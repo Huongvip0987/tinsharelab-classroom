@@ -38,7 +38,7 @@ mv "$STAGE/plugins/vnchooks.dll" "$STAGE/"
 cp translations/*qm "$STAGE/translations/"
 
 QT_PLUGINS=$PREFIX/share/qt6/plugins
-cp "$PREFIX"/lib/qca-qt6/crypto/libqca-ossl.dll "$STAGE/crypto/"
+cp "$(find "$PREFIX" -name libqca-ossl.dll | head -n 1)" "$STAGE/crypto/"
 cp "$QT_PLUGINS/imageformats/qjpeg.dll" "$STAGE/imageformats/"
 cp "$QT_PLUGINS/platforms/qwindows.dll" "$STAGE/platforms/"
 cp "$QT_PLUGINS"/styles/*.dll "$STAGE/styles/"

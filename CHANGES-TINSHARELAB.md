@@ -23,3 +23,8 @@ On the teacher's machine, enable the WebAPI once as administrator, then restart 
 
 Build changes for native MSYS2: AMD64 is recognized as 64-bit, translations are compiled from the
 TS files in the tree without running lupdate, and compiler warnings no longer stop the build.
+
+Room deployment: the desktop shortcut "Cai cho ca phong" (`nsis/tinsharelab-deploy.ps1`) sets up the
+teacher machine and installs the app on the other computers in the room with a Windows administrator
+account. The WebAPI accepts a per-machine pairing token instead of a private key, so the key stays in
+the machine's protected key store.

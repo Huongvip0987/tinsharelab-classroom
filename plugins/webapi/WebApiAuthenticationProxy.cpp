@@ -22,6 +22,9 @@
  *
  */
 
+#include <QFile>
+
+#include "Filesystem.h"
 #include "WebApiAuthenticationProxy.h"
 #include "WebApiConfiguration.h"
 
@@ -111,7 +114,23 @@ bool WebApiAuthenticationProxy::populateCredentials( QUuid authMethod, const QVa
 	if( authMethod == m_authKeysUuid )
 	{
 		const auto keyName = data[QStringLiteral("keyname")].toString();
-		const auto privateKey = CryptoCore::PrivateKey::fromPEM( data[QStringLiteral("keydata")].toString() );
+		const auto pairingToken = data[QStringLiteral("pairingtoken")].toString();
+		auto privateKey = CryptoCore::PrivateKey::fromPEM( data[QStringLiteral("keydata")].toString() );
+
+		// TinShareLab: the web page proves it was paired on this machine with a token
+		// instead of holding the key, which stays in the machine's protected key store.
+		if( pairingToken.isEmpty() == false )
+		{
+			QFile tokenFile( VeyonCore::filesystem().expandPath( QStringLiteral("%GLOBALAPPDATA%/tinsharelab-pairing-token") ) );
+			if( keyName.isEmpty() ||
+				keyName.contains( QLatin1Char('/') ) || keyName.contains( QLatin1Char('\\') ) || keyName.contains( QLatin1String("..") ) ||
+				tokenFile.open( QFile::ReadOnly ) == false ||
+				QString::fromUtf8( tokenFile.readAll() ).trimmed() != pairingToken )
+			{
+				return false;
+			}
+			privateKey = CryptoCore::PrivateKey( VeyonCore::filesystem().privateKeyPath( keyName ) );
+		}
 
 		if( keyName.isEmpty() || credentials.setPrivateKey( privateKey ) == false )
 		{

@@ -68,7 +68,7 @@ RequestExecutionLevel admin
 !insertmacro MUI_PAGE_INSTFILES
 
 !define MUI_FINISHPAGE_RUN
-!define MUI_FINISHPAGE_RUN_TEXT "Run the configurator now"
+!define MUI_FINISHPAGE_RUN_TEXT "Install on the whole room now"
 !define MUI_FINISHPAGE_RUN_FUNCTION "RunConfigurator"
 !define MUI_FINISHPAGE_LINK "Source code and license"
 !define MUI_FINISHPAGE_LINK_LOCATION "https://github.com/Huongvip0987/tinsharelab-classroom"
@@ -219,6 +219,11 @@ CreateDirectory "$SMPROGRAMS\TinShareLab Classroom"
 CreateShortCut "$SMPROGRAMS\TinShareLab Classroom\Veyon Master.lnk" "$INSTDIR\${MAIN_APP_EXE}"
 ${EndIf}
 CreateShortCut "$DESKTOP\TinShareLab Classroom.lnk" "$INSTDIR\${MAIN_APP_EXE}"
+# one-button install for the whole room, from the teacher machine
+SetOutPath "$INSTDIR\deploy"
+File "nsis/tinsharelab-deploy.ps1"
+CopyFiles /SILENT "$EXEPATH" "$INSTDIR\deploy\setup.exe"
+CreateShortCut "$DESKTOP\Cai cho ca phong.lnk" "powershell.exe" '-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File "$INSTDIR\deploy\tinsharelab-deploy.ps1"' "$INSTDIR\${MAIN_APP_EXE}"
 SectionEnd
 
 Section "Interception driver" SEC_INTERCEPTION
@@ -228,7 +233,7 @@ File "interception/*"
 SectionEnd
 
 Function RunConfigurator
-	Exec '"$INSTDIR\veyon-configurator.exe"'
+	Exec 'powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File "$INSTDIR\deploy\tinsharelab-deploy.ps1"'
 FunctionEnd
 
 
@@ -308,6 +313,7 @@ RmDir /r "$INSTDIR\styles"
 RmDir /r "$INSTDIR\tls"
 RmDir /r "$INSTDIR\translations"
 RmDir /r "$INSTDIR\interception"
+RmDir /r "$INSTDIR\deploy"
 
 RmDir "$INSTDIR"
 
@@ -318,6 +324,7 @@ Delete "$SMPROGRAMS\TinShareLab Classroom\TinShareLab Website.lnk"
 RmDir "$SMPROGRAMS\TinShareLab Classroom"
 
 Delete "$DESKTOP\TinShareLab Classroom.lnk"
+Delete "$DESKTOP\Cai cho ca phong.lnk"
 
 DeleteRegKey ${REG_ROOT} "${REG_APP_PATH}"
 DeleteRegKey ${REG_ROOT} "${UNINSTALL_PATH}"
