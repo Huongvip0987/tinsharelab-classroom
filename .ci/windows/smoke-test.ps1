@@ -89,12 +89,13 @@ Report 'web API is listening after reinstall' (Wait-Port 11080 60)
 # Web API rules for tinsharelab.com
 $listeners = @(Get-NetTCPConnection -State Listen -LocalPort 11080 | ForEach-Object { $_.LocalAddress })
 Report 'web API binds to loopback only' (($listeners.Count -gt 0) -and -not ($listeners | Where-Object { $_ -notin '127.0.0.1', '::1' })) ($listeners -join ',')
-$preflight = Call 'OPTIONS' 'authentication/' $site
+$preflight = Call 'OPTIONS' 'hoststate/localhost' $site
 Report 'preflight from the site is allowed' ($preflight.Status -eq 204 -and $preflight.Headers['Access-Control-Allow-Origin'] -eq $site) "status $($preflight.Status)"
 Report 'preflight allows the connection header' ("$($preflight.Headers['Access-Control-Allow-Headers'])" -match 'Connection-Uid')
-Report 'preflight from another site is refused' ((Call 'OPTIONS' 'authentication/' 'https://evil.example').Status -eq 403)
-Report 'request from another site is refused' ((Call 'GET' 'authentication/' 'https://evil.example').Status -eq 403)
-$list = Call 'GET' 'authentication/' $site
+Report 'preflight from another site is refused' ((Call 'OPTIONS' 'hoststate/localhost' 'https://evil.example').Status -eq 403)
+Report 'request from another site is refused' ((Call 'GET' 'hoststate/localhost' 'https://evil.example').Status -eq 403)
+# The call the web page makes first to find the app
+$list = Call 'GET' 'hoststate/localhost' $site
 Report 'request from the site works' ($list.Status -eq 200 -and $list.Headers['Access-Control-Allow-Origin'] -eq $site) "status $($list.Status)"
 $method = '0c69b301-81b4-42d6-8fae-128cdd113314'
 $wrong = Call 'POST' 'authentication/localhost' $site (@{ method = $method; credentials = @{ keyname = 'teacher'; pairingtoken = ('c' * 64) } } | ConvertTo-Json)
