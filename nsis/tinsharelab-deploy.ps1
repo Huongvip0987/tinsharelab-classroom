@@ -1,6 +1,8 @@
-﻿# TinShareLab Classroom: one button that sets up this teacher machine and installs
-# the app on every computer in the room. It needs a Windows administrator account
-# that works on those computers; it never stores the password.
+﻿# TinShareLab Classroom: sets up this teacher machine and gets the app onto the other
+# computers in the room, either with a package the teacher sends through existing
+# classroom software or USB, or over the network with a Windows administrator account.
+# It never stores a password. -MakePackage <folder> creates the package without the window.
+param([string]$MakePackage)
 $ErrorActionPreference = 'Stop'
 
 $identity = [Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()
@@ -57,8 +59,47 @@ function Get-Subnet {
     return @{ Prefix = ($ip -replace '\d+$', ''); Self = $ip }
 }
 
+$studentInstallScript = @'
+@echo off
+net session >nul 2>&1 || (
+  powershell.exe -NoProfile -Command "Start-Process -FilePath '%~f0' -Verb RunAs"
+  exit /b
+)
+cd /d "%~dp0"
+setup.exe /S /NoMaster /NoStartMenuFolder
+set "CLI=%ProgramFiles%\TinShareLab Classroom\veyon-wcli.exe"
+if not exist "%CLI%" (
+  echo install_failed>result.txt
+  exit /b 1
+)
+"%CLI%" authkeys delete teacher/public >nul 2>&1
+"%CLI%" authkeys import teacher/public "%~dp0teacher_public_key.pem" || (
+  echo key_failed>result.txt
+  exit /b 1
+)
+"%CLI%" config set Authentication/Method 1
+"%CLI%" service stop
+"%CLI%" service start
+echo ok>result.txt
+'@
+
+function New-StudentPackage([string]$folder) {
+    if (-not (Test-Path $setup)) { throw 'Thiếu bộ cài. Hãy cài lại TinShareLab Classroom.' }
+    Initialize-Teacher
+    New-Item -ItemType Directory -Force -Path $folder | Out-Null
+    Copy-Item -Force $setup (Join-Path $folder 'setup.exe')
+    Copy-Item -Force $publicKey (Join-Path $folder 'teacher_public_key.pem')
+    Set-Content -Path (Join-Path $folder 'install.cmd') -Encoding Ascii -Value $studentInstallScript
+    Remove-Item -Force -ErrorAction SilentlyContinue (Join-Path $folder 'result.txt')
+}
+
+if ($MakePackage) {
+    New-StudentPackage $MakePackage
+    exit 0
+}
+
 $installWorker = {
-    param([string]$Target, [pscredential]$Credential, [string]$Setup, [string]$Key)
+    param([string]$Target, [object]$Credential, [string]$Setup, [string]$Key, [string]$InstallScript)
     $ErrorActionPreference = 'Stop'
 
     function Test-Port([string]$Address, [int]$Port, [int]$Timeout) {
@@ -69,6 +110,10 @@ $installWorker = {
     }
 
     $result = @{ Host = $Target; Found = $false; Ok = $false; Detail = '' }
+    if (-not $Credential) {
+        if (Test-Port $Target 11100 900) { $result.Found = $true; $result.Ok = $true; $result.Detail = 'Đã có app' }
+        return $result
+    }
     if (-not (Test-Port $Target 445 700)) {
         if (Test-Port $Target 11100 300) { $result.Found = $true; $result.Ok = $true; $result.Detail = 'Đã có app' }
         return $result
@@ -87,25 +132,7 @@ $installWorker = {
         $stage = 'chép bộ cài'
         Copy-Item -Force $Setup "$remote\setup.exe"
         Copy-Item -Force $Key "$remote\teacher_public_key.pem"
-        @'
-@echo off
-cd /d "%~dp0"
-setup.exe /S /NoMaster /NoStartMenuFolder
-set "CLI=%ProgramFiles%\TinShareLab Classroom\veyon-wcli.exe"
-if not exist "%CLI%" (
-  echo install_failed>result.txt
-  exit /b 1
-)
-"%CLI%" authkeys delete teacher/public >nul 2>&1
-"%CLI%" authkeys import teacher/public "%~dp0teacher_public_key.pem" || (
-  echo key_failed>result.txt
-  exit /b 1
-)
-"%CLI%" config set Authentication/Method 1
-"%CLI%" service stop
-"%CLI%" service start
-echo ok>result.txt
-'@ | Set-Content -Path "$remote\install.cmd" -Encoding Ascii
+        Set-Content -Path "$remote\install.cmd" -Encoding Ascii -Value $InstallScript
 
         $stage = 'chạy trình cài'
         $ErrorActionPreference = 'Continue'
@@ -177,7 +204,7 @@ function Add-Box([string]$text, [int]$x, [int]$y, [int]$width) {
     return $box
 }
 
-Add-Label 'Bật tất cả máy trong phòng, nhập tài khoản admin chung của các máy rồi bấm nút.' 16 12 720
+Add-Label 'Máy con không có mật khẩu: bấm nút 1, gửi gói qua NetSupport hoặc USB, chạy xong thì bấm nút 2.' 16 12 720
 Add-Label 'Dải địa chỉ' 16 48 90
 $prefixBox = Add-Box $subnet.Prefix 110 46 130
 Add-Label 'từ' 250 48 26
@@ -190,17 +217,23 @@ Add-Label 'Mật khẩu' 335 84 70
 $passwordBox = Add-Box '' 410 82 180
 $passwordBox.UseSystemPasswordChar = $true
 
-$installButton = New-Object Windows.Forms.Button
-$installButton.Text = 'Tự động cài cho cả phòng'
-$installButton.Location = New-Object Drawing.Point(16, 120)
-$installButton.Size = New-Object Drawing.Size(260, 40)
-$form.Controls.Add($installButton)
+$packageButton = New-Object Windows.Forms.Button
+$packageButton.Text = '1. Tạo gói cài cho máy con'
+$packageButton.Location = New-Object Drawing.Point(16, 120)
+$packageButton.Size = New-Object Drawing.Size(236, 40)
+$form.Controls.Add($packageButton)
 
 $openButton = New-Object Windows.Forms.Button
-$openButton.Text = 'Mở bảng điều khiển trên web'
-$openButton.Location = New-Object Drawing.Point(286, 120)
-$openButton.Size = New-Object Drawing.Size(260, 40)
+$openButton.Text = '2. Tìm máy đã cài, mở web'
+$openButton.Location = New-Object Drawing.Point(262, 120)
+$openButton.Size = New-Object Drawing.Size(236, 40)
 $form.Controls.Add($openButton)
+
+$installButton = New-Object Windows.Forms.Button
+$installButton.Text = 'Cài qua mạng (cần mật khẩu)'
+$installButton.Location = New-Object Drawing.Point(508, 120)
+$installButton.Size = New-Object Drawing.Size(236, 40)
+$form.Controls.Add($installButton)
 
 $status = New-Object Windows.Forms.Label
 $status.Location = New-Object Drawing.Point(16, 168)
@@ -229,9 +262,32 @@ $script:jobs = @()
 $timer = New-Object Windows.Forms.Timer
 $timer.Interval = 500
 
+$script:openWhenDone = $false
+
 function Set-Busy([bool]$busy) {
     $installButton.Enabled = -not $busy
+    $packageButton.Enabled = -not $busy
+    $openButton.Enabled = -not $busy
     $form.UseWaitCursor = $busy
+}
+
+function Start-RoomJobs([object]$credential) {
+    $from = [int]$fromBox.Text
+    $to = [int]$toBox.Text
+    if ($prefixBox.Text -notmatch '^\d{1,3}\.\d{1,3}\.\d{1,3}\.$' -or $from -lt 1 -or $to -gt 254 -or $from -gt $to) { throw 'Dải địa chỉ không hợp lệ.' }
+    $list.Items.Clear()
+    $script:pool = [runspacefactory]::CreateRunspacePool(1, 16)
+    $script:pool.Open()
+    $script:jobs = @()
+    foreach ($last in $from..$to) {
+        $target = "$($prefixBox.Text)$last"
+        if ($target -eq $subnet.Self) { continue }
+        $pipe = [powershell]::Create()
+        $pipe.RunspacePool = $script:pool
+        [void]$pipe.AddScript($installWorker).AddArgument($target).AddArgument($credential).AddArgument($setup).AddArgument($publicKey).AddArgument($studentInstallScript)
+        $script:jobs += [pscustomobject]@{ Host = $target; Pipe = $pipe; Handle = $pipe.BeginInvoke(); Done = $false; Result = $null }
+    }
+    $timer.Start()
 }
 
 $timer.Add_Tick({
@@ -264,21 +320,43 @@ $timer.Add_Tick({
         $script:pool.Close()
         $found = @($script:jobs | Where-Object { $_.Result -and $_.Result.Found })
         $ok = @($found | Where-Object { $_.Result.Ok })
-        $ok | ForEach-Object { $_.Result.Host } | Set-Content -Path $machinesPath -Encoding Ascii
+        Set-Content -Path $machinesPath -Encoding Ascii -Value @($ok | ForEach-Object { $_.Result.Host })
         $status.Text = "Xong: $($ok.Count)/$($found.Count) máy thành công. Máy tắt hoặc chặn mạng sẽ không có trong danh sách."
+        Set-Busy $false
+        if ($script:openWhenDone) {
+            $script:openWhenDone = $false
+            if ($ok.Count) {
+                try { Open-Panel } catch { [void][Windows.Forms.MessageBox]::Show("$_", 'TinShareLab Classroom', 'OK', 'Error') }
+            } else {
+                [void][Windows.Forms.MessageBox]::Show('Chưa thấy máy nào đã cài. Hãy kiểm tra máy con đã chạy install.cmd, đã bật và cùng dải địa chỉ.', 'TinShareLab Classroom', 'OK', 'Warning')
+            }
+        }
+    }
+})
+
+$packageButton.Add_Click({
+    try {
+        Set-Busy $true
+        $status.Text = 'Đang tạo gói cài...'
+        $form.Refresh()
+        $folder = Join-Path ([Environment]::GetFolderPath('Desktop')) 'TinShareLab-May-Con'
+        New-StudentPackage $folder
+        $status.Text = "Đã tạo gói: $folder"
+        Start-Process explorer.exe $folder
+        [void][Windows.Forms.MessageBox]::Show("Dùng NetSupport hoặc USB chép cả thư mục này sang các máy con rồi chạy install.cmd trên đó.`n`nSau khi các máy chạy xong khoảng 1-2 phút, bấm nút 2 để tìm máy và mở web.", 'TinShareLab Classroom', 'OK', 'Information')
+    } catch {
+        $status.Text = ''
+        [void][Windows.Forms.MessageBox]::Show("$_", 'TinShareLab Classroom', 'OK', 'Error')
+    } finally {
         Set-Busy $false
     }
 })
 
 $installButton.Add_Click({
     try {
-        $from = [int]$fromBox.Text
-        $to = [int]$toBox.Text
-        if ($prefixBox.Text -notmatch '^\d{1,3}\.\d{1,3}\.\d{1,3}\.$' -or $from -lt 1 -or $to -gt 254 -or $from -gt $to) { throw 'Dải địa chỉ không hợp lệ.' }
-        if (-not $userBox.Text -or -not $passwordBox.Text) { throw 'Hãy nhập tài khoản và mật khẩu admin của các máy.' }
+        if (-not $userBox.Text -or -not $passwordBox.Text) { throw 'Máy con không có mật khẩu thì dùng nút 1. Nút này cần tài khoản và mật khẩu admin của các máy.' }
         if (-not (Test-Path $setup)) { throw 'Thiếu bộ cài. Hãy cài lại TinShareLab Classroom.' }
         Set-Busy $true
-        $list.Items.Clear()
         $status.Text = 'Đang chuẩn bị máy giáo viên...'
         $form.Refresh()
         Initialize-Teacher
@@ -286,19 +364,7 @@ $installButton.Add_Click({
         $user = $userBox.Text.Trim()
         $secure = ConvertTo-SecureString $passwordBox.Text -AsPlainText -Force
         $passwordBox.Clear()
-        $credential = New-Object Management.Automation.PSCredential($user, $secure)
-        $script:pool = [runspacefactory]::CreateRunspacePool(1, 16)
-        $script:pool.Open()
-        $script:jobs = @()
-        foreach ($last in $from..$to) {
-            $target = "$($prefixBox.Text)$last"
-            if ($target -eq $subnet.Self) { continue }
-            $pipe = [powershell]::Create()
-            $pipe.RunspacePool = $script:pool
-            [void]$pipe.AddScript($installWorker).AddArgument($target).AddArgument($credential).AddArgument($setup).AddArgument($publicKey)
-            $script:jobs += [pscustomobject]@{ Host = $target; Pipe = $pipe; Handle = $pipe.BeginInvoke(); Done = $false; Result = $null }
-        }
-        $timer.Start()
+        Start-RoomJobs (New-Object Management.Automation.PSCredential($user, $secure))
     } catch {
         Set-Busy $false
         $status.Text = ''
@@ -307,7 +373,19 @@ $installButton.Add_Click({
 })
 
 $openButton.Add_Click({
-    try { Open-Panel } catch { [void][Windows.Forms.MessageBox]::Show("$_", 'TinShareLab Classroom', 'OK', 'Error') }
+    try {
+        Set-Busy $true
+        $status.Text = 'Đang tìm máy đã cài...'
+        $form.Refresh()
+        if (-not (Test-Path $tokenPath)) { Initialize-Teacher }
+        $script:openWhenDone = $true
+        Start-RoomJobs $null
+    } catch {
+        $script:openWhenDone = $false
+        Set-Busy $false
+        $status.Text = ''
+        [void][Windows.Forms.MessageBox]::Show("$_", 'TinShareLab Classroom', 'OK', 'Error')
+    }
 })
 
 [void]$form.ShowDialog()

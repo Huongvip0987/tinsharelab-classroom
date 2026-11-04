@@ -72,13 +72,11 @@ Report 'service restarted' ($LASTEXITCODE -eq 0) "code $LASTEXITCODE"
 Report 'web API is listening' (Wait-Port 11080 60)
 
 # Student path: run the exact script the room button sends to each computer
-$match = [regex]::Match((Get-Content $deployScript -Raw -Encoding UTF8), "(?s)@'\r?\n(@echo off.*?)\r?\n'@")
-Report 'student install script found' $match.Success
 $student = Join-Path $work 'student'
-New-Item -ItemType Directory -Force -Path $student | Out-Null
-Copy-Item -Force $setup (Join-Path $student 'setup.exe')
-Copy-Item -Force $publicKey (Join-Path $student 'teacher_public_key.pem')
-Set-Content -Path (Join-Path $student 'install.cmd') -Encoding Ascii -Value $match.Groups[1].Value
+& powershell.exe -NoProfile -ExecutionPolicy Bypass -File $deployScript -MakePackage $student
+Report 'package button logic creates the package' ($LASTEXITCODE -eq 0) "code $LASTEXITCODE"
+foreach ($file in 'setup.exe', 'teacher_public_key.pem', 'install.cmd') { Report "package has $file" (Test-Path (Join-Path $student $file)) }
+Report 'web API is listening after packaging' (Wait-Port 11080 60)
 $process = Start-Process -FilePath 'cmd.exe' -ArgumentList '/c', (Join-Path $student 'install.cmd') -Wait -PassThru -WorkingDirectory $student
 $outcome = if (Test-Path (Join-Path $student 'result.txt')) { (Get-Content (Join-Path $student 'result.txt') -Raw).Trim() } else { 'none' }
 Report 'student install script reports ok' ($outcome -eq 'ok') "result $outcome, code $($process.ExitCode)"

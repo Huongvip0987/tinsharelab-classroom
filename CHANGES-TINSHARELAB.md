@@ -28,3 +28,6 @@ Room deployment: the desktop shortcut "Cai cho ca phong" (`nsis/tinsharelab-depl
 teacher machine and installs the app on the other computers in the room with a Windows administrator
 account. The WebAPI accepts a per-machine pairing token instead of a private key, so the key stays in
 the machine's protected key store.
+
+Computers without an administrator password: the same window can create a student package to send
+through existing classroom software or USB, then find the installed computers and open the web panel.
