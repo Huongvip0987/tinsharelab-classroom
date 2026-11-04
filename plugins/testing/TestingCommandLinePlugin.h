@@ -53,7 +53,7 @@ public:
 
 	QString description() const override
 	{
-		return tr( "Test internal Veyon components and functions" );
+		return tr( "Test internal TinShareLab Classroom components and functions" );
 	}
 
 	QString vendor() const override
@@ -73,7 +73,7 @@ public:
 
 	QString commandLineModuleHelp() const override
 	{
-		return tr( "Commands for testing internal components and functions of Veyon" );
+		return tr( "Commands for testing internal components and functions of TinShareLab Classroom" );
 	}
 
 	QStringList commands() const override;

@@ -17,7 +17,7 @@
       <bool>false</bool>
      </property>
      <property name="placeholderText">
-      <string>e.g. Veyon</string>
+      <string>e.g. TinShareLab Classroom</string>
      </property>
     </widget>
    </item>

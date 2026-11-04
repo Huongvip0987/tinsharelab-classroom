@@ -149,7 +149,7 @@
       <item>
        <widget class="QRadioButton" name="activeSessionModeEnabled">
         <property name="toolTip">
-         <string>Enable if a single Veyon Server instance should be launched for the currently active session, no matter if local or remote.</string>
+         <string>Enable if a single TinShareLab Server instance should be launched for the currently active session, no matter if local or remote.</string>
         </property>
         <property name="text">
          <string>Active session mode (single server instance for active local or remote session)</string>
@@ -236,7 +236,7 @@ Typically this is required to support terminal servers.</string>
       <item row="0" column="0">
        <widget class="QLabel" name="label_12">
         <property name="text">
-         <string>Veyon server</string>
+         <string>TinShareLab server</string>
         </property>
        </widget>
       </item>

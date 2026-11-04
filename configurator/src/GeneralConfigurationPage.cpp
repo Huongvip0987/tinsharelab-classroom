@@ -197,8 +197,8 @@ void GeneralConfigurationPage::clearLogFiles()
 
 	if( serviceControl.isServiceRunning() )
 	{
-		if (QMessageBox::question(this, tr("Veyon service"),
-								   tr("The Veyon service needs to be stopped temporarily "
+		if (QMessageBox::question(this, tr("TinShareLab service"),
+								   tr("The TinShareLab service needs to be stopped temporarily "
 									  "in order to remove the log files. Continue?"),
 								  QMessageBox::Yes | QMessageBox::No,
 								  QMessageBox::Yes) == QMessageBox::Yes)

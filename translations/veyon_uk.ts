@@ -2,8 +2,8 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <source>About Veyon</source>
-        <translation>Про Veyon</translation>
+        <source>About TinShareLab Classroom</source>
+        <translation>Про TinShareLab Classroom</translation>
     </message>
     <message>
         <source>About</source>
@@ -32,18 +32,18 @@
     <message>
         <source>Current language not translated yet (or native English).
 
-If you&apos;re interested in translating Veyon into your local or another language or want to improve an existing translation, please contact a Veyon developer!</source>
+If you&apos;re interested in translating TinShareLab Classroom into your local or another language or want to improve an existing translation, please contact a TinShareLab Classroom developer!</source>
         <translation>Програму ще не перекладено поточною мовою (або налаштовано на використання англійської).
 
-Якщо ви хочете перекласти Veyon вашою рідною або якоюсь іншою мовою або хочете удосконалити наявний переклад, будь ласка, зв’яжіться із розробником Veyon!</translation>
+Якщо ви хочете перекласти TinShareLab Classroom вашою рідною або якоюсь іншою мовою або хочете удосконалити наявний переклад, будь ласка, зв’яжіться із розробником TinShareLab Classroom!</translation>
     </message>
     <message>
         <source>License</source>
         <translation>Ліцензування</translation>
     </message>
     <message>
-        <source>About Veyon %1</source>
-        <translation>Про Veyon %1</translation>
+        <source>About TinShareLab Classroom %1</source>
+        <translation>Про TinShareLab Classroom %1</translation>
     </message>
 </context>
 <context>
@@ -73,8 +73,8 @@ If you&apos;re interested in translating Veyon into your local or another langua
         <translation>Групи користувачів, які уповноважено для доступу до комп’ютера</translation>
     </message>
     <message>
-        <source>Please add the groups whose members should be authorized to access computers in your Veyon network.</source>
-        <translation>Будь ласка, додайте групи, учасники яких повинні будуть проходити розпізнавання, щоб отримати доступу до комп’ютерів у вашій мережі Veyon.</translation>
+        <source>Please add the groups whose members should be authorized to access computers in your TinShareLab Classroom network.</source>
+        <translation>Будь ласка, додайте групи, учасники яких повинні будуть проходити розпізнавання, щоб отримати доступу до комп’ютерів у вашій мережі TinShareLab Classroom.</translation>
     </message>
     <message>
         <source>Authorized user groups</source>
@@ -333,8 +333,8 @@ If you&apos;re interested in translating Veyon into your local or another langua
         <translation>3) Експортуйте відкритий ключ і імпортуйте його на всіх клієнтські комп&apos;ютери із однаковою назвою.</translation>
     </message>
     <message>
-        <source>Please refer to the &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;Veyon Administrator Manual&lt;/a&gt; for more information.</source>
-        <translation>Будь ласка, ознайомтеся із &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;Підручником із адміністрування Veyon&lt;/a&gt;, щоб дізнатися більше.</translation>
+        <source>Please refer to the &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;TinShareLab Classroom Administrator Manual&lt;/a&gt; for more information.</source>
+        <translation>Будь ласка, ознайомтеся із &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;Підручником із адміністрування TinShareLab Classroom&lt;/a&gt;, щоб дізнатися більше.</translation>
     </message>
     <message>
         <source>Key file directories</source>
@@ -1048,8 +1048,8 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>Комп’ютер перебуває поза мережею або його вимкнено</translation>
     </message>
     <message>
-        <source>Veyon Server unreachable or not running</source>
-        <translation>Сервер Veyon є недоступним або сервер не запущено</translation>
+        <source>TinShareLab Server unreachable or not running</source>
+        <translation>Сервер TinShareLab Classroom є недоступним або сервер не запущено</translation>
     </message>
     <message>
         <source>Authentication failed or access denied</source>
@@ -1115,8 +1115,8 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>Користувач «%1» на вузлі «%2» намагався отримати доступ до цього комп&apos;ютера, але його було заблоковано через параметри керування доступом.</translation>
     </message>
     <message>
-        <source>Veyon Service %1 at %2:%3</source>
-        <translation>Служба Veyon %1, %2:%3</translation>
+        <source>TinShareLab Service %1 at %2:%3</source>
+        <translation>Служба TinShareLab Classroom %1, %2:%3</translation>
     </message>
     <message>
         <source>Active connections:</source>
@@ -1138,8 +1138,8 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>Не вистачає додатка каталогу мережевих об’єктів</translation>
     </message>
     <message>
-        <source>No default network object directory plugin was found. Please check your installation or configure a different network object directory backend via Veyon Configurator.</source>
-        <translation>Не знайдено типового додатка каталогу мережевих об’єктів. Будь ласка, перевірте, чи правильно встановлено програму, або налаштуйте інший модуль каталогу мережевих об’єктів за допомогою засобу налаштовування Veyon.</translation>
+        <source>No default network object directory plugin was found. Please check your installation or configure a different network object directory backend via TinShareLab Configurator.</source>
+        <translation>Не знайдено типового додатка каталогу мережевих об’єктів. Будь ласка, перевірте, чи правильно встановлено програму, або налаштуйте інший модуль каталогу мережевих об’єктів за допомогою засобу налаштовування TinShareLab Classroom.</translation>
     </message>
     <message>
         <source>Computer name;Hostname;User</source>
@@ -1200,8 +1200,8 @@ Make sure that the names of the keys belonging to each other are identical on al
 <context>
     <name>ConfigCommands</name>
     <message>
-        <source>Clear system-wide Veyon configuration</source>
-        <translation>Вилучити загальносистемні налаштування Veyon</translation>
+        <source>Clear system-wide TinShareLab Classroom configuration</source>
+        <translation>Вилучити загальносистемні налаштування TinShareLab Classroom</translation>
     </message>
     <message>
         <source>List all configuration keys and values</source>
@@ -1264,27 +1264,27 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>Будь ласка, вкажіть коректне значення.</translation>
     </message>
     <message>
-        <source>Configure Veyon at command line</source>
-        <translation>Налаштувати Veyon з командного рядка</translation>
+        <source>Configure TinShareLab Classroom at command line</source>
+        <translation>Налаштувати TinShareLab Classroom з командного рядка</translation>
     </message>
     <message>
-        <source>Commands for managing the configuration of Veyon</source>
-        <translation>Команди для керування налаштуваннями Veyon</translation>
+        <source>Commands for managing the configuration of TinShareLab Classroom</source>
+        <translation>Команди для керування налаштуваннями TinShareLab Classroom</translation>
     </message>
 </context>
 <context>
     <name>ConfigurationManager</name>
     <message>
-        <source>Could not modify the autostart property for the Veyon Service.</source>
-        <translation>Не вдалося змінити параметр автоматичного запуску служби Veyon.</translation>
+        <source>Could not modify the autostart property for the TinShareLab Service.</source>
+        <translation>Не вдалося змінити параметр автоматичного запуску служби TinShareLab Classroom.</translation>
     </message>
     <message>
-        <source>Could not configure the firewall configuration for the Veyon Server.</source>
-        <translation>Не вдалося налаштувати брандмауер для сервера Veyon.</translation>
+        <source>Could not configure the firewall configuration for the TinShareLab Server.</source>
+        <translation>Не вдалося налаштувати брандмауер для сервера TinShareLab Classroom.</translation>
     </message>
     <message>
-        <source>Could not configure the firewall configuration for the Veyon Worker.</source>
-        <translation>Не вдалося налаштувати брандмауер для обробника Veyon.</translation>
+        <source>Could not configure the firewall configuration for the TinShareLab Classroom Worker.</source>
+        <translation>Не вдалося налаштувати брандмауер для обробника TinShareLab Classroom.</translation>
     </message>
     <message>
         <source>Could not apply platform-specific configuration settings.</source>
@@ -1298,8 +1298,8 @@ Make sure that the names of the keys belonging to each other are identical on al
 <context>
     <name>DemoClient</name>
     <message>
-        <source>Veyon Demo</source>
-        <translation>Демонстрація Veyon</translation>
+        <source>TinShareLab Demo</source>
+        <translation>Демонстрація TinShareLab Classroom</translation>
     </message>
 </context>
 <context>
@@ -1645,8 +1645,8 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>АРГУМЕНТИ</translation>
     </message>
     <message>
-        <source>Starts the specified feature on the specified host by connecting to the Veyon Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features. Depending on the feature, additional arguments (such as the text message to display) encoded as a single JSON string have to be specified. Please refer to the developer documentation for more information</source>
-        <translation>Запускає вказану можливість на вказаному вузлі шляхом з&apos;єднання із запущеним віддалено сервером Veyon. Можливість можна вказати за назвою або UID. Скористайтеся командою «show», щоб переглянути список усіх доступних можливостей. Залежно від можливості, може бути вказано додаткові аргументи (зокрема текстове повідомлення для показу), які має бути закодовано у один рядок JSON. Щоб дізнатися більше, зверніться до документації для розробників.</translation>
+        <source>Starts the specified feature on the specified host by connecting to the TinShareLab Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features. Depending on the feature, additional arguments (such as the text message to display) encoded as a single JSON string have to be specified. Please refer to the developer documentation for more information</source>
+        <translation>Запускає вказану можливість на вказаному вузлі шляхом з&apos;єднання із запущеним віддалено сервером TinShareLab Classroom. Можливість можна вказати за назвою або UID. Скористайтеся командою «show», щоб переглянути список усіх доступних можливостей. Залежно від можливості, може бути вказано додаткові аргументи (зокрема текстове повідомлення для показу), які має бути закодовано у один рядок JSON. Щоб дізнатися більше, зверніться до документації для розробників.</translation>
     </message>
     <message>
         <source>Lock the screen</source>
@@ -1665,8 +1665,8 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>Запустити програму</translation>
     </message>
     <message>
-        <source>Stops the specified feature on the specified host by connecting to the Veyon Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features.</source>
-        <translation>Зупиняє роботу вказаної можливості на вказанмоу вузлі шляхом з&apos;єднання із запущеним віддалено сервером Veyon. Можливість можна вказати за назвою або UID. Скористайтеся командою «show», щоб переглянути список усіх доступних можливостей.</translation>
+        <source>Stops the specified feature on the specified host by connecting to the TinShareLab Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features.</source>
+        <translation>Зупиняє роботу вказаної можливості на вказанмоу вузлі шляхом з&apos;єднання із запущеним віддалено сервером TinShareLab Classroom. Можливість можна вказати за назвою або UID. Скористайтеся командою «show», щоб переглянути список усіх доступних можливостей.</translation>
     </message>
     <message>
         <source>Unlock the screen</source>
@@ -2210,12 +2210,12 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>На цьому комп&apos;ютері ключі розпізнавання налаштовано не так, як слід.</translation>
     </message>
     <message>
-        <source>Veyon service</source>
-        <translation>Служба Veyon</translation>
+        <source>TinShareLab service</source>
+        <translation>Служба TinShareLab Classroom</translation>
     </message>
     <message>
-        <source>The Veyon service needs to be stopped temporarily in order to remove the log files. Continue?</source>
-        <translation>Для вилучення файлів журналу доведеться тимчасово зупинити роботу служби Veyon. Продовжити?</translation>
+        <source>The TinShareLab service needs to be stopped temporarily in order to remove the log files. Continue?</source>
+        <translation>Для вилучення файлів журналу доведеться тимчасово зупинити роботу служби TinShareLab Classroom. Продовжити?</translation>
     </message>
     <message>
         <source>Log files cleared</source>
@@ -3017,8 +3017,8 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>%1 (завантажити записи користувачів та груп з LDAP/AD)</translation>
     </message>
     <message>
-        <source>LDAP/AD support for Veyon</source>
-        <translation>Підтримка LDAP/AD у Veyon</translation>
+        <source>LDAP/AD support for TinShareLab Classroom</source>
+        <translation>Підтримка LDAP/AD у TinShareLab Classroom</translation>
     </message>
 </context>
 <context>
@@ -3100,8 +3100,8 @@ Make sure that the names of the keys belonging to each other are identical on al
 <context>
     <name>MainWindow</name>
     <message>
-        <source>Veyon Configurator</source>
-        <translation>Засіб налаштовування Veyon</translation>
+        <source>TinShareLab Configurator</source>
+        <translation>Засіб налаштовування TinShareLab Classroom</translation>
     </message>
     <message>
         <source>General</source>
@@ -3160,8 +3160,8 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <source>About Veyon</source>
-        <translation>Про Veyon</translation>
+        <source>About TinShareLab Classroom</source>
+        <translation>Про TinShareLab Classroom</translation>
     </message>
     <message>
         <source>About Qt</source>
@@ -3224,8 +3224,8 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>Показувати лише комп&apos;ютери із користувачами у системі</translation>
     </message>
     <message>
-        <source>Veyon Configurator %1</source>
-        <translation>Засіб налаштовування Veyon %1</translation>
+        <source>TinShareLab Configurator %1</source>
+        <translation>Засіб налаштовування TinShareLab Classroom %1</translation>
     </message>
     <message>
         <source>Load settings from file</source>
@@ -3260,16 +3260,16 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>Не вдалося записати налаштування</translation>
     </message>
     <message>
-        <source>The local configuration backend reported that the configuration is not writable! Please run Veyon Configurator with higher privileges.</source>
-        <translation>Модуль керування локальними налаштуваннями повідомив, що не вдалося виконати запис до файла налаштувань! Будь ласка, запустіть Засіб налаштовування Veyon із ширшими правами доступу.</translation>
+        <source>The local configuration backend reported that the configuration is not writable! Please run TinShareLab Configurator with higher privileges.</source>
+        <translation>Модуль керування локальними налаштуваннями повідомив, що не вдалося виконати запис до файла налаштувань! Будь ласка, запустіть Засіб налаштовування TinShareLab Classroom із ширшими правами доступу.</translation>
     </message>
     <message>
         <source>Authentication impossible</source>
         <translation>Розпізнавання неможливе</translation>
     </message>
     <message>
-        <source>No authentication key files were found or your current ones are outdated. Please create new key files using Veyon Configurator. Alternatively set up logon authentication using Veyon Configurator. Otherwise you won&apos;t be able to access computers using Veyon.</source>
-        <translation>Не знайдено файлів ключів розпізнавання або строк дії знайдених ключів вичерпано. Будь ласка, створіть нові файли ключів за допомогою засобу налаштовування Veyon. Крім того, ви можете налаштувати розпізнавання за іменем користувача під час входу до системи, скориставшись для цього засобом налаштовування Veyon. Якщо ви не створите ключів і не налаштуєте розпізнавання, ви не зможете отримувати доступ до комп’ютерів за допомогою Veyon.</translation>
+        <source>No authentication key files were found or your current ones are outdated. Please create new key files using TinShareLab Configurator. Alternatively set up logon authentication using TinShareLab Configurator. Otherwise you won&apos;t be able to access computers using TinShareLab Classroom.</source>
+        <translation>Не знайдено файлів ключів розпізнавання або строк дії знайдених ключів вичерпано. Будь ласка, створіть нові файли ключів за допомогою засобу налаштовування TinShareLab Classroom. Крім того, ви можете налаштувати розпізнавання за іменем користувача під час входу до системи, скориставшись для цього засобом налаштовування TinShareLab Classroom. Якщо ви не створите ключів і не налаштуєте розпізнавання, ви не зможете отримувати доступ до комп’ютерів за допомогою TinShareLab Classroom.</translation>
     </message>
     <message>
         <source>Access denied</source>
@@ -3284,8 +3284,8 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>Задіяно можливість</translation>
     </message>
     <message>
-        <source>The feature &quot;%1&quot; is still active. Please stop it before closing Veyon.</source>
-        <translation>Можливість «%1» все ще задіяно. Будь ласка, зупиніть її роботу, перш ніж завершувати роботу Veyon.</translation>
+        <source>The feature &quot;%1&quot; is still active. Please stop it before closing TinShareLab Classroom.</source>
+        <translation>Можливість «%1» все ще задіяно. Будь ласка, зупиніть її роботу, перш ніж завершувати роботу TinShareLab Classroom.</translation>
     </message>
     <message>
         <source>Use custom computer arrangement.
@@ -3684,8 +3684,8 @@ Press and hold to load arrangement from a file or save current arrangement to a 
         <translation>Відкрити сайт</translation>
     </message>
     <message>
-        <source>e.g. Veyon</source>
-        <translation>наприклад Veyon</translation>
+        <source>e.g. TinShareLab Classroom</source>
+        <translation>наприклад TinShareLab Classroom</translation>
     </message>
     <message>
         <source>Remember and add to website menu</source>
@@ -3707,8 +3707,8 @@ Press and hold to load arrangement from a file or save current arrangement to a 
 <context>
     <name>PasswordDialog</name>
     <message>
-        <source>Veyon Logon</source>
-        <translation>Вхід до Veyon</translation>
+        <source>TinShareLab Logon</source>
+        <translation>Вхід до TinShareLab Classroom</translation>
     </message>
     <message>
         <source>Please enter your username and password in order to access computers.</source>
@@ -3952,12 +3952,12 @@ Please save your work and close all programs.</source>
 <context>
     <name>RemoteAccessWidget</name>
     <message>
-        <source>%1 - Veyon Remote Access</source>
-        <translation>%1 – Віддалений доступ до Veyon</translation>
+        <source>%1 - TinShareLab Remote Access</source>
+        <translation>%1 – Віддалений доступ до TinShareLab Classroom</translation>
     </message>
     <message>
-        <source>%1 - %2 - Veyon Remote Access</source>
-        <translation>%1 - %2 — Віддалений доступ до Veyon</translation>
+        <source>%1 - %2 - TinShareLab Remote Access</source>
+        <translation>%1 - %2 — Віддалений доступ до TinShareLab Classroom</translation>
     </message>
 </context>
 <context>
@@ -4259,8 +4259,8 @@ Typically this is required to support terminal servers.</source>
         <translation>Номери портів мережі</translation>
     </message>
     <message>
-        <source>Veyon server</source>
-        <translation>Сервер Veyon</translation>
+        <source>TinShareLab server</source>
+        <translation>Сервер TinShareLab Classroom</translation>
     </message>
     <message>
         <source>Internal VNC server</source>
@@ -4299,12 +4299,12 @@ Typically this is required to support terminal servers.</source>
         <translation>Додаток:</translation>
     </message>
     <message>
-        <source>Restart Veyon Service</source>
-        <translation>Перезапустити службу Veyon</translation>
+        <source>Restart TinShareLab Service</source>
+        <translation>Перезапустити службу TinShareLab Classroom</translation>
     </message>
     <message>
-        <source>All settings were saved successfully. In order to take effect the Veyon service needs to be restarted. Restart it now?</source>
-        <translation>Всі параметри було збережено. З метою набуття чинності нових параметрів слід перезапустити службу Veyon. Перезапусти службу зараз?</translation>
+        <source>All settings were saved successfully. In order to take effect the TinShareLab service needs to be restarted. Restart it now?</source>
+        <translation>Всі параметри було збережено. З метою набуття чинності нових параметрів слід перезапустити службу TinShareLab Classroom. Перезапусти службу зараз?</translation>
     </message>
     <message>
         <source>Running</source>
@@ -4339,8 +4339,8 @@ Example: [^-]*-(PC[0-9]*)</source>
 Приклад: [^-]*-(PC[0-9]*)</translation>
     </message>
     <message>
-        <source>Enable if a single Veyon Server instance should be launched for the currently active session, no matter if local or remote.</source>
-        <translation>Увімкніть, якщо єдиний екземпляр Veyon Server має бути запущено для поточного активного сеансу, локального чи віддаленого.</translation>
+        <source>Enable if a single TinShareLab Server instance should be launched for the currently active session, no matter if local or remote.</source>
+        <translation>Увімкніть, якщо єдиний екземпляр TinShareLab Server має бути запущено для поточного активного сеансу, локального чи віддаленого.</translation>
     </message>
     <message>
         <source>Environment variable name</source>
@@ -4381,28 +4381,28 @@ Example: [^-]*-(PC[0-9]*)</source>
 <context>
     <name>ServiceControlCommands</name>
     <message>
-        <source>Register Veyon Service</source>
-        <translation>Зареєструвати службу Veyon</translation>
+        <source>Register TinShareLab Service</source>
+        <translation>Зареєструвати службу TinShareLab Classroom</translation>
     </message>
     <message>
-        <source>Unregister Veyon Service</source>
-        <translation>Скасувати реєстрацію служби Veyon</translation>
+        <source>Unregister TinShareLab Service</source>
+        <translation>Скасувати реєстрацію служби TinShareLab Classroom</translation>
     </message>
     <message>
-        <source>Start Veyon Service</source>
-        <translation>Запустити службу Veyon</translation>
+        <source>Start TinShareLab Service</source>
+        <translation>Запустити службу TinShareLab Classroom</translation>
     </message>
     <message>
-        <source>Stop Veyon Service</source>
-        <translation>Зупинити службу Veyon</translation>
+        <source>Stop TinShareLab Service</source>
+        <translation>Зупинити службу TinShareLab Classroom</translation>
     </message>
     <message>
-        <source>Restart Veyon Service</source>
-        <translation>Перезапустити службу Veyon</translation>
+        <source>Restart TinShareLab Service</source>
+        <translation>Перезапустити службу TinShareLab Classroom</translation>
     </message>
     <message>
-        <source>Query status of Veyon Service</source>
-        <translation>Визначити стан служби Veyon</translation>
+        <source>Query status of TinShareLab Service</source>
+        <translation>Визначити стан служби TinShareLab Classroom</translation>
     </message>
     <message>
         <source>Service is running</source>
@@ -4413,12 +4413,12 @@ Example: [^-]*-(PC[0-9]*)</source>
         <translation>Службу не запущено</translation>
     </message>
     <message>
-        <source>Configure and control Veyon service</source>
-        <translation>Налаштовування і керування службою Veyon</translation>
+        <source>Configure and control TinShareLab service</source>
+        <translation>Налаштовування і керування службою TinShareLab Classroom</translation>
     </message>
     <message>
-        <source>Commands for configuring and controlling Veyon Service</source>
-        <translation>Команди для налаштовування і керування службою Veyon</translation>
+        <source>Commands for configuring and controlling TinShareLab Service</source>
+        <translation>Команди для налаштовування і керування службою TinShareLab Classroom</translation>
     </message>
 </context>
 <context>
@@ -4432,8 +4432,8 @@ Example: [^-]*-(PC[0-9]*)</source>
         <translation>Файла «%1» не існує!</translation>
     </message>
     <message>
-        <source>Interactive shell and script execution for Veyon CLI</source>
-        <translation>Інтерактивна оболонка і засіб виконання скриптів для командного рядка Veyon</translation>
+        <source>Interactive shell and script execution for TinShareLab CLI</source>
+        <translation>Інтерактивна оболонка і засіб виконання скриптів для командного рядка TinShareLab Classroom</translation>
     </message>
     <message>
         <source>Commands for shell functionalities</source>
@@ -4463,8 +4463,8 @@ Example: [^-]*-(PC[0-9]*)</source>
         <translation>Переглянути в окремому вікні</translation>
     </message>
     <message>
-        <source>Veyon Master – Slideshow</source>
-        <translation>Veyon Master – Показ слайдів</translation>
+        <source>TinShareLab Classroom – Slideshow</source>
+        <translation>TinShareLab Classroom – Показ слайдів</translation>
     </message>
 </context>
 <context>
@@ -4546,12 +4546,12 @@ Example: [^-]*-(PC[0-9]*)</source>
 <context>
     <name>TestingCommandLinePlugin</name>
     <message>
-        <source>Test internal Veyon components and functions</source>
-        <translation>Виконати перевірку внутрішніх компонентів і функцій Veyon</translation>
+        <source>Test internal TinShareLab Classroom components and functions</source>
+        <translation>Виконати перевірку внутрішніх компонентів і функцій TinShareLab Classroom</translation>
     </message>
     <message>
-        <source>Commands for testing internal components and functions of Veyon</source>
-        <translation>Команди для перевірки внутрішніх компонентів та функцій Veyon</translation>
+        <source>Commands for testing internal components and functions of TinShareLab Classroom</source>
+        <translation>Команди для перевірки внутрішніх компонентів та функцій TinShareLab Classroom</translation>
     </message>
 </context>
 <context>
@@ -4771,15 +4771,15 @@ Example: [^-]*-(PC[0-9]*)</source>
         <translation>Немає доступу на запис</translation>
     </message>
     <message>
-        <source>Could not save your personal settings! Please check the user configuration file path using Veyon Configurator.</source>
-        <translation>Не вдалося зберегти ваші особисті параметри! Будь ласка, перевірте, чи правильно вказано шлях до файла налаштувань користувачів за допомогою засобу налаштовування Veyon.</translation>
+        <source>Could not save your personal settings! Please check the user configuration file path using TinShareLab Configurator.</source>
+        <translation>Не вдалося зберегти ваші особисті параметри! Будь ласка, перевірте, чи правильно вказано шлях до файла налаштувань користувачів за допомогою засобу налаштовування TinShareLab Classroom.</translation>
     </message>
 </context>
 <context>
     <name>VeyonServiceControl</name>
     <message>
-        <source>Veyon Service</source>
-        <translation>Служба Veyon</translation>
+        <source>TinShareLab Service</source>
+        <translation>Служба TinShareLab Classroom</translation>
     </message>
 </context>
 <context>

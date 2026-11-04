@@ -2,8 +2,8 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <source>About Veyon</source>
-        <translation>Apie Veyon</translation>
+        <source>About TinShareLab Classroom</source>
+        <translation>Apie TinShareLab Classroom</translation>
     </message>
     <message>
         <source>About</source>
@@ -32,18 +32,18 @@
     <message>
         <source>Current language not translated yet (or native English).
 
-If you&apos;re interested in translating Veyon into your local or another language or want to improve an existing translation, please contact a Veyon developer!</source>
+If you&apos;re interested in translating TinShareLab Classroom into your local or another language or want to improve an existing translation, please contact a TinShareLab Classroom developer!</source>
         <translation>Dabartinė kalba dar neišversta (arba tai yra originalo kalba – anglų).
 
-Jei norite išversti Veyon į savo ar kitą kalbą arba patobulinti esamą vertimą, susisiekite su Veyon kūrėju!</translation>
+Jei norite išversti TinShareLab Classroom į savo ar kitą kalbą arba patobulinti esamą vertimą, susisiekite su TinShareLab Classroom kūrėju!</translation>
     </message>
     <message>
         <source>License</source>
         <translation>Licencija</translation>
     </message>
     <message>
-        <source>About Veyon %1</source>
-        <translation>Apie Veyon %1</translation>
+        <source>About TinShareLab Classroom %1</source>
+        <translation>Apie TinShareLab Classroom %1</translation>
     </message>
 </context>
 <context>
@@ -73,8 +73,8 @@ Jei norite išversti Veyon į savo ar kitą kalbą arba patobulinti esamą verti
         <translation>Vartotojų grupės, kurioms suteikta prieiga prie kompiuterių</translation>
     </message>
     <message>
-        <source>Please add the groups whose members should be authorized to access computers in your Veyon network.</source>
-        <translation>Pridėkite grupes, kurių nariams turi būti leidžiama pasiekti Veyon tinklo kompiuterius.</translation>
+        <source>Please add the groups whose members should be authorized to access computers in your TinShareLab Classroom network.</source>
+        <translation>Pridėkite grupes, kurių nariams turi būti leidžiama pasiekti TinShareLab Classroom tinklo kompiuterius.</translation>
     </message>
     <message>
         <source>Authorized user groups</source>
@@ -333,8 +333,8 @@ Jei norite išversti Veyon į savo ar kitą kalbą arba patobulinti esamą verti
         <translation>3) Eksportuokite viešąjį raktą ir tuo pačiu pavadinimu importuokite jį visuose klientų kompiuteriuose.</translation>
     </message>
     <message>
-        <source>Please refer to the &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;Veyon Administrator Manual&lt;/a&gt; for more information.</source>
-        <translation>Daugiau informacijos rasite &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;Veyon administratoriaus vadove&lt;/a&gt;.</translation>
+        <source>Please refer to the &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;TinShareLab Classroom Administrator Manual&lt;/a&gt; for more information.</source>
+        <translation>Daugiau informacijos rasite &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;TinShareLab Classroom administratoriaus vadove&lt;/a&gt;.</translation>
     </message>
     <message>
         <source>Key file directories</source>
@@ -1051,8 +1051,8 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>Kompiuteris nepasiekiamas arba išjungtas</translation>
     </message>
     <message>
-        <source>Veyon Server unreachable or not running</source>
-        <translation>Veyon serveris nepasiekiamas arba neveikia</translation>
+        <source>TinShareLab Server unreachable or not running</source>
+        <translation>TinShareLab Classroom serveris nepasiekiamas arba neveikia</translation>
     </message>
     <message>
         <source>Authentication failed or access denied</source>
@@ -1118,8 +1118,8 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>Vartotojas „%1“ iš kompiuterio „%2“ bandė pasiekti šį kompiuterį, tačiau buvo užblokuotas dėl prieigos valdymo nustatymų.</translation>
     </message>
     <message>
-        <source>Veyon Service %1 at %2:%3</source>
-        <translation>Veyon tarnyba %1 adresu %2:%3</translation>
+        <source>TinShareLab Service %1 at %2:%3</source>
+        <translation>TinShareLab Classroom tarnyba %1 adresu %2:%3</translation>
     </message>
     <message>
         <source>Active connections:</source>
@@ -1141,8 +1141,8 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>Trūksta tinklo objektų katalogo papildinio</translation>
     </message>
     <message>
-        <source>No default network object directory plugin was found. Please check your installation or configure a different network object directory backend via Veyon Configurator.</source>
-        <translation>Numatytasis tinklo objektų katalogo papildinys nerastas. Patikrinkite diegimą arba Veyon konfigūratoriuje nustatykite kitą tinklo objektų katalogo posistemę.</translation>
+        <source>No default network object directory plugin was found. Please check your installation or configure a different network object directory backend via TinShareLab Configurator.</source>
+        <translation>Numatytasis tinklo objektų katalogo papildinys nerastas. Patikrinkite diegimą arba TinShareLab Classroom konfigūratoriuje nustatykite kitą tinklo objektų katalogo posistemę.</translation>
     </message>
     <message>
         <source>Computer name;Hostname;User</source>
@@ -1203,8 +1203,8 @@ Make sure that the names of the keys belonging to each other are identical on al
 <context>
     <name>ConfigCommands</name>
     <message>
-        <source>Clear system-wide Veyon configuration</source>
-        <translation>Išvalyti Veyon konfigūraciją sistemos lygmeniu.</translation>
+        <source>Clear system-wide TinShareLab Classroom configuration</source>
+        <translation>Išvalyti TinShareLab Classroom konfigūraciją sistemos lygmeniu.</translation>
     </message>
     <message>
         <source>List all configuration keys and values</source>
@@ -1267,27 +1267,27 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>Nurodykite tinkamą vertę.</translation>
     </message>
     <message>
-        <source>Configure Veyon at command line</source>
-        <translation>Konfigūruoti Veyon komandų eilutėje</translation>
+        <source>Configure TinShareLab Classroom at command line</source>
+        <translation>Konfigūruoti TinShareLab Classroom komandų eilutėje</translation>
     </message>
     <message>
-        <source>Commands for managing the configuration of Veyon</source>
-        <translation>Veyon konfigūracijos valdymo komandos</translation>
+        <source>Commands for managing the configuration of TinShareLab Classroom</source>
+        <translation>TinShareLab Classroom konfigūracijos valdymo komandos</translation>
     </message>
 </context>
 <context>
     <name>ConfigurationManager</name>
     <message>
-        <source>Could not modify the autostart property for the Veyon Service.</source>
-        <translation>Nepavyko pakeisti Veyon tarnybos automatinio paleidimo ypatybės.</translation>
+        <source>Could not modify the autostart property for the TinShareLab Service.</source>
+        <translation>Nepavyko pakeisti TinShareLab Classroom tarnybos automatinio paleidimo ypatybės.</translation>
     </message>
     <message>
-        <source>Could not configure the firewall configuration for the Veyon Server.</source>
-        <translation>Nepavyko sukonfigūruoti Veyon serverio užkardos.</translation>
+        <source>Could not configure the firewall configuration for the TinShareLab Server.</source>
+        <translation>Nepavyko sukonfigūruoti TinShareLab Classroom serverio užkardos.</translation>
     </message>
     <message>
-        <source>Could not configure the firewall configuration for the Veyon Worker.</source>
-        <translation>Nepavyko sukonfigūruoti Veyon darbinio proceso ugniasienės.</translation>
+        <source>Could not configure the firewall configuration for the TinShareLab Classroom Worker.</source>
+        <translation>Nepavyko sukonfigūruoti TinShareLab Classroom darbinio proceso ugniasienės.</translation>
     </message>
     <message>
         <source>Could not apply platform-specific configuration settings.</source>
@@ -1301,8 +1301,8 @@ Make sure that the names of the keys belonging to each other are identical on al
 <context>
     <name>DemoClient</name>
     <message>
-        <source>Veyon Demo</source>
-        <translation>Veyon demonstracija</translation>
+        <source>TinShareLab Demo</source>
+        <translation>TinShareLab Classroom demonstracija</translation>
     </message>
 </context>
 <context>
@@ -1648,8 +1648,8 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>ARGUMENTAI</translation>
     </message>
     <message>
-        <source>Starts the specified feature on the specified host by connecting to the Veyon Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features. Depending on the feature, additional arguments (such as the text message to display) encoded as a single JSON string have to be specified. Please refer to the developer documentation for more information</source>
-        <translation>Prisijungia prie nuotoliniame kompiuteryje veikiančio Veyon serverio ir paleidžia nurodytą funkciją. Funkciją galima nurodyti pavadinimu arba UID. Visas prieinamas funkcijas peržiūrėsite naudodami komandą ``show``. Atsižvelgiant į funkciją, gali reikėti pateikti papildomų argumentų (pavyzdžiui, rodomo tekstinio pranešimo), užkoduotų vienoje JSON eilutėje. Daugiau informacijos rasite kūrėjų dokumentacijoje.</translation>
+        <source>Starts the specified feature on the specified host by connecting to the TinShareLab Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features. Depending on the feature, additional arguments (such as the text message to display) encoded as a single JSON string have to be specified. Please refer to the developer documentation for more information</source>
+        <translation>Prisijungia prie nuotoliniame kompiuteryje veikiančio TinShareLab Classroom serverio ir paleidžia nurodytą funkciją. Funkciją galima nurodyti pavadinimu arba UID. Visas prieinamas funkcijas peržiūrėsite naudodami komandą ``show``. Atsižvelgiant į funkciją, gali reikėti pateikti papildomų argumentų (pavyzdžiui, rodomo tekstinio pranešimo), užkoduotų vienoje JSON eilutėje. Daugiau informacijos rasite kūrėjų dokumentacijoje.</translation>
     </message>
     <message>
         <source>Lock the screen</source>
@@ -1668,8 +1668,8 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>Paleisti programą</translation>
     </message>
     <message>
-        <source>Stops the specified feature on the specified host by connecting to the Veyon Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features.</source>
-        <translation>Prisijungia prie nuotoliniame kompiuteryje veikiančio Veyon serverio ir sustabdo nurodytą funkciją. Funkciją galima nurodyti pavadinimu arba UID. Visas prieinamas funkcijas peržiūrėsite naudodami komandą ``show``.</translation>
+        <source>Stops the specified feature on the specified host by connecting to the TinShareLab Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features.</source>
+        <translation>Prisijungia prie nuotoliniame kompiuteryje veikiančio TinShareLab Classroom serverio ir sustabdo nurodytą funkciją. Funkciją galima nurodyti pavadinimu arba UID. Visas prieinamas funkcijas peržiūrėsite naudodami komandą ``show``.</translation>
     </message>
     <message>
         <source>Unlock the screen</source>
@@ -1689,7 +1689,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Master</source>
-        <translation>Veyon Master</translation>
+        <translation>TinShareLab Classroom</translation>
     </message>
     <message>
         <source>Service</source>
@@ -2213,12 +2213,12 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>Autentifikavimo raktai šiame kompiuteryje nustatyti netinkamai.</translation>
     </message>
     <message>
-        <source>Veyon service</source>
-        <translation>Veyon tarnyba</translation>
+        <source>TinShareLab service</source>
+        <translation>TinShareLab Classroom tarnyba</translation>
     </message>
     <message>
-        <source>The Veyon service needs to be stopped temporarily in order to remove the log files. Continue?</source>
-        <translation>Norint pašalinti žurnalo failus, Veyon tarnybą reikia laikinai sustabdyti. Tęsti?</translation>
+        <source>The TinShareLab service needs to be stopped temporarily in order to remove the log files. Continue?</source>
+        <translation>Norint pašalinti žurnalo failus, TinShareLab Classroom tarnybą reikia laikinai sustabdyti. Tęsti?</translation>
     </message>
     <message>
         <source>Log files cleared</source>
@@ -3018,8 +3018,8 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>%1 (įkelti vartotojus ir grupes iš LDAP / AD)</translation>
     </message>
     <message>
-        <source>LDAP/AD support for Veyon</source>
-        <translation>LDAP / AD palaikymas programoje Veyon</translation>
+        <source>LDAP/AD support for TinShareLab Classroom</source>
+        <translation>LDAP / AD palaikymas programoje TinShareLab Classroom</translation>
     </message>
 </context>
 <context>
@@ -3101,8 +3101,8 @@ Make sure that the names of the keys belonging to each other are identical on al
 <context>
     <name>MainWindow</name>
     <message>
-        <source>Veyon Configurator</source>
-        <translation>Veyon konfigūratorius</translation>
+        <source>TinShareLab Configurator</source>
+        <translation>TinShareLab Classroom konfigūratorius</translation>
     </message>
     <message>
         <source>General</source>
@@ -3114,7 +3114,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Master</source>
-        <translation>Veyon Master</translation>
+        <translation>TinShareLab Classroom</translation>
     </message>
     <message>
         <source>Access control</source>
@@ -3161,8 +3161,8 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <source>About Veyon</source>
-        <translation>Apie Veyon</translation>
+        <source>About TinShareLab Classroom</source>
+        <translation>Apie TinShareLab Classroom</translation>
     </message>
     <message>
         <source>About Qt</source>
@@ -3225,8 +3225,8 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>Rodyti tik kompiuterius su prisijungusiais vartotojais</translation>
     </message>
     <message>
-        <source>Veyon Configurator %1</source>
-        <translation>Veyon konfigūratorius %1</translation>
+        <source>TinShareLab Configurator %1</source>
+        <translation>TinShareLab Classroom konfigūratorius %1</translation>
     </message>
     <message>
         <source>Load settings from file</source>
@@ -3261,16 +3261,16 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>Konfigūracijos negalima įrašyti</translation>
     </message>
     <message>
-        <source>The local configuration backend reported that the configuration is not writable! Please run Veyon Configurator with higher privileges.</source>
-        <translation>Vietinės konfigūracijos posistemė pranešė, kad konfigūracijos negalima įrašyti! Paleiskite Veyon konfigūratorių su aukštesnėmis teisėmis.</translation>
+        <source>The local configuration backend reported that the configuration is not writable! Please run TinShareLab Configurator with higher privileges.</source>
+        <translation>Vietinės konfigūracijos posistemė pranešė, kad konfigūracijos negalima įrašyti! Paleiskite TinShareLab Classroom konfigūratorių su aukštesnėmis teisėmis.</translation>
     </message>
     <message>
         <source>Authentication impossible</source>
         <translation>Autentifikuoti neįmanoma</translation>
     </message>
     <message>
-        <source>No authentication key files were found or your current ones are outdated. Please create new key files using Veyon Configurator. Alternatively set up logon authentication using Veyon Configurator. Otherwise you won&apos;t be able to access computers using Veyon.</source>
-        <translation>Autentifikavimo raktų failų nerasta arba dabartiniai failai yra pasenę. Naudodami Veyon konfigūratorių sukurkite naujus raktų failus. Taip pat Veyon konfigūratoriuje galite nustatyti prisijungimo autentifikavimą. To nepadarę negalėsite pasiekti kompiuterių naudodami Veyon.</translation>
+        <source>No authentication key files were found or your current ones are outdated. Please create new key files using TinShareLab Configurator. Alternatively set up logon authentication using TinShareLab Configurator. Otherwise you won&apos;t be able to access computers using TinShareLab Classroom.</source>
+        <translation>Autentifikavimo raktų failų nerasta arba dabartiniai failai yra pasenę. Naudodami TinShareLab Classroom konfigūratorių sukurkite naujus raktų failus. Taip pat TinShareLab Classroom konfigūratoriuje galite nustatyti prisijungimo autentifikavimą. To nepadarę negalėsite pasiekti kompiuterių naudodami TinShareLab Classroom.</translation>
     </message>
     <message>
         <source>Access denied</source>
@@ -3285,8 +3285,8 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>Funkcija aktyvi</translation>
     </message>
     <message>
-        <source>The feature &quot;%1&quot; is still active. Please stop it before closing Veyon.</source>
-        <translation>Funkcija „%1“ vis dar aktyvi. Prieš uždarydami Veyon ją sustabdykite.</translation>
+        <source>The feature &quot;%1&quot; is still active. Please stop it before closing TinShareLab Classroom.</source>
+        <translation>Funkcija „%1“ vis dar aktyvi. Prieš uždarydami TinShareLab Classroom ją sustabdykite.</translation>
     </message>
     <message>
         <source>Use custom computer arrangement.
@@ -3685,8 +3685,8 @@ Paspauskite ir palaikykite, kad įkeltumėte išdėstymą iš failo arba įrašy
         <translation>Atverti svetainę</translation>
     </message>
     <message>
-        <source>e.g. Veyon</source>
-        <translation>pvz.: Veyon</translation>
+        <source>e.g. TinShareLab Classroom</source>
+        <translation>pvz.: TinShareLab Classroom</translation>
     </message>
     <message>
         <source>Remember and add to website menu</source>
@@ -3708,8 +3708,8 @@ Paspauskite ir palaikykite, kad įkeltumėte išdėstymą iš failo arba įrašy
 <context>
     <name>PasswordDialog</name>
     <message>
-        <source>Veyon Logon</source>
-        <translation>Veyon prisijungimas</translation>
+        <source>TinShareLab Logon</source>
+        <translation>TinShareLab Classroom prisijungimas</translation>
     </message>
     <message>
         <source>Please enter your username and password in order to access computers.</source>
@@ -3953,12 +3953,12 @@ Please save your work and close all programs.</source>
 <context>
     <name>RemoteAccessWidget</name>
     <message>
-        <source>%1 - Veyon Remote Access</source>
-        <translation>%1 – Veyon nuotolinė prieiga</translation>
+        <source>%1 - TinShareLab Remote Access</source>
+        <translation>%1 – TinShareLab Classroom nuotolinė prieiga</translation>
     </message>
     <message>
-        <source>%1 - %2 - Veyon Remote Access</source>
-        <translation>%1 – %2 – Veyon nuotolinė prieiga</translation>
+        <source>%1 - %2 - TinShareLab Remote Access</source>
+        <translation>%1 – %2 – TinShareLab Classroom nuotolinė prieiga</translation>
     </message>
 </context>
 <context>
@@ -4260,8 +4260,8 @@ Paprastai to reikia terminalų serveriams palaikyti.</translation>
         <translation>Tinklo prievadų numeriai</translation>
     </message>
     <message>
-        <source>Veyon server</source>
-        <translation>Veyon serveris</translation>
+        <source>TinShareLab server</source>
+        <translation>TinShareLab Classroom serveris</translation>
     </message>
     <message>
         <source>Internal VNC server</source>
@@ -4300,12 +4300,12 @@ Paprastai to reikia terminalų serveriams palaikyti.</translation>
         <translation>Papildinys:</translation>
     </message>
     <message>
-        <source>Restart Veyon Service</source>
-        <translation>Paleisti Veyon tarnybą iš naujo</translation>
+        <source>Restart TinShareLab Service</source>
+        <translation>Paleisti TinShareLab Classroom tarnybą iš naujo</translation>
     </message>
     <message>
-        <source>All settings were saved successfully. In order to take effect the Veyon service needs to be restarted. Restart it now?</source>
-        <translation>Visi nustatymai sėkmingai įrašyti. Kad jie įsigaliotų, Veyon tarnybą reikia paleisti iš naujo. Paleisti ją iš naujo dabar?</translation>
+        <source>All settings were saved successfully. In order to take effect the TinShareLab service needs to be restarted. Restart it now?</source>
+        <translation>Visi nustatymai sėkmingai įrašyti. Kad jie įsigaliotų, TinShareLab Classroom tarnybą reikia paleisti iš naujo. Paleisti ją iš naujo dabar?</translation>
     </message>
     <message>
         <source>Running</source>
@@ -4340,8 +4340,8 @@ Example: [^-]*-(PC[0-9]*)</source>
 Pavyzdys: [^-]*-(PC[0-9]*)</translation>
     </message>
     <message>
-        <source>Enable if a single Veyon Server instance should be launched for the currently active session, no matter if local or remote.</source>
-        <translation>Įjunkite, jei šiuo metu aktyviai sesijai turi būti paleistas vienas Veyon serverio egzempliorius, neatsižvelgiant į tai, ar sesija vietinė, ar nuotolinė.</translation>
+        <source>Enable if a single TinShareLab Server instance should be launched for the currently active session, no matter if local or remote.</source>
+        <translation>Įjunkite, jei šiuo metu aktyviai sesijai turi būti paleistas vienas TinShareLab Classroom serverio egzempliorius, neatsižvelgiant į tai, ar sesija vietinė, ar nuotolinė.</translation>
     </message>
     <message>
         <source>Environment variable name</source>
@@ -4382,28 +4382,28 @@ Pavyzdys: [^-]*-(PC[0-9]*)</translation>
 <context>
     <name>ServiceControlCommands</name>
     <message>
-        <source>Register Veyon Service</source>
-        <translation>Užregistruoti Veyon tarnybą</translation>
+        <source>Register TinShareLab Service</source>
+        <translation>Užregistruoti TinShareLab Classroom tarnybą</translation>
     </message>
     <message>
-        <source>Unregister Veyon Service</source>
-        <translation>Išregistruoti Veyon tarnybą</translation>
+        <source>Unregister TinShareLab Service</source>
+        <translation>Išregistruoti TinShareLab Classroom tarnybą</translation>
     </message>
     <message>
-        <source>Start Veyon Service</source>
-        <translation>Paleisti Veyon tarnybą</translation>
+        <source>Start TinShareLab Service</source>
+        <translation>Paleisti TinShareLab Classroom tarnybą</translation>
     </message>
     <message>
-        <source>Stop Veyon Service</source>
-        <translation>Sustabdyti Veyon tarnybą</translation>
+        <source>Stop TinShareLab Service</source>
+        <translation>Sustabdyti TinShareLab Classroom tarnybą</translation>
     </message>
     <message>
-        <source>Restart Veyon Service</source>
-        <translation>Paleisti Veyon tarnybą iš naujo</translation>
+        <source>Restart TinShareLab Service</source>
+        <translation>Paleisti TinShareLab Classroom tarnybą iš naujo</translation>
     </message>
     <message>
-        <source>Query status of Veyon Service</source>
-        <translation>Užklausti Veyon tarnybos būseną</translation>
+        <source>Query status of TinShareLab Service</source>
+        <translation>Užklausti TinShareLab Classroom tarnybos būseną</translation>
     </message>
     <message>
         <source>Service is running</source>
@@ -4414,12 +4414,12 @@ Pavyzdys: [^-]*-(PC[0-9]*)</translation>
         <translation>Tarnyba neveikia</translation>
     </message>
     <message>
-        <source>Configure and control Veyon service</source>
-        <translation>Konfigūruoti ir valdyti Veyon tarnybą</translation>
+        <source>Configure and control TinShareLab service</source>
+        <translation>Konfigūruoti ir valdyti TinShareLab Classroom tarnybą</translation>
     </message>
     <message>
-        <source>Commands for configuring and controlling Veyon Service</source>
-        <translation>Veyon tarnybos konfigūravimo ir valdymo komandos</translation>
+        <source>Commands for configuring and controlling TinShareLab Service</source>
+        <translation>TinShareLab Classroom tarnybos konfigūravimo ir valdymo komandos</translation>
     </message>
 </context>
 <context>
@@ -4433,8 +4433,8 @@ Pavyzdys: [^-]*-(PC[0-9]*)</translation>
         <translation>Failas &quot;%1&quot; neegzistuoja!</translation>
     </message>
     <message>
-        <source>Interactive shell and script execution for Veyon CLI</source>
-        <translation>Interaktyvus apvalkalas ir scenarijų vykdymas per Veyon CLI</translation>
+        <source>Interactive shell and script execution for TinShareLab CLI</source>
+        <translation>Interaktyvus apvalkalas ir scenarijų vykdymas per TinShareLab CLI</translation>
     </message>
     <message>
         <source>Commands for shell functionalities</source>
@@ -4464,8 +4464,8 @@ Pavyzdys: [^-]*-(PC[0-9]*)</translation>
         <translation>Rodyti atskirame lange</translation>
     </message>
     <message>
-        <source>Veyon Master – Slideshow</source>
-        <translation>Veyon Master – skaidrių demonstracija</translation>
+        <source>TinShareLab Classroom – Slideshow</source>
+        <translation>TinShareLab Classroom – skaidrių demonstracija</translation>
     </message>
 </context>
 <context>
@@ -4547,12 +4547,12 @@ Pavyzdys: [^-]*-(PC[0-9]*)</translation>
 <context>
     <name>TestingCommandLinePlugin</name>
     <message>
-        <source>Test internal Veyon components and functions</source>
-        <translation>Patikrinti vidinius Veyon komponentus ir funkcijas</translation>
+        <source>Test internal TinShareLab Classroom components and functions</source>
+        <translation>Patikrinti vidinius TinShareLab Classroom komponentus ir funkcijas</translation>
     </message>
     <message>
-        <source>Commands for testing internal components and functions of Veyon</source>
-        <translation>Veyon vidinių komponentų ir funkcijų tikrinimo komandos</translation>
+        <source>Commands for testing internal components and functions of TinShareLab Classroom</source>
+        <translation>TinShareLab Classroom vidinių komponentų ir funkcijų tikrinimo komandos</translation>
     </message>
 </context>
 <context>
@@ -4772,15 +4772,15 @@ Pavyzdys: [^-]*-(PC[0-9]*)</translation>
         <translation>Nėra rašymo prieigos</translation>
     </message>
     <message>
-        <source>Could not save your personal settings! Please check the user configuration file path using Veyon Configurator.</source>
-        <translation>Nepavyko įrašyti asmeninių nustatymų! Naudodami Veyon konfigūratorių patikrinkite vartotojo konfigūracijos failo kelią.</translation>
+        <source>Could not save your personal settings! Please check the user configuration file path using TinShareLab Configurator.</source>
+        <translation>Nepavyko įrašyti asmeninių nustatymų! Naudodami TinShareLab Classroom konfigūratorių patikrinkite vartotojo konfigūracijos failo kelią.</translation>
     </message>
 </context>
 <context>
     <name>VeyonServiceControl</name>
     <message>
-        <source>Veyon Service</source>
-        <translation>Veyon tarnyba</translation>
+        <source>TinShareLab Service</source>
+        <translation>TinShareLab Classroom tarnyba</translation>
     </message>
 </context>
 <context>

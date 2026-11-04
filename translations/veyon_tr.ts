@@ -2,8 +2,8 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <source>About Veyon</source>
-        <translation>Veyon Hakkında</translation>
+        <source>About TinShareLab Classroom</source>
+        <translation>TinShareLab Classroom Hakkında</translation>
     </message>
     <message>
         <source>About</source>
@@ -32,17 +32,17 @@
     <message>
         <source>Current language not translated yet (or native English).
 
-If you&apos;re interested in translating Veyon into your local or another language or want to improve an existing translation, please contact a Veyon developer!</source>
+If you&apos;re interested in translating TinShareLab Classroom into your local or another language or want to improve an existing translation, please contact a TinShareLab Classroom developer!</source>
         <translation>Geçerli dilde henüz bir çeviri yapılmamış (veya anadili İngilizce) .
 
-Veyon&apos;u kendi dilinizde veya başka bir dile çevirmek istiyorsanız veya var olan bir çeviriyi geliştirmek istiyorsanız, lütfen bir Veyon geliştiricisine başvurun!</translation>
+TinShareLab Classroom&apos;u kendi dilinizde veya başka bir dile çevirmek istiyorsanız veya var olan bir çeviriyi geliştirmek istiyorsanız, lütfen bir TinShareLab Classroom geliştiricisine başvurun!</translation>
     </message>
     <message>
         <source>License</source>
         <translation>Lisans</translation>
     </message>
     <message>
-        <source>About Veyon %1</source>
+        <source>About TinShareLab Classroom %1</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -73,8 +73,8 @@ Veyon&apos;u kendi dilinizde veya başka bir dile çevirmek istiyorsanız veya v
         <translation>Bilgisayar erişimi için yetkilendirilmiş kullanıcı grupları</translation>
     </message>
     <message>
-        <source>Please add the groups whose members should be authorized to access computers in your Veyon network.</source>
-        <translation>Lütfen Veyon ağınızdaki bilgisayarlara erişim yetkisi verilmesi gereken üyelerin gruplarını ekleyin.</translation>
+        <source>Please add the groups whose members should be authorized to access computers in your TinShareLab Classroom network.</source>
+        <translation>Lütfen TinShareLab Classroom ağınızdaki bilgisayarlara erişim yetkisi verilmesi gereken üyelerin gruplarını ekleyin.</translation>
     </message>
     <message>
         <source>Authorized user groups</source>
@@ -333,8 +333,8 @@ Veyon&apos;u kendi dilinizde veya başka bir dile çevirmek istiyorsanız veya v
         <translation>3) Genel anahtarı dışarı verin ve tüm katılımcı bilgisayarlara aynı isimle ekleyin.</translation>
     </message>
     <message>
-        <source>Please refer to the &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;Veyon Administrator Manual&lt;/a&gt; for more information.</source>
-        <translation>Lütfen &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;Veyon Yönetici Kılavuzuna &lt;/a&gt; daha fazla bilgi için göz atın.</translation>
+        <source>Please refer to the &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;TinShareLab Classroom Administrator Manual&lt;/a&gt; for more information.</source>
+        <translation>Lütfen &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;TinShareLab Classroom Yönetici Kılavuzuna &lt;/a&gt; daha fazla bilgi için göz atın.</translation>
     </message>
     <message>
         <source>Key file directories</source>
@@ -1051,8 +1051,8 @@ Birbirine ait anahtarların isimlerinin tüm bilgisayarlarda aynı olduğundan e
         <translation>Bilgisayar çevrim dışı veya kapalı</translation>
     </message>
     <message>
-        <source>Veyon Server unreachable or not running</source>
-        <translation>Veyon Sunucusuna erişilemiyor veya çalışmıyor</translation>
+        <source>TinShareLab Server unreachable or not running</source>
+        <translation>TinShareLab Classroom Sunucusuna erişilemiyor veya çalışmıyor</translation>
     </message>
     <message>
         <source>Authentication failed or access denied</source>
@@ -1118,7 +1118,7 @@ Birbirine ait anahtarların isimlerinin tüm bilgisayarlarda aynı olduğundan e
         <translation>&quot;%2&quot; ana bilgisayarındaki &quot;%1&quot; kullanıcısı bu bilgisayara erişmeye çalıştı, ancak erişim denetimi ayarları nedeniyle engellendi.</translation>
     </message>
     <message>
-        <source>Veyon Service %1 at %2:%3</source>
+        <source>TinShareLab Service %1 at %2:%3</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1141,7 +1141,7 @@ Birbirine ait anahtarların isimlerinin tüm bilgisayarlarda aynı olduğundan e
         <translation>Eksik ağ nesnesi dizini eklentisi</translation>
     </message>
     <message>
-        <source>No default network object directory plugin was found. Please check your installation or configure a different network object directory backend via Veyon Configurator.</source>
+        <source>No default network object directory plugin was found. Please check your installation or configure a different network object directory backend via TinShareLab Configurator.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1203,8 +1203,8 @@ Birbirine ait anahtarların isimlerinin tüm bilgisayarlarda aynı olduğundan e
 <context>
     <name>ConfigCommands</name>
     <message>
-        <source>Clear system-wide Veyon configuration</source>
-        <translation>Sistem geneli Veyon yapılandırmasını temizle</translation>
+        <source>Clear system-wide TinShareLab Classroom configuration</source>
+        <translation>Sistem geneli TinShareLab Classroom yapılandırmasını temizle</translation>
     </message>
     <message>
         <source>List all configuration keys and values</source>
@@ -1267,26 +1267,26 @@ Birbirine ait anahtarların isimlerinin tüm bilgisayarlarda aynı olduğundan e
         <translation>Lütfen geçerli bir değer belirtin.</translation>
     </message>
     <message>
-        <source>Configure Veyon at command line</source>
-        <translation>Veyon&apos;u komut satırında yapılandır</translation>
+        <source>Configure TinShareLab Classroom at command line</source>
+        <translation>TinShareLab Classroom&apos;u komut satırında yapılandır</translation>
     </message>
     <message>
-        <source>Commands for managing the configuration of Veyon</source>
-        <translation>Veyon&apos;un yapılandırmasını yönetmek için komutlar</translation>
+        <source>Commands for managing the configuration of TinShareLab Classroom</source>
+        <translation>TinShareLab Classroom&apos;un yapılandırmasını yönetmek için komutlar</translation>
     </message>
 </context>
 <context>
     <name>ConfigurationManager</name>
     <message>
-        <source>Could not modify the autostart property for the Veyon Service.</source>
+        <source>Could not modify the autostart property for the TinShareLab Service.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Could not configure the firewall configuration for the Veyon Server.</source>
+        <source>Could not configure the firewall configuration for the TinShareLab Server.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Could not configure the firewall configuration for the Veyon Worker.</source>
+        <source>Could not configure the firewall configuration for the TinShareLab Classroom Worker.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1301,7 +1301,7 @@ Birbirine ait anahtarların isimlerinin tüm bilgisayarlarda aynı olduğundan e
 <context>
     <name>DemoClient</name>
     <message>
-        <source>Veyon Demo</source>
+        <source>TinShareLab Demo</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -1648,8 +1648,8 @@ Birbirine ait anahtarların isimlerinin tüm bilgisayarlarda aynı olduğundan e
         <translation>ARGÜMANLAR</translation>
     </message>
     <message>
-        <source>Starts the specified feature on the specified host by connecting to the Veyon Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features. Depending on the feature, additional arguments (such as the text message to display) encoded as a single JSON string have to be specified. Please refer to the developer documentation for more information</source>
-        <translation>Belirtilen özelliği belirtilen ana bilgisayarda uzaktan çalışan Veyon Sunucusuna bağlanarak başlatır. Özellik, ad veya UID ile belirtilebilir. Tüm kullanılabilir özellikleri görmek için ``show`` komutunu kullanın. Özelliğe bağlı olarak, tek bir JSON dizesi olarak kodlanmış ek argümanlar (görüntülenecek metin mesajı gibi) belirtilmelidir. Daha fazla bilgi için lütfen geliştirici belgelerine bakın</translation>
+        <source>Starts the specified feature on the specified host by connecting to the TinShareLab Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features. Depending on the feature, additional arguments (such as the text message to display) encoded as a single JSON string have to be specified. Please refer to the developer documentation for more information</source>
+        <translation>Belirtilen özelliği belirtilen ana bilgisayarda uzaktan çalışan TinShareLab Classroom Sunucusuna bağlanarak başlatır. Özellik, ad veya UID ile belirtilebilir. Tüm kullanılabilir özellikleri görmek için ``show`` komutunu kullanın. Özelliğe bağlı olarak, tek bir JSON dizesi olarak kodlanmış ek argümanlar (görüntülenecek metin mesajı gibi) belirtilmelidir. Daha fazla bilgi için lütfen geliştirici belgelerine bakın</translation>
     </message>
     <message>
         <source>Lock the screen</source>
@@ -1668,8 +1668,8 @@ Birbirine ait anahtarların isimlerinin tüm bilgisayarlarda aynı olduğundan e
         <translation>Bir uygulamayı başlat</translation>
     </message>
     <message>
-        <source>Stops the specified feature on the specified host by connecting to the Veyon Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features.</source>
-        <translation>Uzaktan çalışan Veyon Sunucusuna bağlanarak belirtilen ana bilgisayarda belirtilen özelliği durdurur. Özellik ad veya UID ile belirtilebilir. Kullanılabilir tüm özellikleri görmek için ``show`` komutunu kullanın.</translation>
+        <source>Stops the specified feature on the specified host by connecting to the TinShareLab Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features.</source>
+        <translation>Uzaktan çalışan TinShareLab Classroom Sunucusuna bağlanarak belirtilen ana bilgisayarda belirtilen özelliği durdurur. Özellik ad veya UID ile belirtilebilir. Kullanılabilir tüm özellikleri görmek için ``show`` komutunu kullanın.</translation>
     </message>
     <message>
         <source>Unlock the screen</source>
@@ -2213,11 +2213,11 @@ Birbirine ait anahtarların isimlerinin tüm bilgisayarlarda aynı olduğundan e
         <translation>Bu bilgisayarda kimlik doğrulama anahtarları düzgün şekilde ayarlanmamış.</translation>
     </message>
     <message>
-        <source>Veyon service</source>
+        <source>TinShareLab service</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>The Veyon service needs to be stopped temporarily in order to remove the log files. Continue?</source>
+        <source>The TinShareLab service needs to be stopped temporarily in order to remove the log files. Continue?</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3018,7 +3018,7 @@ Birbirine ait anahtarların isimlerinin tüm bilgisayarlarda aynı olduğundan e
         <translation>%1 (LDAP/AD&apos;den kullanıcıları ve grupları yükleme)</translation>
     </message>
     <message>
-        <source>LDAP/AD support for Veyon</source>
+        <source>LDAP/AD support for TinShareLab Classroom</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -3101,8 +3101,8 @@ Birbirine ait anahtarların isimlerinin tüm bilgisayarlarda aynı olduğundan e
 <context>
     <name>MainWindow</name>
     <message>
-        <source>Veyon Configurator</source>
-        <translation>Veyon Yapılandırıcı</translation>
+        <source>TinShareLab Configurator</source>
+        <translation>TinShareLab Classroom Yapılandırıcı</translation>
     </message>
     <message>
         <source>General</source>
@@ -3161,8 +3161,8 @@ Birbirine ait anahtarların isimlerinin tüm bilgisayarlarda aynı olduğundan e
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <source>About Veyon</source>
-        <translation>Veyon Hakkında</translation>
+        <source>About TinShareLab Classroom</source>
+        <translation>TinShareLab Classroom Hakkında</translation>
     </message>
     <message>
         <source>About Qt</source>
@@ -3225,7 +3225,7 @@ Birbirine ait anahtarların isimlerinin tüm bilgisayarlarda aynı olduğundan e
         <translation>Yalnızca oturum açmış kullanıcıların olduğu bilgisayarları göster</translation>
     </message>
     <message>
-        <source>Veyon Configurator %1</source>
+        <source>TinShareLab Configurator %1</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3261,7 +3261,7 @@ Birbirine ait anahtarların isimlerinin tüm bilgisayarlarda aynı olduğundan e
         <translation>Yapılandırma yazılabilir değil</translation>
     </message>
     <message>
-        <source>The local configuration backend reported that the configuration is not writable! Please run Veyon Configurator with higher privileges.</source>
+        <source>The local configuration backend reported that the configuration is not writable! Please run TinShareLab Configurator with higher privileges.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3269,7 +3269,7 @@ Birbirine ait anahtarların isimlerinin tüm bilgisayarlarda aynı olduğundan e
         <translation>Kimlik doğrulama imkansız</translation>
     </message>
     <message>
-        <source>No authentication key files were found or your current ones are outdated. Please create new key files using Veyon Configurator. Alternatively set up logon authentication using Veyon Configurator. Otherwise you won&apos;t be able to access computers using Veyon.</source>
+        <source>No authentication key files were found or your current ones are outdated. Please create new key files using TinShareLab Configurator. Alternatively set up logon authentication using TinShareLab Configurator. Otherwise you won&apos;t be able to access computers using TinShareLab Classroom.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3285,7 +3285,7 @@ Birbirine ait anahtarların isimlerinin tüm bilgisayarlarda aynı olduğundan e
         <translation>Özellik etkin</translation>
     </message>
     <message>
-        <source>The feature &quot;%1&quot; is still active. Please stop it before closing Veyon.</source>
+        <source>The feature &quot;%1&quot; is still active. Please stop it before closing TinShareLab Classroom.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3685,8 +3685,8 @@ Düzenlemeyi bir dosyadan yüklemek veya mevcut düzenlemeyi bir dosyaya kaydetm
         <translation>İnternet sitesi aç</translation>
     </message>
     <message>
-        <source>e.g. Veyon</source>
-        <translation>Örn. Veyon</translation>
+        <source>e.g. TinShareLab Classroom</source>
+        <translation>Örn. TinShareLab Classroom</translation>
     </message>
     <message>
         <source>Remember and add to website menu</source>
@@ -3708,8 +3708,8 @@ Düzenlemeyi bir dosyadan yüklemek veya mevcut düzenlemeyi bir dosyaya kaydetm
 <context>
     <name>PasswordDialog</name>
     <message>
-        <source>Veyon Logon</source>
-        <translation>Veyon Girişi</translation>
+        <source>TinShareLab Logon</source>
+        <translation>TinShareLab Classroom Girişi</translation>
     </message>
     <message>
         <source>Please enter your username and password in order to access computers.</source>
@@ -3953,11 +3953,11 @@ Lütfen çalışmalarınızı kaydedip tüm açık pencereleri kapatın.</transl
 <context>
     <name>RemoteAccessWidget</name>
     <message>
-        <source>%1 - Veyon Remote Access</source>
+        <source>%1 - TinShareLab Remote Access</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>%1 - %2 - Veyon Remote Access</source>
+        <source>%1 - %2 - TinShareLab Remote Access</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -4260,8 +4260,8 @@ Bu genellikle terminal sunucularını desteklemek için gereklidir.</translation
         <translation>Ağ bağlantı noktası numaraları</translation>
     </message>
     <message>
-        <source>Veyon server</source>
-        <translation>Veyon sunucusu</translation>
+        <source>TinShareLab server</source>
+        <translation>TinShareLab Classroom sunucusu</translation>
     </message>
     <message>
         <source>Internal VNC server</source>
@@ -4300,11 +4300,11 @@ Bu genellikle terminal sunucularını desteklemek için gereklidir.</translation
         <translation>Eklenti:</translation>
     </message>
     <message>
-        <source>Restart Veyon Service</source>
-        <translation>Veyon Hizmetini Yeniden Başlat</translation>
+        <source>Restart TinShareLab Service</source>
+        <translation>TinShareLab Classroom Hizmetini Yeniden Başlat</translation>
     </message>
     <message>
-        <source>All settings were saved successfully. In order to take effect the Veyon service needs to be restarted. Restart it now?</source>
+        <source>All settings were saved successfully. In order to take effect the TinShareLab service needs to be restarted. Restart it now?</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -4340,8 +4340,8 @@ Example: [^-]*-(PC[0-9]*)</source>
 Örnek: [^-]*-(PC[0-9]*)</translation>
     </message>
     <message>
-        <source>Enable if a single Veyon Server instance should be launched for the currently active session, no matter if local or remote.</source>
-        <translation>Yerel veya uzak olması fark etmeksizin, geçerli etkin oturum için tek bir Veyon Sunucu örneğinin başlatılması gerekiyorsa etkinleştirin.</translation>
+        <source>Enable if a single TinShareLab Server instance should be launched for the currently active session, no matter if local or remote.</source>
+        <translation>Yerel veya uzak olması fark etmeksizin, geçerli etkin oturum için tek bir TinShareLab Classroom Sunucu örneğinin başlatılması gerekiyorsa etkinleştirin.</translation>
     </message>
     <message>
         <source>Environment variable name</source>
@@ -4382,28 +4382,28 @@ Example: [^-]*-(PC[0-9]*)</source>
 <context>
     <name>ServiceControlCommands</name>
     <message>
-        <source>Register Veyon Service</source>
-        <translation>Veyon Hizmetini Kaydet</translation>
+        <source>Register TinShareLab Service</source>
+        <translation>TinShareLab Classroom Hizmetini Kaydet</translation>
     </message>
     <message>
-        <source>Unregister Veyon Service</source>
-        <translation>Veyon Hizmetinin Kaydını Kaldır</translation>
+        <source>Unregister TinShareLab Service</source>
+        <translation>TinShareLab Classroom Hizmetinin Kaydını Kaldır</translation>
     </message>
     <message>
-        <source>Start Veyon Service</source>
-        <translation>Veyon Hizmetini Başlat</translation>
+        <source>Start TinShareLab Service</source>
+        <translation>TinShareLab Classroom Hizmetini Başlat</translation>
     </message>
     <message>
-        <source>Stop Veyon Service</source>
-        <translation>Veyon Hizmetini Durdur</translation>
+        <source>Stop TinShareLab Service</source>
+        <translation>TinShareLab Classroom Hizmetini Durdur</translation>
     </message>
     <message>
-        <source>Restart Veyon Service</source>
-        <translation>Veyon Hizmetini Yeniden Başlat</translation>
+        <source>Restart TinShareLab Service</source>
+        <translation>TinShareLab Classroom Hizmetini Yeniden Başlat</translation>
     </message>
     <message>
-        <source>Query status of Veyon Service</source>
-        <translation>Veyon Hizmetinin sorgu durumu</translation>
+        <source>Query status of TinShareLab Service</source>
+        <translation>TinShareLab Classroom Hizmetinin sorgu durumu</translation>
     </message>
     <message>
         <source>Service is running</source>
@@ -4414,12 +4414,12 @@ Example: [^-]*-(PC[0-9]*)</source>
         <translation>Hizmet çalışmıyor</translation>
     </message>
     <message>
-        <source>Configure and control Veyon service</source>
-        <translation>Veyon hizmetini ayarla ve denetle</translation>
+        <source>Configure and control TinShareLab service</source>
+        <translation>TinShareLab Classroom hizmetini ayarla ve denetle</translation>
     </message>
     <message>
-        <source>Commands for configuring and controlling Veyon Service</source>
-        <translation>Veyon Hizmetini yapılandırmak ve denetlemek için komutlar</translation>
+        <source>Commands for configuring and controlling TinShareLab Service</source>
+        <translation>TinShareLab Classroom Hizmetini yapılandırmak ve denetlemek için komutlar</translation>
     </message>
 </context>
 <context>
@@ -4433,8 +4433,8 @@ Example: [^-]*-(PC[0-9]*)</source>
         <translation>&quot;%1&quot; dosyası mevcut değil!</translation>
     </message>
     <message>
-        <source>Interactive shell and script execution for Veyon CLI</source>
-        <translation>Veyon CLI için etkileşimli kabuk ve betik yürütme</translation>
+        <source>Interactive shell and script execution for TinShareLab CLI</source>
+        <translation>TinShareLab CLI için etkileşimli kabuk ve betik yürütme</translation>
     </message>
     <message>
         <source>Commands for shell functionalities</source>
@@ -4464,7 +4464,7 @@ Example: [^-]*-(PC[0-9]*)</source>
         <translation>Ayrı pencerede görüntüle</translation>
     </message>
     <message>
-        <source>Veyon Master – Slideshow</source>
+        <source>TinShareLab Classroom – Slideshow</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -4547,12 +4547,12 @@ Example: [^-]*-(PC[0-9]*)</source>
 <context>
     <name>TestingCommandLinePlugin</name>
     <message>
-        <source>Test internal Veyon components and functions</source>
-        <translation>Dahili Veyon bileşenlerini ve fonksiyonlarını test et</translation>
+        <source>Test internal TinShareLab Classroom components and functions</source>
+        <translation>Dahili TinShareLab Classroom bileşenlerini ve fonksiyonlarını test et</translation>
     </message>
     <message>
-        <source>Commands for testing internal components and functions of Veyon</source>
-        <translation>Veyon&apos;un dahili bileşenlerini ve işlevlerini test etme komutları</translation>
+        <source>Commands for testing internal components and functions of TinShareLab Classroom</source>
+        <translation>TinShareLab Classroom&apos;un dahili bileşenlerini ve işlevlerini test etme komutları</translation>
     </message>
 </context>
 <context>
@@ -4772,15 +4772,15 @@ Example: [^-]*-(PC[0-9]*)</source>
         <translation>Erişim izni yok</translation>
     </message>
     <message>
-        <source>Could not save your personal settings! Please check the user configuration file path using Veyon Configurator.</source>
+        <source>Could not save your personal settings! Please check the user configuration file path using TinShareLab Configurator.</source>
         <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>VeyonServiceControl</name>
     <message>
-        <source>Veyon Service</source>
-        <translation>Veyon Hizmeti</translation>
+        <source>TinShareLab Service</source>
+        <translation>TinShareLab Classroom Hizmeti</translation>
     </message>
 </context>
 <context>

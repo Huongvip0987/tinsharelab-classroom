@@ -93,7 +93,7 @@ CommandLinePluginInterface::RunResult FeatureCommands::handle_help( const QStrin
 					{ { tr("ARGUMENTS"), {} } } );
 
 		printDescription( tr("Starts the specified feature on the specified host by connecting to "
-							  "the Veyon Server running remotely. The feature can be specified by name "
+							  "the TinShareLab Server running remotely. The feature can be specified by name "
 							  "or UID. Use the ``show`` command to see all available features. "
 							  "Depending on the feature, additional arguments (such as the text message to display) "
 							  "encoded as a single JSON string have to be specified. Please refer to "
@@ -123,7 +123,7 @@ CommandLinePluginInterface::RunResult FeatureCommands::handle_help( const QStrin
 					{ { tr("HOST ADDRESS"), {} }, { tr("FEATURE"), {} } }, {} );
 
 		printDescription( tr("Stops the specified feature on the specified host by connecting to "
-							  "the Veyon Server running remotely. The feature can be specified by name "
+							  "the TinShareLab Server running remotely. The feature can be specified by name "
 							  "or UID. Use the ``show`` command to see all available features.") );
 
 		printExamples( commandLineModuleName(), stopCommand(),

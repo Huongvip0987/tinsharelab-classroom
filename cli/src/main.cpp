@@ -66,7 +66,7 @@ int main( int argc, char **argv )
 		}
 		if( arguments.last() == QLatin1String("about") )
 		{
-			CommandLineIO::print( QStringLiteral("Veyon: %1 (%2)").arg( VeyonCore::versionString() ).arg( QLatin1String(__DATE__) ) );
+			CommandLineIO::print( QStringLiteral("TinShareLab Classroom (based on Veyon): %1 (%2)").arg( VeyonCore::versionString() ).arg( QLatin1String(__DATE__) ) );
 			CommandLineIO::print( QStringLiteral("Qt: %1 (built against %2/%3)").
 								  arg( QLatin1String(qVersion() ) ).
 								  arg( QLatin1String(QT_VERSION_STR) ).

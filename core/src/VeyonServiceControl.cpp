@@ -64,5 +64,5 @@ QString VeyonServiceControl::filePath()
 
 QString VeyonServiceControl::displayName()
 {
-	return tr( "Veyon Service" );
+	return tr( "TinShareLab Service" );
 }

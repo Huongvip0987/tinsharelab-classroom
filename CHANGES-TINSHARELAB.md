@@ -31,3 +31,6 @@ the machine's protected key store.
 
 Computers without an administrator password: the same window can create a student package to send
 through existing classroom software or USB, then find the installed computers and open the web panel.
+
+Branding: the names shown to users and the logo are TinShareLab Classroom. Program files, the Windows
+service name, configuration paths and the legal notices still say Veyon.

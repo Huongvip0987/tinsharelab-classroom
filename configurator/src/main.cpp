@@ -65,7 +65,7 @@ int main( int argc, char **argv )
 		QMessageBox::critical(nullptr,
 							  MainWindow::tr("Configuration not writable"),
 							  MainWindow::tr("The local configuration backend reported that the "
-											 "configuration is not writable! Please run Veyon "
+											 "configuration is not writable! Please run TinShareLab Classroom "
 											 "Configurator with higher privileges."));
 		return -1;
 	}

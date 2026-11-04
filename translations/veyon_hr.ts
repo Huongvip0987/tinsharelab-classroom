@@ -2,7 +2,7 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <source>About Veyon</source>
+        <source>About TinShareLab Classroom</source>
         <translation>O Veyonu</translation>
     </message>
     <message>
@@ -32,17 +32,17 @@
     <message>
         <source>Current language not translated yet (or native English).
 
-If you&apos;re interested in translating Veyon into your local or another language or want to improve an existing translation, please contact a Veyon developer!</source>
+If you&apos;re interested in translating TinShareLab Classroom into your local or another language or want to improve an existing translation, please contact a TinShareLab Classroom developer!</source>
         <translation>Trenutni jezik još nije preveden (ili je to izvorni engleski).
 
-Ako ste zainteresirani za prevođenje Veyona na svoj lokalni ili neki drugi jezik ili želite poboljšati postojeći prijevod, obratite se Veyon programeru!</translation>
+Ako ste zainteresirani za prevođenje Veyona na svoj lokalni ili neki drugi jezik ili želite poboljšati postojeći prijevod, obratite se TinShareLab Classroom programeru!</translation>
     </message>
     <message>
         <source>License</source>
         <translation>Licenca</translation>
     </message>
     <message>
-        <source>About Veyon %1</source>
+        <source>About TinShareLab Classroom %1</source>
         <translation>O Veyonu %1</translation>
     </message>
 </context>
@@ -73,8 +73,8 @@ Ako ste zainteresirani za prevođenje Veyona na svoj lokalni ili neki drugi jezi
         <translation>Autorizirane korisničke grupe za pristup računalu</translation>
     </message>
     <message>
-        <source>Please add the groups whose members should be authorized to access computers in your Veyon network.</source>
-        <translation>Molimo dodajte grupe čiji članovi trebaju biti autorizirani za pristup računalima u vašoj Veyon mreži.</translation>
+        <source>Please add the groups whose members should be authorized to access computers in your TinShareLab Classroom network.</source>
+        <translation>Molimo dodajte grupe čiji članovi trebaju biti autorizirani za pristup računalima u vašoj TinShareLab Classroom mreži.</translation>
     </message>
     <message>
         <source>Authorized user groups</source>
@@ -333,8 +333,8 @@ Ako ste zainteresirani za prevođenje Veyona na svoj lokalni ili neki drugi jezi
         <translation>3) Izvesti javni ključ i uvesti ga na sva klijentska računala s istim imenom.</translation>
     </message>
     <message>
-        <source>Please refer to the &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;Veyon Administrator Manual&lt;/a&gt; for more information.</source>
-        <translation>Molimo pogledajte &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;Veyon Administrator Manual&lt;/a&gt; za više informacija.</translation>
+        <source>Please refer to the &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;TinShareLab Classroom Administrator Manual&lt;/a&gt; for more information.</source>
+        <translation>Molimo pogledajte &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;TinShareLab Classroom Administrator Manual&lt;/a&gt; za više informacija.</translation>
     </message>
     <message>
         <source>Key file directories</source>
@@ -1051,8 +1051,8 @@ Pobrinite se da su imena ključeva identična na svim računalima.</translation>
         <translation>Računalo offline ili isključeno</translation>
     </message>
     <message>
-        <source>Veyon Server unreachable or not running</source>
-        <translation>Veyon server nedostupan ili ne radi</translation>
+        <source>TinShareLab Server unreachable or not running</source>
+        <translation>TinShareLab server nedostupan ili ne radi</translation>
     </message>
     <message>
         <source>Authentication failed or access denied</source>
@@ -1118,8 +1118,8 @@ Pobrinite se da su imena ključeva identična na svim računalima.</translation>
         <translation>Korisnik &quot;%1&quot; na hostu &quot;%2&quot; pokušao je pristupiti ovom računalu, ali je blokiran zbog postavki kontrole pristupa.</translation>
     </message>
     <message>
-        <source>Veyon Service %1 at %2:%3</source>
-        <translation>Veyon Service %1 na %2:%3</translation>
+        <source>TinShareLab Service %1 at %2:%3</source>
+        <translation>TinShareLab Service %1 na %2:%3</translation>
     </message>
     <message>
         <source>Active connections:</source>
@@ -1141,8 +1141,8 @@ Pobrinite se da su imena ključeva identična na svim računalima.</translation>
         <translation>Nedostajući dodatak za direktorij mrežnih objekata</translation>
     </message>
     <message>
-        <source>No default network object directory plugin was found. Please check your installation or configure a different network object directory backend via Veyon Configurator.</source>
-        <translation>Nije pronađen zadani dodatak za direktorij mrežnih objekata. Molimo provjerite svoju instalaciju ili konfigurirajte backend drugog direktorija mrežnih objekata putem Veyon Configuratora.</translation>
+        <source>No default network object directory plugin was found. Please check your installation or configure a different network object directory backend via TinShareLab Configurator.</source>
+        <translation>Nije pronađen zadani dodatak za direktorij mrežnih objekata. Molimo provjerite svoju instalaciju ili konfigurirajte backend drugog direktorija mrežnih objekata putem TinShareLab Classroom Configuratora.</translation>
     </message>
     <message>
         <source>Computer name;Hostname;User</source>
@@ -1203,7 +1203,7 @@ Pobrinite se da su imena ključeva identična na svim računalima.</translation>
 <context>
     <name>ConfigCommands</name>
     <message>
-        <source>Clear system-wide Veyon configuration</source>
+        <source>Clear system-wide TinShareLab Classroom configuration</source>
         <translation>Jasna konfiguracija Veyona na razini cijelog sustava</translation>
     </message>
     <message>
@@ -1267,27 +1267,27 @@ Pobrinite se da su imena ključeva identična na svim računalima.</translation>
         <translation>Molimo navedite valjanu vrijednost.</translation>
     </message>
     <message>
-        <source>Configure Veyon at command line</source>
+        <source>Configure TinShareLab Classroom at command line</source>
         <translation>Konfiguracija Veyona u naredbenoj liniji</translation>
     </message>
     <message>
-        <source>Commands for managing the configuration of Veyon</source>
+        <source>Commands for managing the configuration of TinShareLab Classroom</source>
         <translation>Naredbe za upravljanje konfiguracijom Veyona</translation>
     </message>
 </context>
 <context>
     <name>ConfigurationManager</name>
     <message>
-        <source>Could not modify the autostart property for the Veyon Service.</source>
-        <translation>Nije se moglo izmijeniti svojstvo automatskog pokretanja za Veyon servis.</translation>
+        <source>Could not modify the autostart property for the TinShareLab Service.</source>
+        <translation>Nije se moglo izmijeniti svojstvo automatskog pokretanja za TinShareLab Classroom servis.</translation>
     </message>
     <message>
-        <source>Could not configure the firewall configuration for the Veyon Server.</source>
-        <translation>Nisam mogao konfigurirati konfiguraciju vatrozida za Veyon server.</translation>
+        <source>Could not configure the firewall configuration for the TinShareLab Server.</source>
+        <translation>Nisam mogao konfigurirati konfiguraciju vatrozida za TinShareLab server.</translation>
     </message>
     <message>
-        <source>Could not configure the firewall configuration for the Veyon Worker.</source>
-        <translation>Nisam mogao konfigurirati konfiguraciju vatrozida za Veyon Worker.</translation>
+        <source>Could not configure the firewall configuration for the TinShareLab Classroom Worker.</source>
+        <translation>Nisam mogao konfigurirati konfiguraciju vatrozida za TinShareLab Classroom Worker.</translation>
     </message>
     <message>
         <source>Could not apply platform-specific configuration settings.</source>
@@ -1301,8 +1301,8 @@ Pobrinite se da su imena ključeva identična na svim računalima.</translation>
 <context>
     <name>DemoClient</name>
     <message>
-        <source>Veyon Demo</source>
-        <translation>Veyon Demo</translation>
+        <source>TinShareLab Demo</source>
+        <translation>TinShareLab Demo</translation>
     </message>
 </context>
 <context>
@@ -1648,8 +1648,8 @@ Pobrinite se da su imena ključeva identična na svim računalima.</translation>
         <translation>ARGUMENTI</translation>
     </message>
     <message>
-        <source>Starts the specified feature on the specified host by connecting to the Veyon Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features. Depending on the feature, additional arguments (such as the text message to display) encoded as a single JSON string have to be specified. Please refer to the developer documentation for more information</source>
-        <translation>Pokreće zadanu značajku na određenom hostu povezivanjem na Veyon server koji radi udaljeno. Značajka može biti specificirana imenom ili UID-om. Koristite naredbu &apos;&apos;show&apos;&apos; da vidite sve dostupne značajke. Ovisno o značajci, potrebno je specificirati dodatne argumente (poput tekstualne poruke za prikaz) kodirane kao jedan JSON string. Molimo pogledajte dokumentaciju za programere za više informacija</translation>
+        <source>Starts the specified feature on the specified host by connecting to the TinShareLab Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features. Depending on the feature, additional arguments (such as the text message to display) encoded as a single JSON string have to be specified. Please refer to the developer documentation for more information</source>
+        <translation>Pokreće zadanu značajku na određenom hostu povezivanjem na TinShareLab server koji radi udaljeno. Značajka može biti specificirana imenom ili UID-om. Koristite naredbu &apos;&apos;show&apos;&apos; da vidite sve dostupne značajke. Ovisno o značajci, potrebno je specificirati dodatne argumente (poput tekstualne poruke za prikaz) kodirane kao jedan JSON string. Molimo pogledajte dokumentaciju za programere za više informacija</translation>
     </message>
     <message>
         <source>Lock the screen</source>
@@ -1668,8 +1668,8 @@ Pobrinite se da su imena ključeva identična na svim računalima.</translation>
         <translation>Pokreni prijavu</translation>
     </message>
     <message>
-        <source>Stops the specified feature on the specified host by connecting to the Veyon Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features.</source>
-        <translation>Zaustavlja zadanu značajku na određenom računalu povezivanjem na Veyon server koji radi na daljinu. Značajka može biti specificirana imenom ili UID-om. Koristite naredbu &apos;&apos;show&apos;&apos; da vidite sve dostupne značajke.</translation>
+        <source>Stops the specified feature on the specified host by connecting to the TinShareLab Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features.</source>
+        <translation>Zaustavlja zadanu značajku na određenom računalu povezivanjem na TinShareLab server koji radi na daljinu. Značajka može biti specificirana imenom ili UID-om. Koristite naredbu &apos;&apos;show&apos;&apos; da vidite sve dostupne značajke.</translation>
     </message>
     <message>
         <source>Unlock the screen</source>
@@ -2213,12 +2213,12 @@ Pobrinite se da su imena ključeva identična na svim računalima.</translation>
         <translation>Autentifikacijski ključevi nisu pravilno postavljeni na ovom računalu.</translation>
     </message>
     <message>
-        <source>Veyon service</source>
-        <translation>Veyon služba</translation>
+        <source>TinShareLab service</source>
+        <translation>TinShareLab Classroom služba</translation>
     </message>
     <message>
-        <source>The Veyon service needs to be stopped temporarily in order to remove the log files. Continue?</source>
-        <translation>Veyon uslugu treba privremeno zaustaviti kako bi se uklonile log datoteke. Nastaviti?</translation>
+        <source>The TinShareLab service needs to be stopped temporarily in order to remove the log files. Continue?</source>
+        <translation>TinShareLab Classroom uslugu treba privremeno zaustaviti kako bi se uklonile log datoteke. Nastaviti?</translation>
     </message>
     <message>
         <source>Log files cleared</source>
@@ -3018,8 +3018,8 @@ Pobrinite se da su imena ključeva identična na svim računalima.</translation>
         <translation>%1 (učitavanje korisnika i grupa iz LDAP/AD)</translation>
     </message>
     <message>
-        <source>LDAP/AD support for Veyon</source>
-        <translation>LDAP/AD podrška za Veyon</translation>
+        <source>LDAP/AD support for TinShareLab Classroom</source>
+        <translation>LDAP/AD podrška za TinShareLab Classroom</translation>
     </message>
 </context>
 <context>
@@ -3101,8 +3101,8 @@ Pobrinite se da su imena ključeva identična na svim računalima.</translation>
 <context>
     <name>MainWindow</name>
     <message>
-        <source>Veyon Configurator</source>
-        <translation>Veyon konfigurator</translation>
+        <source>TinShareLab Configurator</source>
+        <translation>TinShareLab Classroom konfigurator</translation>
     </message>
     <message>
         <source>General</source>
@@ -3161,8 +3161,8 @@ Pobrinite se da su imena ključeva identična na svim računalima.</translation>
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <source>About Veyon</source>
-        <translation>O Veyon</translation>
+        <source>About TinShareLab Classroom</source>
+        <translation>O TinShareLab Classroom</translation>
     </message>
     <message>
         <source>About Qt</source>
@@ -3225,8 +3225,8 @@ Pobrinite se da su imena ključeva identična na svim računalima.</translation>
         <translation>Prikazati samo računala s prijavljenim korisnicima</translation>
     </message>
     <message>
-        <source>Veyon Configurator %1</source>
-        <translation>Veyon Configurator %1</translation>
+        <source>TinShareLab Configurator %1</source>
+        <translation>TinShareLab Configurator %1</translation>
     </message>
     <message>
         <source>Load settings from file</source>
@@ -3261,16 +3261,16 @@ Pobrinite se da su imena ključeva identična na svim računalima.</translation>
         <translation>Konfiguracija nije zapisiva</translation>
     </message>
     <message>
-        <source>The local configuration backend reported that the configuration is not writable! Please run Veyon Configurator with higher privileges.</source>
-        <translation>Lokalni konfiguracijski backend je izvijestio da konfiguracija nije zapisiva! Molim te, koristi Veyon Configurator s većim privilegijama.</translation>
+        <source>The local configuration backend reported that the configuration is not writable! Please run TinShareLab Configurator with higher privileges.</source>
+        <translation>Lokalni konfiguracijski backend je izvijestio da konfiguracija nije zapisiva! Molim te, koristi TinShareLab Configurator s većim privilegijama.</translation>
     </message>
     <message>
         <source>Authentication impossible</source>
         <translation>Autentifikacija nemoguća</translation>
     </message>
     <message>
-        <source>No authentication key files were found or your current ones are outdated. Please create new key files using Veyon Configurator. Alternatively set up logon authentication using Veyon Configurator. Otherwise you won&apos;t be able to access computers using Veyon.</source>
-        <translation>Nisu pronađene nikakve datoteke s autentifikacijskim ključevima ili su vaši trenutni zastarjeli. Molimo kreirajte nove ključne datoteke koristeći Veyon Configurator. Alternativno, postavite autentifikaciju prijave pomoću Veyon Configuratora. Inače nećete moći pristupiti računalima koristeći Veyon.</translation>
+        <source>No authentication key files were found or your current ones are outdated. Please create new key files using TinShareLab Configurator. Alternatively set up logon authentication using TinShareLab Configurator. Otherwise you won&apos;t be able to access computers using TinShareLab Classroom.</source>
+        <translation>Nisu pronađene nikakve datoteke s autentifikacijskim ključevima ili su vaši trenutni zastarjeli. Molimo kreirajte nove ključne datoteke koristeći TinShareLab Configurator. Alternativno, postavite autentifikaciju prijave pomoću TinShareLab Classroom Configuratora. Inače nećete moći pristupiti računalima koristeći TinShareLab Classroom.</translation>
     </message>
     <message>
         <source>Access denied</source>
@@ -3285,8 +3285,8 @@ Pobrinite se da su imena ključeva identična na svim računalima.</translation>
         <translation>Aktivna značajka</translation>
     </message>
     <message>
-        <source>The feature &quot;%1&quot; is still active. Please stop it before closing Veyon.</source>
-        <translation>Značajka &quot;%1&quot; je i dalje aktivna. Molim te, prestani prije nego zatvoriš Veyon.</translation>
+        <source>The feature &quot;%1&quot; is still active. Please stop it before closing TinShareLab Classroom.</source>
+        <translation>Značajka &quot;%1&quot; je i dalje aktivna. Molim te, prestani prije nego zatvoriš TinShareLab Classroom.</translation>
     </message>
     <message>
         <source>Use custom computer arrangement.
@@ -3685,8 +3685,8 @@ Pritisnite i držite za učitavanje rasporeda iz datoteke ili spremanje trenutno
         <translation>Otvorena web stranica</translation>
     </message>
     <message>
-        <source>e.g. Veyon</source>
-        <translation>npr. Veyon</translation>
+        <source>e.g. TinShareLab Classroom</source>
+        <translation>npr. TinShareLab Classroom</translation>
     </message>
     <message>
         <source>Remember and add to website menu</source>
@@ -3708,8 +3708,8 @@ Pritisnite i držite za učitavanje rasporeda iz datoteke ili spremanje trenutno
 <context>
     <name>PasswordDialog</name>
     <message>
-        <source>Veyon Logon</source>
-        <translation>Veyon Logon</translation>
+        <source>TinShareLab Logon</source>
+        <translation>TinShareLab Logon</translation>
     </message>
     <message>
         <source>Please enter your username and password in order to access computers.</source>
@@ -3953,12 +3953,12 @@ Molimo spremite svoj rad i zatvorite sve programe.</translation>
 <context>
     <name>RemoteAccessWidget</name>
     <message>
-        <source>%1 - Veyon Remote Access</source>
-        <translation>%1 - Veyon daljinski pristup</translation>
+        <source>%1 - TinShareLab Remote Access</source>
+        <translation>%1 - TinShareLab Classroom daljinski pristup</translation>
     </message>
     <message>
-        <source>%1 - %2 - Veyon Remote Access</source>
-        <translation>%1 - %2 - Veyon Remote Access</translation>
+        <source>%1 - %2 - TinShareLab Remote Access</source>
+        <translation>%1 - %2 - TinShareLab Remote Access</translation>
     </message>
 </context>
 <context>
@@ -4260,8 +4260,8 @@ Obično je to potrebno za podršku terminalskim poslužiteljima.</translation>
         <translation>Brojevi mrežnih portova</translation>
     </message>
     <message>
-        <source>Veyon server</source>
-        <translation>Veyon server</translation>
+        <source>TinShareLab server</source>
+        <translation>TinShareLab server</translation>
     </message>
     <message>
         <source>Internal VNC server</source>
@@ -4300,12 +4300,12 @@ Obično je to potrebno za podršku terminalskim poslužiteljima.</translation>
         <translation>Dodatak:</translation>
     </message>
     <message>
-        <source>Restart Veyon Service</source>
-        <translation>Ponovno pokretanje Veyon usluge</translation>
+        <source>Restart TinShareLab Service</source>
+        <translation>Ponovno pokretanje TinShareLab Classroom usluge</translation>
     </message>
     <message>
-        <source>All settings were saved successfully. In order to take effect the Veyon service needs to be restarted. Restart it now?</source>
-        <translation>Sve postavke su uspješno spremljene. Da bi Veyon usluga stupila na snagu, potrebno je ponovno pokrenuti. Restartati ga sada?</translation>
+        <source>All settings were saved successfully. In order to take effect the TinShareLab service needs to be restarted. Restart it now?</source>
+        <translation>Sve postavke su uspješno spremljene. Da bi TinShareLab Classroom usluga stupila na snagu, potrebno je ponovno pokrenuti. Restartati ga sada?</translation>
     </message>
     <message>
         <source>Running</source>
@@ -4340,8 +4340,8 @@ Example: [^-]*-(PC[0-9]*)</source>
 Primjer: [^-]*-(PC[0-9]*)</translation>
     </message>
     <message>
-        <source>Enable if a single Veyon Server instance should be launched for the currently active session, no matter if local or remote.</source>
-        <translation>Omogućite ako se jedna instanca Veyon servera pokrene za trenutno aktivnu sesiju, bez obzira je li lokalna ili udaljena.</translation>
+        <source>Enable if a single TinShareLab Server instance should be launched for the currently active session, no matter if local or remote.</source>
+        <translation>Omogućite ako se jedna instanca TinShareLab Classroom servera pokrene za trenutno aktivnu sesiju, bez obzira je li lokalna ili udaljena.</translation>
     </message>
     <message>
         <source>Environment variable name</source>
@@ -4382,28 +4382,28 @@ Primjer: [^-]*-(PC[0-9]*)</translation>
 <context>
     <name>ServiceControlCommands</name>
     <message>
-        <source>Register Veyon Service</source>
-        <translation>Registrirajte Veyon uslugu</translation>
+        <source>Register TinShareLab Service</source>
+        <translation>Registrirajte TinShareLab Classroom uslugu</translation>
     </message>
     <message>
-        <source>Unregister Veyon Service</source>
-        <translation>Unregister Veyon Service</translation>
+        <source>Unregister TinShareLab Service</source>
+        <translation>Unregister TinShareLab Service</translation>
     </message>
     <message>
-        <source>Start Veyon Service</source>
-        <translation>Početak Veyon usluge</translation>
+        <source>Start TinShareLab Service</source>
+        <translation>Početak TinShareLab Classroom usluge</translation>
     </message>
     <message>
-        <source>Stop Veyon Service</source>
-        <translation>Stop Veyon usluga</translation>
+        <source>Stop TinShareLab Service</source>
+        <translation>Stop TinShareLab Classroom usluga</translation>
     </message>
     <message>
-        <source>Restart Veyon Service</source>
-        <translation>Ponovno pokretanje Veyon usluge</translation>
+        <source>Restart TinShareLab Service</source>
+        <translation>Ponovno pokretanje TinShareLab Classroom usluge</translation>
     </message>
     <message>
-        <source>Query status of Veyon Service</source>
-        <translation>Status upita Veyon usluge</translation>
+        <source>Query status of TinShareLab Service</source>
+        <translation>Status upita TinShareLab Classroom usluge</translation>
     </message>
     <message>
         <source>Service is running</source>
@@ -4414,12 +4414,12 @@ Primjer: [^-]*-(PC[0-9]*)</translation>
         <translation>Usluga ne radi</translation>
     </message>
     <message>
-        <source>Configure and control Veyon service</source>
-        <translation>Konfiguracija i kontrola Veyon usluge</translation>
+        <source>Configure and control TinShareLab service</source>
+        <translation>Konfiguracija i kontrola TinShareLab Classroom usluge</translation>
     </message>
     <message>
-        <source>Commands for configuring and controlling Veyon Service</source>
-        <translation>Naredbe za konfiguraciju i kontrolu Veyon servisa</translation>
+        <source>Commands for configuring and controlling TinShareLab Service</source>
+        <translation>Naredbe za konfiguraciju i kontrolu TinShareLab Classroom servisa</translation>
     </message>
 </context>
 <context>
@@ -4433,8 +4433,8 @@ Primjer: [^-]*-(PC[0-9]*)</translation>
         <translation>Datoteka &quot;%1&quot; ne postoji!</translation>
     </message>
     <message>
-        <source>Interactive shell and script execution for Veyon CLI</source>
-        <translation>Interaktivno izvršavanje ljuske i skripti za Veyon CLI</translation>
+        <source>Interactive shell and script execution for TinShareLab CLI</source>
+        <translation>Interaktivno izvršavanje ljuske i skripti za TinShareLab CLI</translation>
     </message>
     <message>
         <source>Commands for shell functionalities</source>
@@ -4464,8 +4464,8 @@ Primjer: [^-]*-(PC[0-9]*)</translation>
         <translation>Pogled u zasebnom prozoru</translation>
     </message>
     <message>
-        <source>Veyon Master – Slideshow</source>
-        <translation>Veyon Master – Slideshow</translation>
+        <source>TinShareLab Classroom – Slideshow</source>
+        <translation>TinShareLab Classroom – Slideshow</translation>
     </message>
 </context>
 <context>
@@ -4547,11 +4547,11 @@ Primjer: [^-]*-(PC[0-9]*)</translation>
 <context>
     <name>TestingCommandLinePlugin</name>
     <message>
-        <source>Test internal Veyon components and functions</source>
-        <translation>Testirajte interne Veyon komponente i funkcije</translation>
+        <source>Test internal TinShareLab Classroom components and functions</source>
+        <translation>Testirajte interne TinShareLab Classroom komponente i funkcije</translation>
     </message>
     <message>
-        <source>Commands for testing internal components and functions of Veyon</source>
+        <source>Commands for testing internal components and functions of TinShareLab Classroom</source>
         <translation>Naredbe za testiranje unutarnjih komponenti i funkcija Veyona</translation>
     </message>
 </context>
@@ -4772,15 +4772,15 @@ Primjer: [^-]*-(PC[0-9]*)</translation>
         <translation>Nema pristupa pisanju</translation>
     </message>
     <message>
-        <source>Could not save your personal settings! Please check the user configuration file path using Veyon Configurator.</source>
-        <translation>Nisam mogao spremiti vaše osobne postavke! Molimo provjerite putanju do korisničke konfiguracijske datoteke pomoću Veyon Configuratora.</translation>
+        <source>Could not save your personal settings! Please check the user configuration file path using TinShareLab Configurator.</source>
+        <translation>Nisam mogao spremiti vaše osobne postavke! Molimo provjerite putanju do korisničke konfiguracijske datoteke pomoću TinShareLab Classroom Configuratora.</translation>
     </message>
 </context>
 <context>
     <name>VeyonServiceControl</name>
     <message>
-        <source>Veyon Service</source>
-        <translation>Veyon služba</translation>
+        <source>TinShareLab Service</source>
+        <translation>TinShareLab Classroom služba</translation>
     </message>
 </context>
 <context>

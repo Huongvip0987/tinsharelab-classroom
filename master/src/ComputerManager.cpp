@@ -62,7 +62,7 @@ ComputerManager::ComputerManager( UserConfig& config, QObject* parent ) :
 							  tr("Missing network object directory plugin"),
 							  tr("No default network object directory plugin was found. "
 								 "Please check your installation or configure a different "
-								 "network object directory backend via Veyon Configurator."));
+								 "network object directory backend via TinShareLab Configurator."));
 		qFatal( "ComputerManager: missing network object directory plugin!" );
 	}
 

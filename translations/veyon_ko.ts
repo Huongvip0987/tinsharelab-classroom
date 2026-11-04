@@ -2,8 +2,8 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <source>About Veyon</source>
-        <translation>Veyon 정보</translation>
+        <source>About TinShareLab Classroom</source>
+        <translation>TinShareLab Classroom 정보</translation>
     </message>
     <message>
         <source>About</source>
@@ -32,18 +32,18 @@
     <message>
         <source>Current language not translated yet (or native English).
 
-If you&apos;re interested in translating Veyon into your local or another language or want to improve an existing translation, please contact a Veyon developer!</source>
+If you&apos;re interested in translating TinShareLab Classroom into your local or another language or want to improve an existing translation, please contact a TinShareLab Classroom developer!</source>
         <translation>현재 한국어 번역이 진행중입니다 (영어 -&gt; 한국어).
 
-Veyon 번역에 관심이 있거나 번역을 개선하실 의향이 있으신 분들은 Veyon 개발자에게 연락주세요. </translation>
+TinShareLab Classroom 번역에 관심이 있거나 번역을 개선하실 의향이 있으신 분들은 TinShareLab Classroom 개발자에게 연락주세요. </translation>
     </message>
     <message>
         <source>License</source>
         <translation>라이센스</translation>
     </message>
     <message>
-        <source>About Veyon %1</source>
-        <translation>Veyon %1 에 대하여</translation>
+        <source>About TinShareLab Classroom %1</source>
+        <translation>TinShareLab Classroom %1 에 대하여</translation>
     </message>
 </context>
 <context>
@@ -73,8 +73,8 @@ Veyon 번역에 관심이 있거나 번역을 개선하실 의향이 있으신 �
         <translation>컴퓨터 접속이 허용된 사용자 그룹</translation>
     </message>
     <message>
-        <source>Please add the groups whose members should be authorized to access computers in your Veyon network.</source>
-        <translation>Veyon 네트워크에 컴퓨터에 접속을 허용할 사용자 그룹을 추가하세요.</translation>
+        <source>Please add the groups whose members should be authorized to access computers in your TinShareLab Classroom network.</source>
+        <translation>TinShareLab Classroom 네트워크에 컴퓨터에 접속을 허용할 사용자 그룹을 추가하세요.</translation>
     </message>
     <message>
         <source>Authorized user groups</source>
@@ -333,8 +333,8 @@ Veyon 번역에 관심이 있거나 번역을 개선하실 의향이 있으신 �
         <translation>3) 공개키를 내보내고 그키를 같은 이름을 가진 모든 클라이언트 컴퓨터에서 읽어들이기.</translation>
     </message>
     <message>
-        <source>Please refer to the &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;Veyon Administrator Manual&lt;/a&gt; for more information.</source>
-        <translation>더 자세한 정보는  &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt; Veyon 관리자 매뉴얼을 참조하세요 &lt;/a&gt; .</translation>
+        <source>Please refer to the &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;TinShareLab Classroom Administrator Manual&lt;/a&gt; for more information.</source>
+        <translation>더 자세한 정보는  &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt; TinShareLab Classroom 관리자 매뉴얼을 참조하세요 &lt;/a&gt; .</translation>
     </message>
     <message>
         <source>Key file directories</source>
@@ -1049,8 +1049,8 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>컴퓨터 오프라인 또는 전원 꺼짐</translation>
     </message>
     <message>
-        <source>Veyon Server unreachable or not running</source>
-        <translation>Veyon 서버에 접속할 수 없거나 꺼져있습니다</translation>
+        <source>TinShareLab Server unreachable or not running</source>
+        <translation>TinShareLab Classroom 서버에 접속할 수 없거나 꺼져있습니다</translation>
     </message>
     <message>
         <source>Authentication failed or access denied</source>
@@ -1116,7 +1116,7 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>호스트 &quot;%2&quot;의 사용자  &quot;%1&quot; 가 이 컴퓨터에 연결하려고 하였으나 접근제어 설정에 의해 블럭되었습니다.</translation>
     </message>
     <message>
-        <source>Veyon Service %1 at %2:%3</source>
+        <source>TinShareLab Service %1 at %2:%3</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1139,7 +1139,7 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>네트워크 개체 디렉토리 플러그인이 없음</translation>
     </message>
     <message>
-        <source>No default network object directory plugin was found. Please check your installation or configure a different network object directory backend via Veyon Configurator.</source>
+        <source>No default network object directory plugin was found. Please check your installation or configure a different network object directory backend via TinShareLab Configurator.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1201,8 +1201,8 @@ Make sure that the names of the keys belonging to each other are identical on al
 <context>
     <name>ConfigCommands</name>
     <message>
-        <source>Clear system-wide Veyon configuration</source>
-        <translation>시스템 상의 Veyon 설정 삭제</translation>
+        <source>Clear system-wide TinShareLab Classroom configuration</source>
+        <translation>시스템 상의 TinShareLab Classroom 설정 삭제</translation>
     </message>
     <message>
         <source>List all configuration keys and values</source>
@@ -1265,26 +1265,26 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>유효한 값을 지정하세요</translation>
     </message>
     <message>
-        <source>Configure Veyon at command line</source>
-        <translation>커맨드 라인에서 Veyon 설정</translation>
+        <source>Configure TinShareLab Classroom at command line</source>
+        <translation>커맨드 라인에서 TinShareLab Classroom 설정</translation>
     </message>
     <message>
-        <source>Commands for managing the configuration of Veyon</source>
-        <translation>Veyon 설정 관리 명령어들</translation>
+        <source>Commands for managing the configuration of TinShareLab Classroom</source>
+        <translation>TinShareLab Classroom 설정 관리 명령어들</translation>
     </message>
 </context>
 <context>
     <name>ConfigurationManager</name>
     <message>
-        <source>Could not modify the autostart property for the Veyon Service.</source>
+        <source>Could not modify the autostart property for the TinShareLab Service.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Could not configure the firewall configuration for the Veyon Server.</source>
+        <source>Could not configure the firewall configuration for the TinShareLab Server.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Could not configure the firewall configuration for the Veyon Worker.</source>
+        <source>Could not configure the firewall configuration for the TinShareLab Classroom Worker.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1299,7 +1299,7 @@ Make sure that the names of the keys belonging to each other are identical on al
 <context>
     <name>DemoClient</name>
     <message>
-        <source>Veyon Demo</source>
+        <source>TinShareLab Demo</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -1646,7 +1646,7 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Starts the specified feature on the specified host by connecting to the Veyon Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features. Depending on the feature, additional arguments (such as the text message to display) encoded as a single JSON string have to be specified. Please refer to the developer documentation for more information</source>
+        <source>Starts the specified feature on the specified host by connecting to the TinShareLab Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features. Depending on the feature, additional arguments (such as the text message to display) encoded as a single JSON string have to be specified. Please refer to the developer documentation for more information</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1666,7 +1666,7 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>애플리케이션 실행하기</translation>
     </message>
     <message>
-        <source>Stops the specified feature on the specified host by connecting to the Veyon Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features.</source>
+        <source>Stops the specified feature on the specified host by connecting to the TinShareLab Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2211,11 +2211,11 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>이 컴퓨터에서 인증키가 적절히 설정되지 않았습니다.</translation>
     </message>
     <message>
-        <source>Veyon service</source>
+        <source>TinShareLab service</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>The Veyon service needs to be stopped temporarily in order to remove the log files. Continue?</source>
+        <source>The TinShareLab service needs to be stopped temporarily in order to remove the log files. Continue?</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3014,7 +3014,7 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>%1 (LDAP/AD에서 사용자와 그룹을 가져옴)</translation>
     </message>
     <message>
-        <source>LDAP/AD support for Veyon</source>
+        <source>LDAP/AD support for TinShareLab Classroom</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -3097,8 +3097,8 @@ Make sure that the names of the keys belonging to each other are identical on al
 <context>
     <name>MainWindow</name>
     <message>
-        <source>Veyon Configurator</source>
-        <translation>Veyon Configurator</translation>
+        <source>TinShareLab Configurator</source>
+        <translation>TinShareLab Configurator</translation>
     </message>
     <message>
         <source>General</source>
@@ -3157,7 +3157,7 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <source>About Veyon</source>
+        <source>About TinShareLab Classroom</source>
         <translation>Veyon에 대해서</translation>
     </message>
     <message>
@@ -3221,7 +3221,7 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Veyon Configurator %1</source>
+        <source>TinShareLab Configurator %1</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3257,7 +3257,7 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>설정 저장 불가</translation>
     </message>
     <message>
-        <source>The local configuration backend reported that the configuration is not writable! Please run Veyon Configurator with higher privileges.</source>
+        <source>The local configuration backend reported that the configuration is not writable! Please run TinShareLab Configurator with higher privileges.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3265,7 +3265,7 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>인증 불가</translation>
     </message>
     <message>
-        <source>No authentication key files were found or your current ones are outdated. Please create new key files using Veyon Configurator. Alternatively set up logon authentication using Veyon Configurator. Otherwise you won&apos;t be able to access computers using Veyon.</source>
+        <source>No authentication key files were found or your current ones are outdated. Please create new key files using TinShareLab Configurator. Alternatively set up logon authentication using TinShareLab Configurator. Otherwise you won&apos;t be able to access computers using TinShareLab Classroom.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3281,7 +3281,7 @@ Make sure that the names of the keys belonging to each other are identical on al
         <translation>기능 활성화</translation>
     </message>
     <message>
-        <source>The feature &quot;%1&quot; is still active. Please stop it before closing Veyon.</source>
+        <source>The feature &quot;%1&quot; is still active. Please stop it before closing TinShareLab Classroom.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3679,8 +3679,8 @@ Press and hold to load arrangement from a file or save current arrangement to a 
         <translation>웹사이트 열기</translation>
     </message>
     <message>
-        <source>e.g. Veyon</source>
-        <translation>예: Veyon</translation>
+        <source>e.g. TinShareLab Classroom</source>
+        <translation>예: TinShareLab Classroom</translation>
     </message>
     <message>
         <source>Remember and add to website menu</source>
@@ -3702,8 +3702,8 @@ Press and hold to load arrangement from a file or save current arrangement to a 
 <context>
     <name>PasswordDialog</name>
     <message>
-        <source>Veyon Logon</source>
-        <translation>Veyon 로그온</translation>
+        <source>TinShareLab Logon</source>
+        <translation>TinShareLab Classroom 로그온</translation>
     </message>
     <message>
         <source>Please enter your username and password in order to access computers.</source>
@@ -3947,11 +3947,11 @@ Please save your work and close all programs.</source>
 <context>
     <name>RemoteAccessWidget</name>
     <message>
-        <source>%1 - Veyon Remote Access</source>
+        <source>%1 - TinShareLab Remote Access</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>%1 - %2 - Veyon Remote Access</source>
+        <source>%1 - %2 - TinShareLab Remote Access</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -4254,7 +4254,7 @@ Typically this is required to support terminal servers.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Veyon server</source>
+        <source>TinShareLab server</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -4294,11 +4294,11 @@ Typically this is required to support terminal servers.</source>
         <translation>플러그인:</translation>
     </message>
     <message>
-        <source>Restart Veyon Service</source>
-        <translation>Veyon 서비스 재시작</translation>
+        <source>Restart TinShareLab Service</source>
+        <translation>TinShareLab Classroom 서비스 재시작</translation>
     </message>
     <message>
-        <source>All settings were saved successfully. In order to take effect the Veyon service needs to be restarted. Restart it now?</source>
+        <source>All settings were saved successfully. In order to take effect the TinShareLab service needs to be restarted. Restart it now?</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -4332,7 +4332,7 @@ Example: [^-]*-(PC[0-9]*)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Enable if a single Veyon Server instance should be launched for the currently active session, no matter if local or remote.</source>
+        <source>Enable if a single TinShareLab Server instance should be launched for the currently active session, no matter if local or remote.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -4374,28 +4374,28 @@ Example: [^-]*-(PC[0-9]*)</source>
 <context>
     <name>ServiceControlCommands</name>
     <message>
-        <source>Register Veyon Service</source>
-        <translation>Veyon 서비스 등록</translation>
+        <source>Register TinShareLab Service</source>
+        <translation>TinShareLab Classroom 서비스 등록</translation>
     </message>
     <message>
-        <source>Unregister Veyon Service</source>
-        <translation>Veyon 서비스 등록해지</translation>
+        <source>Unregister TinShareLab Service</source>
+        <translation>TinShareLab Classroom 서비스 등록해지</translation>
     </message>
     <message>
-        <source>Start Veyon Service</source>
-        <translation>Veyon 서비스 시작</translation>
+        <source>Start TinShareLab Service</source>
+        <translation>TinShareLab Classroom 서비스 시작</translation>
     </message>
     <message>
-        <source>Stop Veyon Service</source>
-        <translation>Veyon 서비스 중지</translation>
+        <source>Stop TinShareLab Service</source>
+        <translation>TinShareLab Classroom 서비스 중지</translation>
     </message>
     <message>
-        <source>Restart Veyon Service</source>
-        <translation>Veyon 서비스 재시작</translation>
+        <source>Restart TinShareLab Service</source>
+        <translation>TinShareLab Classroom 서비스 재시작</translation>
     </message>
     <message>
-        <source>Query status of Veyon Service</source>
-        <translation>Veyon 서비스 상태 조회</translation>
+        <source>Query status of TinShareLab Service</source>
+        <translation>TinShareLab Classroom 서비스 상태 조회</translation>
     </message>
     <message>
         <source>Service is running</source>
@@ -4406,12 +4406,12 @@ Example: [^-]*-(PC[0-9]*)</source>
         <translation>서비스 실행중이 아님</translation>
     </message>
     <message>
-        <source>Configure and control Veyon service</source>
-        <translation>Veyon 서비스 설정및 제어</translation>
+        <source>Configure and control TinShareLab service</source>
+        <translation>TinShareLab Classroom 서비스 설정및 제어</translation>
     </message>
     <message>
-        <source>Commands for configuring and controlling Veyon Service</source>
-        <translation>Veyon 서비스 설정 및 제어 명령어</translation>
+        <source>Commands for configuring and controlling TinShareLab Service</source>
+        <translation>TinShareLab Classroom 서비스 설정 및 제어 명령어</translation>
     </message>
 </context>
 <context>
@@ -4425,7 +4425,7 @@ Example: [^-]*-(PC[0-9]*)</source>
         <translation>화일 &quot;%1&quot; 이 없음!</translation>
     </message>
     <message>
-        <source>Interactive shell and script execution for Veyon CLI</source>
+        <source>Interactive shell and script execution for TinShareLab CLI</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -4456,7 +4456,7 @@ Example: [^-]*-(PC[0-9]*)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Veyon Master – Slideshow</source>
+        <source>TinShareLab Classroom – Slideshow</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -4539,11 +4539,11 @@ Example: [^-]*-(PC[0-9]*)</source>
 <context>
     <name>TestingCommandLinePlugin</name>
     <message>
-        <source>Test internal Veyon components and functions</source>
-        <translation>내부 Veyon 컴포넌트 및 기능을 시험</translation>
+        <source>Test internal TinShareLab Classroom components and functions</source>
+        <translation>내부 TinShareLab Classroom 컴포넌트 및 기능을 시험</translation>
     </message>
     <message>
-        <source>Commands for testing internal components and functions of Veyon</source>
+        <source>Commands for testing internal components and functions of TinShareLab Classroom</source>
         <translation>Veyon의 내부 컴포넌트 및 기능을 시험하는 명령어들</translation>
     </message>
 </context>
@@ -4764,15 +4764,15 @@ Example: [^-]*-(PC[0-9]*)</source>
         <translation>쓰기 권한 없음</translation>
     </message>
     <message>
-        <source>Could not save your personal settings! Please check the user configuration file path using Veyon Configurator.</source>
+        <source>Could not save your personal settings! Please check the user configuration file path using TinShareLab Configurator.</source>
         <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>VeyonServiceControl</name>
     <message>
-        <source>Veyon Service</source>
-        <translation>Veyon Service</translation>
+        <source>TinShareLab Service</source>
+        <translation>TinShareLab Service</translation>
     </message>
 </context>
 <context>

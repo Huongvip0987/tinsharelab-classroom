@@ -68,7 +68,7 @@
       <item>
        <widget class="QLabel" name="label_6">
         <property name="text">
-         <string>Please refer to the &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;Veyon Administrator Manual&lt;/a&gt; for more information.</string>
+         <string>Please refer to the &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;TinShareLab Classroom Administrator Manual&lt;/a&gt; for more information.</string>
         </property>
         <property name="openExternalLinks">
          <bool>true</bool>

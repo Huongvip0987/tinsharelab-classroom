@@ -13,7 +13,7 @@ function(add_windows_resources TARGET)
 	endif()
 
 	if (NOT arg_DESCRIPTION)
-		set(arg_DESCRIPTION "Veyon ${arg_NAME}")
+		set(arg_DESCRIPTION "TinShareLab ${arg_NAME}")
 	endif()
 
 	if (arg_CONSOLE)
@@ -47,7 +47,7 @@ function(add_windows_resources TARGET)
 		"		BEGIN\n"
 		"			VALUE \"Comments\",         \"Virtual Eye On Networks (https://veyon.io)\\0\"\n"
 		"			VALUE \"CompanyName\",      \"Veyon Solutions\\0\"\n"
-		"			VALUE \"ProductName\",      \"Veyon\\0\"\n"
+		"			VALUE \"ProductName\",      \"TinShareLab Classroom\\0\"\n"
 		"			VALUE \"ProductVersion\",   \"${VERSION_STRING}\\0\"\n"
 		"			VALUE \"FileDescription\",  \"${arg_DESCRIPTION}\\0\"\n"
 		"			VALUE \"FileVersion\",      \"${VERSION_STRING}\\0\"\n"

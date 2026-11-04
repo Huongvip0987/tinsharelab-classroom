@@ -2,8 +2,8 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <source>About Veyon</source>
-        <translation>Veyon-i buruz</translation>
+        <source>About TinShareLab Classroom</source>
+        <translation>TinShareLab Classroom-i buruz</translation>
     </message>
     <message>
         <source>About</source>
@@ -32,18 +32,18 @@
     <message>
         <source>Current language not translated yet (or native English).
 
-If you&apos;re interested in translating Veyon into your local or another language or want to improve an existing translation, please contact a Veyon developer!</source>
+If you&apos;re interested in translating TinShareLab Classroom into your local or another language or want to improve an existing translation, please contact a TinShareLab Classroom developer!</source>
         <translation>Oraingo hizkuntza ez da itzuli oraindik (edo jatorrizko ingelesa).
 
-Veyon zure tokiko hizkuntzara edo beste hizkuntza batera itzultzeko interesa baduzu edo lehendik dagoen itzulpen bat hobetu nahi baduzu, jarri harremanetan Veyoneko garatzaile batekin!</translation>
+TinShareLab Classroom zure tokiko hizkuntzara edo beste hizkuntza batera itzultzeko interesa baduzu edo lehendik dagoen itzulpen bat hobetu nahi baduzu, jarri harremanetan Veyoneko garatzaile batekin!</translation>
     </message>
     <message>
         <source>License</source>
         <translation>Lizentzia</translation>
     </message>
     <message>
-        <source>About Veyon %1</source>
-        <translation>Veyon %1-i buruz</translation>
+        <source>About TinShareLab Classroom %1</source>
+        <translation>TinShareLab Classroom %1-i buruz</translation>
     </message>
 </context>
 <context>
@@ -73,8 +73,8 @@ Veyon zure tokiko hizkuntzara edo beste hizkuntza batera itzultzeko interesa bad
         <translation>Ordenagailuko sarbidea baimenduta duten erabiltzaile-taldeak</translation>
     </message>
     <message>
-        <source>Please add the groups whose members should be authorized to access computers in your Veyon network.</source>
-        <translation>Gehitu zure Veyon sareko ordenagailuetara sartzeko baimena duten taldeak.</translation>
+        <source>Please add the groups whose members should be authorized to access computers in your TinShareLab Classroom network.</source>
+        <translation>Gehitu zure TinShareLab Classroom sareko ordenagailuetara sartzeko baimena duten taldeak.</translation>
     </message>
     <message>
         <source>Authorized user groups</source>
@@ -333,8 +333,8 @@ Veyon zure tokiko hizkuntzara edo beste hizkuntza batera itzultzeko interesa bad
         <translation>3) Esportatu gako publikoa eta inportatu izen bereko bezero-ordenagailu guztietan.</translation>
     </message>
     <message>
-        <source>Please refer to the &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;Veyon Administrator Manual&lt;/a&gt; for more information.</source>
-        <translation>Mesedez, ikusi &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;Veyon administratzailearen eskuliburua&lt;/a&gt;  informazio gehiago lortzeko.</translation>
+        <source>Please refer to the &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;TinShareLab Classroom Administrator Manual&lt;/a&gt; for more information.</source>
+        <translation>Mesedez, ikusi &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;TinShareLab Classroom administratzailearen eskuliburua&lt;/a&gt;  informazio gehiago lortzeko.</translation>
     </message>
     <message>
         <source>Key file directories</source>
@@ -1051,8 +1051,8 @@ Ziurtatu gakoen izenak ordenagailu guztietan berdinak direla.</translation>
         <translation>Ordenagailua lineaz kanpo edo deskonektatuta</translation>
     </message>
     <message>
-        <source>Veyon Server unreachable or not running</source>
-        <translation>Veyon zerbitzaria ezin da atzitu edo ez dago martxan</translation>
+        <source>TinShareLab Server unreachable or not running</source>
+        <translation>TinShareLab Classroom zerbitzaria ezin da atzitu edo ez dago martxan</translation>
     </message>
     <message>
         <source>Authentication failed or access denied</source>
@@ -1118,8 +1118,8 @@ Ziurtatu gakoen izenak ordenagailu guztietan berdinak direla.</translation>
         <translation>&quot;%2&quot; ostalariaren &quot;%1&quot; erabiltzailea ordenagailu honetara sartzen saiatu da baina blokeatua izan da sarbide-kontrolaren ezarpenengatik.</translation>
     </message>
     <message>
-        <source>Veyon Service %1 at %2:%3</source>
-        <translation>Veyon zerbitzua %1  %2:%3-n</translation>
+        <source>TinShareLab Service %1 at %2:%3</source>
+        <translation>TinShareLab Classroom zerbitzua %1  %2:%3-n</translation>
     </message>
     <message>
         <source>Active connections:</source>
@@ -1141,8 +1141,8 @@ Ziurtatu gakoen izenak ordenagailu guztietan berdinak direla.</translation>
         <translation>Sareko objektuen direktorioaren plugina falta da</translation>
     </message>
     <message>
-        <source>No default network object directory plugin was found. Please check your installation or configure a different network object directory backend via Veyon Configurator.</source>
-        <translation>Ez da sareko objektuen direktorioko plugin lehenetsirik aurkitu. Egiaztatu zure instalazioa edo konfiguratu beste sareko objektuen direktorioren-motorra bat Veyon Konfiguratzailearen bidez.</translation>
+        <source>No default network object directory plugin was found. Please check your installation or configure a different network object directory backend via TinShareLab Configurator.</source>
+        <translation>Ez da sareko objektuen direktorioko plugin lehenetsirik aurkitu. Egiaztatu zure instalazioa edo konfiguratu beste sareko objektuen direktorioren-motorra bat TinShareLab Classroom Konfiguratzailearen bidez.</translation>
     </message>
     <message>
         <source>Computer name;Hostname;User</source>
@@ -1203,8 +1203,8 @@ Ziurtatu gakoen izenak ordenagailu guztietan berdinak direla.</translation>
 <context>
     <name>ConfigCommands</name>
     <message>
-        <source>Clear system-wide Veyon configuration</source>
-        <translation>Garbitu sistema osorako Veyon konfigurazioa</translation>
+        <source>Clear system-wide TinShareLab Classroom configuration</source>
+        <translation>Garbitu sistema osorako TinShareLab Classroom konfigurazioa</translation>
     </message>
     <message>
         <source>List all configuration keys and values</source>
@@ -1267,27 +1267,27 @@ Ziurtatu gakoen izenak ordenagailu guztietan berdinak direla.</translation>
         <translation>Zehaztu baliozko balio bat.</translation>
     </message>
     <message>
-        <source>Configure Veyon at command line</source>
-        <translation>Konfiguratu Veyon komando lerroan</translation>
+        <source>Configure TinShareLab Classroom at command line</source>
+        <translation>Konfiguratu TinShareLab Classroom komando lerroan</translation>
     </message>
     <message>
-        <source>Commands for managing the configuration of Veyon</source>
-        <translation>Veyon-en konfigurazioa kudeatzeko komandoak</translation>
+        <source>Commands for managing the configuration of TinShareLab Classroom</source>
+        <translation>TinShareLab Classroom-en konfigurazioa kudeatzeko komandoak</translation>
     </message>
 </context>
 <context>
     <name>ConfigurationManager</name>
     <message>
-        <source>Could not modify the autostart property for the Veyon Service.</source>
-        <translation>Ezin izan da Veyon Zerbitzuaren abiarazte automatikoaren propietatea aldatu.</translation>
+        <source>Could not modify the autostart property for the TinShareLab Service.</source>
+        <translation>Ezin izan da TinShareLab Classroom Zerbitzuaren abiarazte automatikoaren propietatea aldatu.</translation>
     </message>
     <message>
-        <source>Could not configure the firewall configuration for the Veyon Server.</source>
-        <translation>Ezin izan da Veyon zerbitzariaren suebakiaren konfigurazioa ezarri.</translation>
+        <source>Could not configure the firewall configuration for the TinShareLab Server.</source>
+        <translation>Ezin izan da TinShareLab Classroom zerbitzariaren suebakiaren konfigurazioa ezarri.</translation>
     </message>
     <message>
-        <source>Could not configure the firewall configuration for the Veyon Worker.</source>
-        <translation>Ezin izan da Veyon Worker-en suebakiaren konfigurazioa ezarri.</translation>
+        <source>Could not configure the firewall configuration for the TinShareLab Classroom Worker.</source>
+        <translation>Ezin izan da TinShareLab Classroom Worker-en suebakiaren konfigurazioa ezarri.</translation>
     </message>
     <message>
         <source>Could not apply platform-specific configuration settings.</source>
@@ -1301,8 +1301,8 @@ Ziurtatu gakoen izenak ordenagailu guztietan berdinak direla.</translation>
 <context>
     <name>DemoClient</name>
     <message>
-        <source>Veyon Demo</source>
-        <translation>Veyon Demo</translation>
+        <source>TinShareLab Demo</source>
+        <translation>TinShareLab Demo</translation>
     </message>
 </context>
 <context>
@@ -1648,8 +1648,8 @@ Ziurtatu gakoen izenak ordenagailu guztietan berdinak direla.</translation>
         <translation>ARGUMENTUAK</translation>
     </message>
     <message>
-        <source>Starts the specified feature on the specified host by connecting to the Veyon Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features. Depending on the feature, additional arguments (such as the text message to display) encoded as a single JSON string have to be specified. Please refer to the developer documentation for more information</source>
-        <translation>Zehaztutako funtzioa abiarazten du zehaztutako ostalarian urrutitik exekutatzen den Veyon zerbitzarira konektatuz. Funtzioa izenaren edo UIDaren arabera zehaztu daiteke. Erabili ``show`` komandoa erabilgarri dauden funtzio guztiak ikusteko. Eginbidearen arabera, JSON kate bakar gisa kodetutako argumentu gehigarriak (adibidez, bistaratu beharreko testu-mezua) zehaztu behar dira. Ikusi garatzaileen dokumentazioa informazio gehiago lortzeko</translation>
+        <source>Starts the specified feature on the specified host by connecting to the TinShareLab Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features. Depending on the feature, additional arguments (such as the text message to display) encoded as a single JSON string have to be specified. Please refer to the developer documentation for more information</source>
+        <translation>Zehaztutako funtzioa abiarazten du zehaztutako ostalarian urrutitik exekutatzen den TinShareLab Classroom zerbitzarira konektatuz. Funtzioa izenaren edo UIDaren arabera zehaztu daiteke. Erabili ``show`` komandoa erabilgarri dauden funtzio guztiak ikusteko. Eginbidearen arabera, JSON kate bakar gisa kodetutako argumentu gehigarriak (adibidez, bistaratu beharreko testu-mezua) zehaztu behar dira. Ikusi garatzaileen dokumentazioa informazio gehiago lortzeko</translation>
     </message>
     <message>
         <source>Lock the screen</source>
@@ -1668,8 +1668,8 @@ Ziurtatu gakoen izenak ordenagailu guztietan berdinak direla.</translation>
         <translation>Abiarazi aplikazio bat</translation>
     </message>
     <message>
-        <source>Stops the specified feature on the specified host by connecting to the Veyon Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features.</source>
-        <translation>Zehaztutako ostalarian zehaztutako funtzioa geldiarazten du urrutitik exekutatzen den Veyon zerbitzarira konektatuz. Funtzioa izenaren edo UIDaren arabera zehaztu daiteke. Erabili ``show`` komandoa erabilgarri dauden funtzio guztiak ikusteko.</translation>
+        <source>Stops the specified feature on the specified host by connecting to the TinShareLab Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features.</source>
+        <translation>Zehaztutako ostalarian zehaztutako funtzioa geldiarazten du urrutitik exekutatzen den TinShareLab Classroom zerbitzarira konektatuz. Funtzioa izenaren edo UIDaren arabera zehaztu daiteke. Erabili ``show`` komandoa erabilgarri dauden funtzio guztiak ikusteko.</translation>
     </message>
     <message>
         <source>Unlock the screen</source>
@@ -2213,12 +2213,12 @@ Ziurtatu gakoen izenak ordenagailu guztietan berdinak direla.</translation>
         <translation>Autentifikazio-gakoak ez daude behar bezala konfiguratuta ordenagailu honetan.</translation>
     </message>
     <message>
-        <source>Veyon service</source>
-        <translation>Veyon zerbitzua</translation>
+        <source>TinShareLab service</source>
+        <translation>TinShareLab Classroom zerbitzua</translation>
     </message>
     <message>
-        <source>The Veyon service needs to be stopped temporarily in order to remove the log files. Continue?</source>
-        <translation>Veyon zerbitzua aldi baterako gelditu behar da erregistro-fitxategiak kentzeko. Jarraitu nahi duzu?</translation>
+        <source>The TinShareLab service needs to be stopped temporarily in order to remove the log files. Continue?</source>
+        <translation>TinShareLab Classroom zerbitzua aldi baterako gelditu behar da erregistro-fitxategiak kentzeko. Jarraitu nahi duzu?</translation>
     </message>
     <message>
         <source>Log files cleared</source>
@@ -3018,7 +3018,7 @@ Ziurtatu gakoen izenak ordenagailu guztietan berdinak direla.</translation>
         <translation>%1 (kargatu erabiltzaileak eta taldeak LDAP/ADtik)</translation>
     </message>
     <message>
-        <source>LDAP/AD support for Veyon</source>
+        <source>LDAP/AD support for TinShareLab Classroom</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -3101,8 +3101,8 @@ Ziurtatu gakoen izenak ordenagailu guztietan berdinak direla.</translation>
 <context>
     <name>MainWindow</name>
     <message>
-        <source>Veyon Configurator</source>
-        <translation>Veyon Konfiguratzailea</translation>
+        <source>TinShareLab Configurator</source>
+        <translation>TinShareLab Classroom Konfiguratzailea</translation>
     </message>
     <message>
         <source>General</source>
@@ -3161,8 +3161,8 @@ Ziurtatu gakoen izenak ordenagailu guztietan berdinak direla.</translation>
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <source>About Veyon</source>
-        <translation>Veyon-i buruz</translation>
+        <source>About TinShareLab Classroom</source>
+        <translation>TinShareLab Classroom-i buruz</translation>
     </message>
     <message>
         <source>About Qt</source>
@@ -3225,8 +3225,8 @@ Ziurtatu gakoen izenak ordenagailu guztietan berdinak direla.</translation>
         <translation>Erakutsi bakarrik saioa hasita duten erabiltzaileak</translation>
     </message>
     <message>
-        <source>Veyon Configurator %1</source>
-        <translation>Veyon Konfiguratzailea %1</translation>
+        <source>TinShareLab Configurator %1</source>
+        <translation>TinShareLab Classroom Konfiguratzailea %1</translation>
     </message>
     <message>
         <source>Load settings from file</source>
@@ -3261,15 +3261,15 @@ Ziurtatu gakoen izenak ordenagailu guztietan berdinak direla.</translation>
         <translation>Konfigurazioa ezin da idatzi</translation>
     </message>
     <message>
-        <source>The local configuration backend reported that the configuration is not writable! Please run Veyon Configurator with higher privileges.</source>
-        <translation>Tokiko konfigurazioaren motorrak konfigurazioa ezin dela idatzi jakinarazi du! Exekutatu Veyon Konfiguratzailea pribilegio handiagoekin.</translation>
+        <source>The local configuration backend reported that the configuration is not writable! Please run TinShareLab Configurator with higher privileges.</source>
+        <translation>Tokiko konfigurazioaren motorrak konfigurazioa ezin dela idatzi jakinarazi du! Exekutatu TinShareLab Classroom Konfiguratzailea pribilegio handiagoekin.</translation>
     </message>
     <message>
         <source>Authentication impossible</source>
         <translation>Autentifikazioa ezinezkoa</translation>
     </message>
     <message>
-        <source>No authentication key files were found or your current ones are outdated. Please create new key files using Veyon Configurator. Alternatively set up logon authentication using Veyon Configurator. Otherwise you won&apos;t be able to access computers using Veyon.</source>
+        <source>No authentication key files were found or your current ones are outdated. Please create new key files using TinShareLab Configurator. Alternatively set up logon authentication using TinShareLab Configurator. Otherwise you won&apos;t be able to access computers using TinShareLab Classroom.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3285,8 +3285,8 @@ Ziurtatu gakoen izenak ordenagailu guztietan berdinak direla.</translation>
         <translation>Funtzio aktiboa</translation>
     </message>
     <message>
-        <source>The feature &quot;%1&quot; is still active. Please stop it before closing Veyon.</source>
-        <translation>&quot;% 1&quot; funtzioa aktibo dago oraindik. Mesedez, gelditu Veyon itxi aurretik.</translation>
+        <source>The feature &quot;%1&quot; is still active. Please stop it before closing TinShareLab Classroom.</source>
+        <translation>&quot;% 1&quot; funtzioa aktibo dago oraindik. Mesedez, gelditu TinShareLab Classroom itxi aurretik.</translation>
     </message>
     <message>
         <source>Use custom computer arrangement.
@@ -3685,8 +3685,8 @@ Luze sakatu fitxategi batetik kargatzeko edo uneko antolamendua fitxategi batera
         <translation>Ireki webgunea</translation>
     </message>
     <message>
-        <source>e.g. Veyon</source>
-        <translation>adib. Veyon</translation>
+        <source>e.g. TinShareLab Classroom</source>
+        <translation>adib. TinShareLab Classroom</translation>
     </message>
     <message>
         <source>Remember and add to website menu</source>
@@ -3708,8 +3708,8 @@ Luze sakatu fitxategi batetik kargatzeko edo uneko antolamendua fitxategi batera
 <context>
     <name>PasswordDialog</name>
     <message>
-        <source>Veyon Logon</source>
-        <translation>Veyon saioa</translation>
+        <source>TinShareLab Logon</source>
+        <translation>TinShareLab Classroom saioa</translation>
     </message>
     <message>
         <source>Please enter your username and password in order to access computers.</source>
@@ -3953,12 +3953,12 @@ Mesedez, gorde zure lana eta itxi programa guztiak.</translation>
 <context>
     <name>RemoteAccessWidget</name>
     <message>
-        <source>%1 - Veyon Remote Access</source>
-        <translation>%1 - Veyon urruneko sarbidea</translation>
+        <source>%1 - TinShareLab Remote Access</source>
+        <translation>%1 - TinShareLab Classroom urruneko sarbidea</translation>
     </message>
     <message>
-        <source>%1 - %2 - Veyon Remote Access</source>
-        <translation>%1 - %2 - Veyon urruneko sarbidea</translation>
+        <source>%1 - %2 - TinShareLab Remote Access</source>
+        <translation>%1 - %2 - TinShareLab Classroom urruneko sarbidea</translation>
     </message>
 </context>
 <context>
@@ -4260,8 +4260,8 @@ Normalean hori beharrezkoa da terminal zerbitzariak onartzeko.</translation>
         <translation>Sareko ataka-zenbakiak</translation>
     </message>
     <message>
-        <source>Veyon server</source>
-        <translation>Veyon zerbitzaria</translation>
+        <source>TinShareLab server</source>
+        <translation>TinShareLab Classroom zerbitzaria</translation>
     </message>
     <message>
         <source>Internal VNC server</source>
@@ -4300,12 +4300,12 @@ Normalean hori beharrezkoa da terminal zerbitzariak onartzeko.</translation>
         <translation>Plugina:</translation>
     </message>
     <message>
-        <source>Restart Veyon Service</source>
-        <translation>Berrabiarazi Veyon zerbitzua</translation>
+        <source>Restart TinShareLab Service</source>
+        <translation>Berrabiarazi TinShareLab Classroom zerbitzua</translation>
     </message>
     <message>
-        <source>All settings were saved successfully. In order to take effect the Veyon service needs to be restarted. Restart it now?</source>
-        <translation>Ezarpen guztiak behar bezala gorde dira. Eragina izateko Veyon zerbitzua berrabiarazi behar da. Orain berrabiarazi?</translation>
+        <source>All settings were saved successfully. In order to take effect the TinShareLab service needs to be restarted. Restart it now?</source>
+        <translation>Ezarpen guztiak behar bezala gorde dira. Eragina izateko TinShareLab Classroom zerbitzua berrabiarazi behar da. Orain berrabiarazi?</translation>
     </message>
     <message>
         <source>Running</source>
@@ -4340,8 +4340,8 @@ Example: [^-]*-(PC[0-9]*)</source>
 Adibidea: [^ -] * - (PC [0-9] *)</translation>
     </message>
     <message>
-        <source>Enable if a single Veyon Server instance should be launched for the currently active session, no matter if local or remote.</source>
-        <translation>Gaitu Veyon Zerbitzari instantzia bat abiarazi behar bada une honetan aktibo dagoen saiorako, ez dio axola tokiko edo urruneko.</translation>
+        <source>Enable if a single TinShareLab Server instance should be launched for the currently active session, no matter if local or remote.</source>
+        <translation>Gaitu TinShareLab Classroom Zerbitzari instantzia bat abiarazi behar bada une honetan aktibo dagoen saiorako, ez dio axola tokiko edo urruneko.</translation>
     </message>
     <message>
         <source>Environment variable name</source>
@@ -4382,28 +4382,28 @@ Adibidea: [^ -] * - (PC [0-9] *)</translation>
 <context>
     <name>ServiceControlCommands</name>
     <message>
-        <source>Register Veyon Service</source>
-        <translation>Erregistratu Veyon zerbitzua</translation>
+        <source>Register TinShareLab Service</source>
+        <translation>Erregistratu TinShareLab Classroom zerbitzua</translation>
     </message>
     <message>
-        <source>Unregister Veyon Service</source>
-        <translation>Veyon zerbitzuaren erregistroa kendu</translation>
+        <source>Unregister TinShareLab Service</source>
+        <translation>TinShareLab Classroom zerbitzuaren erregistroa kendu</translation>
     </message>
     <message>
-        <source>Start Veyon Service</source>
-        <translation>Abiarazi Veyon zerbitzua</translation>
+        <source>Start TinShareLab Service</source>
+        <translation>Abiarazi TinShareLab Classroom zerbitzua</translation>
     </message>
     <message>
-        <source>Stop Veyon Service</source>
-        <translation>Gelditu Veyon zerbitzua</translation>
+        <source>Stop TinShareLab Service</source>
+        <translation>Gelditu TinShareLab Classroom zerbitzua</translation>
     </message>
     <message>
-        <source>Restart Veyon Service</source>
-        <translation>Berrabiarazi Veyon zerbitzua</translation>
+        <source>Restart TinShareLab Service</source>
+        <translation>Berrabiarazi TinShareLab Classroom zerbitzua</translation>
     </message>
     <message>
-        <source>Query status of Veyon Service</source>
-        <translation>Kontsultatu Veyon zerbitzuaren egoera</translation>
+        <source>Query status of TinShareLab Service</source>
+        <translation>Kontsultatu TinShareLab Classroom zerbitzuaren egoera</translation>
     </message>
     <message>
         <source>Service is running</source>
@@ -4414,12 +4414,12 @@ Adibidea: [^ -] * - (PC [0-9] *)</translation>
         <translation>Zerbitzua ez dago lanean</translation>
     </message>
     <message>
-        <source>Configure and control Veyon service</source>
-        <translation>Konfiguratu eta kontrolatu Veyon zerbitzua</translation>
+        <source>Configure and control TinShareLab service</source>
+        <translation>Konfiguratu eta kontrolatu TinShareLab Classroom zerbitzua</translation>
     </message>
     <message>
-        <source>Commands for configuring and controlling Veyon Service</source>
-        <translation>Veyon zerbitzua konfiguratzeko eta kontrolatzeko komandoak</translation>
+        <source>Commands for configuring and controlling TinShareLab Service</source>
+        <translation>TinShareLab Classroom zerbitzua konfiguratzeko eta kontrolatzeko komandoak</translation>
     </message>
 </context>
 <context>
@@ -4433,8 +4433,8 @@ Adibidea: [^ -] * - (PC [0-9] *)</translation>
         <translation>&quot;%1&quot; fitxategia ez da existitzen!</translation>
     </message>
     <message>
-        <source>Interactive shell and script execution for Veyon CLI</source>
-        <translation>Veyon CLIrako shell interaktiboa eta scripten exekuzioa</translation>
+        <source>Interactive shell and script execution for TinShareLab CLI</source>
+        <translation>TinShareLab Classroom CLIrako shell interaktiboa eta scripten exekuzioa</translation>
     </message>
     <message>
         <source>Commands for shell functionalities</source>
@@ -4464,8 +4464,8 @@ Adibidea: [^ -] * - (PC [0-9] *)</translation>
         <translation>Ikusi beste leiho batean</translation>
     </message>
     <message>
-        <source>Veyon Master – Slideshow</source>
-        <translation>Veyon Irakaslea – Diaporama</translation>
+        <source>TinShareLab Classroom – Slideshow</source>
+        <translation>TinShareLab Classroom Irakaslea – Diaporama</translation>
     </message>
 </context>
 <context>
@@ -4547,11 +4547,11 @@ Adibidea: [^ -] * - (PC [0-9] *)</translation>
 <context>
     <name>TestingCommandLinePlugin</name>
     <message>
-        <source>Test internal Veyon components and functions</source>
+        <source>Test internal TinShareLab Classroom components and functions</source>
         <translation>Probatu Veyonen barne osagaiak eta funtzioak</translation>
     </message>
     <message>
-        <source>Commands for testing internal components and functions of Veyon</source>
+        <source>Commands for testing internal components and functions of TinShareLab Classroom</source>
         <translation>Veyonen barne osagaiak eta funtzioak probatzeko komandoak</translation>
     </message>
 </context>
@@ -4772,15 +4772,15 @@ Adibidea: [^ -] * - (PC [0-9] *)</translation>
         <translation>Ez dago idazteko sarbiderik</translation>
     </message>
     <message>
-        <source>Could not save your personal settings! Please check the user configuration file path using Veyon Configurator.</source>
-        <translation>Ezin izan dira zure ezarpen pertsonalak gorde! Mesedez, egiaztatu erabiltzailearen konfigurazio fitxategiaren bidea Veyon Konfiguratzailea erabiliz.</translation>
+        <source>Could not save your personal settings! Please check the user configuration file path using TinShareLab Configurator.</source>
+        <translation>Ezin izan dira zure ezarpen pertsonalak gorde! Mesedez, egiaztatu erabiltzailearen konfigurazio fitxategiaren bidea TinShareLab Classroom Konfiguratzailea erabiliz.</translation>
     </message>
 </context>
 <context>
     <name>VeyonServiceControl</name>
     <message>
-        <source>Veyon Service</source>
-        <translation>Veyon zerbitzua</translation>
+        <source>TinShareLab Service</source>
+        <translation>TinShareLab Classroom zerbitzua</translation>
     </message>
 </context>
 <context>

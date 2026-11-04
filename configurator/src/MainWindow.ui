@@ -3,7 +3,7 @@
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
   <property name="windowTitle">
-   <string>Veyon Configurator</string>
+   <string>TinShareLab Configurator</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../resources/configurator.qrc">
@@ -220,7 +220,7 @@
      <normaloff>:/core/help-about.png</normaloff>:/core/help-about.png</iconset>
    </property>
    <property name="text">
-    <string>About Veyon</string>
+    <string>About TinShareLab Classroom</string>
    </property>
   </action>
   <action name="actionAboutQt">

@@ -12,7 +12,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>About Veyon</string>
+   <string>About TinShareLab Classroom</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../resources/core.qrc">
@@ -80,7 +80,7 @@
         </font>
        </property>
        <property name="text">
-        <string>About Veyon</string>
+        <string>About TinShareLab Classroom</string>
        </property>
       </widget>
      </item>
@@ -118,7 +118,7 @@
        <item row="0" column="0" colspan="2">
         <widget class="QLabel" name="label_3">
          <property name="text">
-          <string notr="true">Veyon - Virtual Eye On Networks</string>
+          <string notr="true">TinShareLab Classroom - based on Veyon, Virtual Eye On Networks</string>
          </property>
         </widget>
        </item>
@@ -247,7 +247,7 @@
          <property name="text">
           <string>Current language not translated yet (or native English).
 
-If you're interested in translating Veyon into your local or another language or want to improve an existing translation, please contact a Veyon developer!</string>
+If you're interested in translating TinShareLab Classroom into your local or another language or want to improve an existing translation, please contact a TinShareLab Classroom developer!</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>

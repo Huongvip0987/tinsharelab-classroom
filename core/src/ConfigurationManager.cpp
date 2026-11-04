@@ -54,7 +54,7 @@ bool ConfigurationManager::applyConfiguration()
 	// update Veyon Service configuration
 	if( VeyonServiceControl().setAutostart( m_configuration.autostartService() ) == false )
 	{
-		m_errorString = tr("Could not modify the autostart property for the Veyon Service.");
+		m_errorString = tr("Could not modify the autostart property for the TinShareLab Service.");
 		return false;
 	}
 
@@ -64,7 +64,7 @@ bool ConfigurationManager::applyConfiguration()
 											QStringLiteral("Veyon Server"),
 											m_configuration.isFirewallExceptionEnabled() ) == false )
 	{
-		m_errorString = tr("Could not configure the firewall configuration for the Veyon Server.");
+		m_errorString = tr("Could not configure the firewall configuration for the TinShareLab Server.");
 		return false;
 	}
 
@@ -72,7 +72,7 @@ bool ConfigurationManager::applyConfiguration()
 											QStringLiteral("Veyon Worker"),
 											m_configuration.isFirewallExceptionEnabled() ) == false )
 	{
-		m_errorString = tr("Could not configure the firewall configuration for the Veyon Worker.");
+		m_errorString = tr("Could not configure the firewall configuration for the TinShareLab Classroom Worker.");
 		return false;
 	}
 

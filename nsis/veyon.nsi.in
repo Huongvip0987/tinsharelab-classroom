@@ -144,7 +144,7 @@ RequestExecutionLevel admin
 
 ######################################################################
 
-Section "Veyon Service" SEC_SERVICE
+Section "TinShareLab Service" SEC_SERVICE
 SectionIn RO
 ${INSTALL_TYPE}
 ClearErrors
@@ -207,7 +207,7 @@ ${EndIf}
 ExecWait '"$INSTDIR\veyon-wcli.exe" service start'
 SectionEnd
 
-Section "Veyon Master" SEC_MASTER
+Section "TinShareLab Classroom" SEC_MASTER
 ${INSTALL_TYPE}
 SetOutPath "$INSTDIR"
 File "veyon-master.exe"
@@ -216,7 +216,7 @@ ${GetParameters} $R0
 ${GetOptions} $R0 "/NoStartMenuFolder" $R1
 ${If} ${Errors}
 CreateDirectory "$SMPROGRAMS\TinShareLab Classroom"
-CreateShortCut "$SMPROGRAMS\TinShareLab Classroom\Veyon Master.lnk" "$INSTDIR\${MAIN_APP_EXE}"
+CreateShortCut "$SMPROGRAMS\TinShareLab Classroom\TinShareLab Classroom.lnk" "$INSTDIR\${MAIN_APP_EXE}"
 ${EndIf}
 CreateShortCut "$DESKTOP\TinShareLab Classroom.lnk" "$INSTDIR\${MAIN_APP_EXE}"
 # one-button install for the whole room, from the teacher machine
@@ -268,14 +268,14 @@ ${GetParameters} $R0
 ${GetOptions} $R0 "/NoStartMenuFolder" $R1
 ${If} ${Errors}
 CreateDirectory "$SMPROGRAMS\TinShareLab Classroom"
-CreateShortCut "$SMPROGRAMS\TinShareLab Classroom\Veyon Configurator.lnk" "$INSTDIR\veyon-configurator.exe"
+CreateShortCut "$SMPROGRAMS\TinShareLab Classroom\TinShareLab Configurator.lnk" "$INSTDIR\veyon-configurator.exe"
 CreateShortCut "$SMPROGRAMS\TinShareLab Classroom\Uninstall TinShareLab Classroom.lnk" "$INSTDIR\uninstall.exe"
 WriteIniStr "$INSTDIR\TinShareLab website.url" "InternetShortcut" "URL" "${WEB_SITE}"
 CreateShortCut "$SMPROGRAMS\TinShareLab Classroom\TinShareLab Website.lnk" "$INSTDIR\TinShareLab website.url"
 ${EndIf}
 
 WriteRegStr ${REG_ROOT} "${REG_APP_PATH}" "" "$INSTDIR\${MAIN_APP_EXE}"
-WriteRegStr ${REG_ROOT} "${UNINSTALL_PATH}"  "DisplayName" "Veyon"
+WriteRegStr ${REG_ROOT} "${UNINSTALL_PATH}"  "DisplayName" "${APP_NAME}"
 WriteRegStr ${REG_ROOT} "${UNINSTALL_PATH}"  "UninstallString" "$INSTDIR\uninstall.exe"
 WriteRegStr ${REG_ROOT} "${UNINSTALL_PATH}"  "DisplayIcon" "$INSTDIR\${MAIN_APP_EXE}"
 WriteRegStr ${REG_ROOT} "${UNINSTALL_PATH}"  "DisplayVersion" "${VERSION}"
@@ -317,8 +317,8 @@ RmDir /r "$INSTDIR\deploy"
 
 RmDir "$INSTDIR"
 
-Delete "$SMPROGRAMS\TinShareLab Classroom\Veyon Master.lnk"
-Delete "$SMPROGRAMS\TinShareLab Classroom\Veyon Configurator.lnk"
+Delete "$SMPROGRAMS\TinShareLab Classroom\TinShareLab Classroom.lnk"
+Delete "$SMPROGRAMS\TinShareLab Classroom\TinShareLab Configurator.lnk"
 Delete "$SMPROGRAMS\TinShareLab Classroom\Uninstall TinShareLab Classroom.lnk"
 Delete "$SMPROGRAMS\TinShareLab Classroom\TinShareLab Website.lnk"
 RmDir "$SMPROGRAMS\TinShareLab Classroom"
@@ -338,10 +338,10 @@ FunctionEnd
 
 ######################################################################
 
-LangString DESC_SEC_SERVICE ${LANG_ENGLISH} "Veyon service and common files required on all computers"
-LangString DESC_SEC_SERVICE ${LANG_GERMAN} "Veyon-Dienst und gemeinsame Dateien, die auf allen Computern benötigt werden"
-LangString DESC_SEC_MASTER ${LANG_ENGLISH} "Master application for monitoring and controlling Veyon client computers"
-LangString DESC_SEC_MASTER ${LANG_GERMAN} "Master-Applikation zum Beobachten und Steuern von Veyon-Client-Computern"
+LangString DESC_SEC_SERVICE ${LANG_ENGLISH} "TinShareLab service and common files required on all computers"
+LangString DESC_SEC_SERVICE ${LANG_GERMAN} "TinShareLab-Dienst und gemeinsame Dateien, die auf allen Computern benötigt werden"
+LangString DESC_SEC_MASTER ${LANG_ENGLISH} "Master application for monitoring and controlling TinShareLab client computers"
+LangString DESC_SEC_MASTER ${LANG_GERMAN} "Master-Applikation zum Beobachten und Steuern von TinShareLab-Client-Computern"
 LangString DESC_SEC_INTERCEPTION ${LANG_ENGLISH} "Special input device driver required for intercepting keyboard shortcuts such as Ctrl+Alt+Del in screen lock mode"
 LangString DESC_SEC_INTERCEPTION ${LANG_GERMAN} "Spezieller Eingabegerätetreiber, der zum Abfangen von Tastenkombinationen wie Strg+Alt+Entf im Bildschirmsperr-Modus benötigt wird"
 

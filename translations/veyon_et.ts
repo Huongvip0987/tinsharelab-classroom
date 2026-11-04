@@ -2,8 +2,8 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <source>About Veyon</source>
-        <translation>Programmist Veyon</translation>
+        <source>About TinShareLab Classroom</source>
+        <translation>Programmist TinShareLab Classroom</translation>
     </message>
     <message>
         <source>About</source>
@@ -32,7 +32,7 @@
     <message>
         <source>Current language not translated yet (or native English).
 
-If you&apos;re interested in translating Veyon into your local or another language or want to improve an existing translation, please contact a Veyon developer!</source>
+If you&apos;re interested in translating TinShareLab Classroom into your local or another language or want to improve an existing translation, please contact a TinShareLab Classroom developer!</source>
         <translation>Praegune keel pole veel tõlgitud (või emakeel).
 
 Kui olete huvitatud Veyoni tõlkimisest oma kohalikku või mõnda muusse keelde või soovite olemasolevat tõlget paremaks muuta, võtke ühendust Veyoni arendajaga!</translation>
@@ -42,7 +42,7 @@ Kui olete huvitatud Veyoni tõlkimisest oma kohalikku või mõnda muusse keelde 
         <translation>Litsents</translation>
     </message>
     <message>
-        <source>About Veyon %1</source>
+        <source>About TinShareLab Classroom %1</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -73,7 +73,7 @@ Kui olete huvitatud Veyoni tõlkimisest oma kohalikku või mõnda muusse keelde 
         <translation>Kasutajarühmad, kellel on juurdepääs arvutile</translation>
     </message>
     <message>
-        <source>Please add the groups whose members should be authorized to access computers in your Veyon network.</source>
+        <source>Please add the groups whose members should be authorized to access computers in your TinShareLab Classroom network.</source>
         <translation>Palun lisage rühmad, mille liikmetel peaks olema õigus pääseda juurde teie Veyoni võrgu arvutitele.</translation>
     </message>
     <message>
@@ -333,8 +333,8 @@ Kui olete huvitatud Veyoni tõlkimisest oma kohalikku või mõnda muusse keelde 
         <translation>3) Eksportige avalik võti ja importige see kõigisse samanimelistesse klientarvutitesse.</translation>
     </message>
     <message>
-        <source>Please refer to the &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;Veyon Administrator Manual&lt;/a&gt; for more information.</source>
-        <translation>Kasutage &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;Veyon administraatori käsiraamatut&lt;/a&gt; lisateabe saamiseks.</translation>
+        <source>Please refer to the &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;TinShareLab Classroom Administrator Manual&lt;/a&gt; for more information.</source>
+        <translation>Kasutage &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;TinShareLab Classroom administraatori käsiraamatut&lt;/a&gt; lisateabe saamiseks.</translation>
     </message>
     <message>
         <source>Key file directories</source>
@@ -1051,8 +1051,8 @@ Veenduge, et üksteisele kuuluvate võtmete nimed oleksid kõikides arvutites id
         <translation>Arvuti on võrguühenduseta või välja lülitatud</translation>
     </message>
     <message>
-        <source>Veyon Server unreachable or not running</source>
-        <translation>Veyon Server pole kättesaadav või ei tööta</translation>
+        <source>TinShareLab Server unreachable or not running</source>
+        <translation>TinShareLab Server pole kättesaadav või ei tööta</translation>
     </message>
     <message>
         <source>Authentication failed or access denied</source>
@@ -1118,7 +1118,7 @@ Veenduge, et üksteisele kuuluvate võtmete nimed oleksid kõikides arvutites id
         <translation>Kasutaja &quot;%1&quot; hostis &quot;%2&quot; üritas sellele arvutile juurde pääseda, kuid on juurdepääsu seadete tõttu blokeeritud.</translation>
     </message>
     <message>
-        <source>Veyon Service %1 at %2:%3</source>
+        <source>TinShareLab Service %1 at %2:%3</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1141,7 +1141,7 @@ Veenduge, et üksteisele kuuluvate võtmete nimed oleksid kõikides arvutites id
         <translation>Võrguobjektide kataloogi pistikprogramm puudub</translation>
     </message>
     <message>
-        <source>No default network object directory plugin was found. Please check your installation or configure a different network object directory backend via Veyon Configurator.</source>
+        <source>No default network object directory plugin was found. Please check your installation or configure a different network object directory backend via TinShareLab Configurator.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1203,7 +1203,7 @@ Veenduge, et üksteisele kuuluvate võtmete nimed oleksid kõikides arvutites id
 <context>
     <name>ConfigCommands</name>
     <message>
-        <source>Clear system-wide Veyon configuration</source>
+        <source>Clear system-wide TinShareLab Classroom configuration</source>
         <translation>Tühi kogu süsteemi hõlmav Veyoni konfiguratsioon</translation>
     </message>
     <message>
@@ -1267,26 +1267,26 @@ Veenduge, et üksteisele kuuluvate võtmete nimed oleksid kõikides arvutites id
         <translation>Palun määrake kehtiv väärtus.</translation>
     </message>
     <message>
-        <source>Configure Veyon at command line</source>
-        <translation>Seadistage Veyon käsureal</translation>
+        <source>Configure TinShareLab Classroom at command line</source>
+        <translation>Seadistage TinShareLab Classroom käsureal</translation>
     </message>
     <message>
-        <source>Commands for managing the configuration of Veyon</source>
+        <source>Commands for managing the configuration of TinShareLab Classroom</source>
         <translation>Käsud Veyoni konfiguratsiooni haldamiseks</translation>
     </message>
 </context>
 <context>
     <name>ConfigurationManager</name>
     <message>
-        <source>Could not modify the autostart property for the Veyon Service.</source>
+        <source>Could not modify the autostart property for the TinShareLab Service.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Could not configure the firewall configuration for the Veyon Server.</source>
+        <source>Could not configure the firewall configuration for the TinShareLab Server.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Could not configure the firewall configuration for the Veyon Worker.</source>
+        <source>Could not configure the firewall configuration for the TinShareLab Classroom Worker.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1301,7 +1301,7 @@ Veenduge, et üksteisele kuuluvate võtmete nimed oleksid kõikides arvutites id
 <context>
     <name>DemoClient</name>
     <message>
-        <source>Veyon Demo</source>
+        <source>TinShareLab Demo</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -1648,7 +1648,7 @@ Veenduge, et üksteisele kuuluvate võtmete nimed oleksid kõikides arvutites id
         <translation>ARGUMENTID</translation>
     </message>
     <message>
-        <source>Starts the specified feature on the specified host by connecting to the Veyon Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features. Depending on the feature, additional arguments (such as the text message to display) encoded as a single JSON string have to be specified. Please refer to the developer documentation for more information</source>
+        <source>Starts the specified feature on the specified host by connecting to the TinShareLab Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features. Depending on the feature, additional arguments (such as the text message to display) encoded as a single JSON string have to be specified. Please refer to the developer documentation for more information</source>
         <translation>Käivitab määratud funktsiooni määratud hostis, luues ühenduse kaugtöötava Veyoni serveriga. Funktsiooni saab määrata nime või UID-ga. Kõigi saadaolevate funktsioonide vaatamiseks kasutage käsku ``show``. Olenevalt funktsioonist tuleb määrata täiendavad argumendid (nt kuvatav tekstsõnum), mis on kodeeritud ühe JSON-stringina. Lisateabe saamiseks vaadake arendaja dokumentatsiooni</translation>
     </message>
     <message>
@@ -1668,7 +1668,7 @@ Veenduge, et üksteisele kuuluvate võtmete nimed oleksid kõikides arvutites id
         <translation>Käivitage rakendus</translation>
     </message>
     <message>
-        <source>Stops the specified feature on the specified host by connecting to the Veyon Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features.</source>
+        <source>Stops the specified feature on the specified host by connecting to the TinShareLab Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features.</source>
         <translation>Peatab määratud funktsiooni määratud hostis, luues ühenduse kaugtöötava Veyoni serveriga. Funktsiooni saab määrata nime või UID-ga. Kõigi saadaolevate funktsioonide vaatamiseks kasutage käsku ``show``.</translation>
     </message>
     <message>
@@ -2213,11 +2213,11 @@ Veenduge, et üksteisele kuuluvate võtmete nimed oleksid kõikides arvutites id
         <translation>Autentimisvõtmed pole selles arvutis õigesti seadistatud.</translation>
     </message>
     <message>
-        <source>Veyon service</source>
+        <source>TinShareLab service</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>The Veyon service needs to be stopped temporarily in order to remove the log files. Continue?</source>
+        <source>The TinShareLab service needs to be stopped temporarily in order to remove the log files. Continue?</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3018,7 +3018,7 @@ Veenduge, et üksteisele kuuluvate võtmete nimed oleksid kõikides arvutites id
         <translation>%1 (laadige kasutajad ja grupid LDAP/AD-st)</translation>
     </message>
     <message>
-        <source>LDAP/AD support for Veyon</source>
+        <source>LDAP/AD support for TinShareLab Classroom</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -3101,7 +3101,7 @@ Veenduge, et üksteisele kuuluvate võtmete nimed oleksid kõikides arvutites id
 <context>
     <name>MainWindow</name>
     <message>
-        <source>Veyon Configurator</source>
+        <source>TinShareLab Configurator</source>
         <translation>Veyoni konfiguraator</translation>
     </message>
     <message>
@@ -3161,8 +3161,8 @@ Veenduge, et üksteisele kuuluvate võtmete nimed oleksid kõikides arvutites id
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <source>About Veyon</source>
-        <translation>Programmist Veyon</translation>
+        <source>About TinShareLab Classroom</source>
+        <translation>Programmist TinShareLab Classroom</translation>
     </message>
     <message>
         <source>About Qt</source>
@@ -3225,7 +3225,7 @@ Veenduge, et üksteisele kuuluvate võtmete nimed oleksid kõikides arvutites id
         <translation>Kuva ainult arvutid, mille kasutajad on sisse logitud</translation>
     </message>
     <message>
-        <source>Veyon Configurator %1</source>
+        <source>TinShareLab Configurator %1</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3261,7 +3261,7 @@ Veenduge, et üksteisele kuuluvate võtmete nimed oleksid kõikides arvutites id
         <translation>Konfiguratsiooni ei saa kirjutada</translation>
     </message>
     <message>
-        <source>The local configuration backend reported that the configuration is not writable! Please run Veyon Configurator with higher privileges.</source>
+        <source>The local configuration backend reported that the configuration is not writable! Please run TinShareLab Configurator with higher privileges.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3269,7 +3269,7 @@ Veenduge, et üksteisele kuuluvate võtmete nimed oleksid kõikides arvutites id
         <translation>Autentimine on võimatu</translation>
     </message>
     <message>
-        <source>No authentication key files were found or your current ones are outdated. Please create new key files using Veyon Configurator. Alternatively set up logon authentication using Veyon Configurator. Otherwise you won&apos;t be able to access computers using Veyon.</source>
+        <source>No authentication key files were found or your current ones are outdated. Please create new key files using TinShareLab Configurator. Alternatively set up logon authentication using TinShareLab Configurator. Otherwise you won&apos;t be able to access computers using TinShareLab Classroom.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3285,7 +3285,7 @@ Veenduge, et üksteisele kuuluvate võtmete nimed oleksid kõikides arvutites id
         <translation>Funktsioon on aktiivne</translation>
     </message>
     <message>
-        <source>The feature &quot;%1&quot; is still active. Please stop it before closing Veyon.</source>
+        <source>The feature &quot;%1&quot; is still active. Please stop it before closing TinShareLab Classroom.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3685,8 +3685,8 @@ Failist arranžeeringu laadimiseks või praeguse arranžeeringu faili salvestami
         <translation>Weebilehe avamine</translation>
     </message>
     <message>
-        <source>e.g. Veyon</source>
-        <translation>näit. Veyon</translation>
+        <source>e.g. TinShareLab Classroom</source>
+        <translation>näit. TinShareLab Classroom</translation>
     </message>
     <message>
         <source>Remember and add to website menu</source>
@@ -3708,7 +3708,7 @@ Failist arranžeeringu laadimiseks või praeguse arranžeeringu faili salvestami
 <context>
     <name>PasswordDialog</name>
     <message>
-        <source>Veyon Logon</source>
+        <source>TinShareLab Logon</source>
         <translation>Veyoni sisselogimine</translation>
     </message>
     <message>
@@ -3953,11 +3953,11 @@ Salvestage oma töö ja sulgege kõik programmid.</translation>
 <context>
     <name>RemoteAccessWidget</name>
     <message>
-        <source>%1 - Veyon Remote Access</source>
+        <source>%1 - TinShareLab Remote Access</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>%1 - %2 - Veyon Remote Access</source>
+        <source>%1 - %2 - TinShareLab Remote Access</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -4260,7 +4260,7 @@ Tavaliselt on see vajalik terminaliserverite toetamiseks.</translation>
         <translation>Võrgu pordi numbrid</translation>
     </message>
     <message>
-        <source>Veyon server</source>
+        <source>TinShareLab server</source>
         <translation>Veyoni server</translation>
     </message>
     <message>
@@ -4300,11 +4300,11 @@ Tavaliselt on see vajalik terminaliserverite toetamiseks.</translation>
         <translation>Pistikprogramm:</translation>
     </message>
     <message>
-        <source>Restart Veyon Service</source>
+        <source>Restart TinShareLab Service</source>
         <translation>Taaskäivitage Veyoni teenus</translation>
     </message>
     <message>
-        <source>All settings were saved successfully. In order to take effect the Veyon service needs to be restarted. Restart it now?</source>
+        <source>All settings were saved successfully. In order to take effect the TinShareLab service needs to be restarted. Restart it now?</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -4340,7 +4340,7 @@ Example: [^-]*-(PC[0-9]*)</source>
 Näide: [^-]*-(PC[0-9]*)</translation>
     </message>
     <message>
-        <source>Enable if a single Veyon Server instance should be launched for the currently active session, no matter if local or remote.</source>
+        <source>Enable if a single TinShareLab Server instance should be launched for the currently active session, no matter if local or remote.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -4382,27 +4382,27 @@ Näide: [^-]*-(PC[0-9]*)</translation>
 <context>
     <name>ServiceControlCommands</name>
     <message>
-        <source>Register Veyon Service</source>
+        <source>Register TinShareLab Service</source>
         <translation>Registreerige Veyoni teenus</translation>
     </message>
     <message>
-        <source>Unregister Veyon Service</source>
+        <source>Unregister TinShareLab Service</source>
         <translation>Tühistage Veyoni teenuse registreerimine</translation>
     </message>
     <message>
-        <source>Start Veyon Service</source>
+        <source>Start TinShareLab Service</source>
         <translation>Käivitage Veyoni teenus</translation>
     </message>
     <message>
-        <source>Stop Veyon Service</source>
+        <source>Stop TinShareLab Service</source>
         <translation>Peatan Veyoni teenuse</translation>
     </message>
     <message>
-        <source>Restart Veyon Service</source>
+        <source>Restart TinShareLab Service</source>
         <translation>Taaskäivitage Veyoni teenus</translation>
     </message>
     <message>
-        <source>Query status of Veyon Service</source>
+        <source>Query status of TinShareLab Service</source>
         <translation>Veyoni teenuse päringu olek</translation>
     </message>
     <message>
@@ -4414,12 +4414,12 @@ Näide: [^-]*-(PC[0-9]*)</translation>
         <translation>Teenus on peatatud</translation>
     </message>
     <message>
-        <source>Configure and control Veyon service</source>
+        <source>Configure and control TinShareLab service</source>
         <translation>Veyoni teenuse konfigureerimine ja juhtimine</translation>
     </message>
     <message>
-        <source>Commands for configuring and controlling Veyon Service</source>
-        <translation>Käsud Veyon Service&apos;i konfigureerimiseks ja juhtimiseks</translation>
+        <source>Commands for configuring and controlling TinShareLab Service</source>
+        <translation>Käsud TinShareLab Service&apos;i konfigureerimiseks ja juhtimiseks</translation>
     </message>
 </context>
 <context>
@@ -4433,8 +4433,8 @@ Näide: [^-]*-(PC[0-9]*)</translation>
         <translation>Faili &quot;%1&quot; ei ole!</translation>
     </message>
     <message>
-        <source>Interactive shell and script execution for Veyon CLI</source>
-        <translation>Interaktiivne kest ja skripti täitmine Veyon CLI jaoks</translation>
+        <source>Interactive shell and script execution for TinShareLab CLI</source>
+        <translation>Interaktiivne kest ja skripti täitmine TinShareLab CLI jaoks</translation>
     </message>
     <message>
         <source>Commands for shell functionalities</source>
@@ -4464,7 +4464,7 @@ Näide: [^-]*-(PC[0-9]*)</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Veyon Master – Slideshow</source>
+        <source>TinShareLab Classroom – Slideshow</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -4547,11 +4547,11 @@ Näide: [^-]*-(PC[0-9]*)</translation>
 <context>
     <name>TestingCommandLinePlugin</name>
     <message>
-        <source>Test internal Veyon components and functions</source>
+        <source>Test internal TinShareLab Classroom components and functions</source>
         <translation>Testige Veyoni sisemisi komponente ja funktsioone</translation>
     </message>
     <message>
-        <source>Commands for testing internal components and functions of Veyon</source>
+        <source>Commands for testing internal components and functions of TinShareLab Classroom</source>
         <translation>Käsud Veyoni sisemiste komponentide ja funktsioonide testimiseks</translation>
     </message>
 </context>
@@ -4772,14 +4772,14 @@ Näide: [^-]*-(PC[0-9]*)</translation>
         <translation>Kirjutusjuurdepääs puudub</translation>
     </message>
     <message>
-        <source>Could not save your personal settings! Please check the user configuration file path using Veyon Configurator.</source>
+        <source>Could not save your personal settings! Please check the user configuration file path using TinShareLab Configurator.</source>
         <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>VeyonServiceControl</name>
     <message>
-        <source>Veyon Service</source>
+        <source>TinShareLab Service</source>
         <translation>Veyoni teenus</translation>
     </message>
 </context>

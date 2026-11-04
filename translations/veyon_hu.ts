@@ -2,8 +2,8 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <source>About Veyon</source>
-        <translation>Veyon-ról</translation>
+        <source>About TinShareLab Classroom</source>
+        <translation>TinShareLab Classroom-ról</translation>
     </message>
     <message>
         <source>About</source>
@@ -32,18 +32,18 @@
     <message>
         <source>Current language not translated yet (or native English).
 
-If you&apos;re interested in translating Veyon into your local or another language or want to improve an existing translation, please contact a Veyon developer!</source>
-        <translation>A Veyon esetleges fordítási hibáit kérem, jelezd a kisskalmandaniel@gmail.hu címre.
+If you&apos;re interested in translating TinShareLab Classroom into your local or another language or want to improve an existing translation, please contact a TinShareLab Classroom developer!</source>
+        <translation>A TinShareLab Classroom esetleges fordítási hibáit kérem, jelezd a kisskalmandaniel@gmail.hu címre.
 
-Ha érdekel a Veyon fordítása (saját vagy egyéb nyelvre), esetleg meglévő fordítást szeretnél továbbfejleszteni, vedd fel a kapcsolatot a Veyon fejlesztőivel.</translation>
+Ha érdekel a TinShareLab Classroom fordítása (saját vagy egyéb nyelvre), esetleg meglévő fordítást szeretnél továbbfejleszteni, vedd fel a kapcsolatot a TinShareLab Classroom fejlesztőivel.</translation>
     </message>
     <message>
         <source>License</source>
         <translation>Licensz</translation>
     </message>
     <message>
-        <source>About Veyon %1</source>
-        <translation>Veyon %1 névjegye</translation>
+        <source>About TinShareLab Classroom %1</source>
+        <translation>TinShareLab Classroom %1 névjegye</translation>
     </message>
 </context>
 <context>
@@ -73,8 +73,8 @@ Ha érdekel a Veyon fordítása (saját vagy egyéb nyelvre), esetleg meglévő 
         <translation>Számítógép-hozzáférést engedélyezett felhasználói csoportok</translation>
     </message>
     <message>
-        <source>Please add the groups whose members should be authorized to access computers in your Veyon network.</source>
-        <translation>Adja meg azokat a csoportokat, melyek tagjainak hozzáférése kellene, hogy legyen a Veyon hálózatában lévő számítógépekhez.</translation>
+        <source>Please add the groups whose members should be authorized to access computers in your TinShareLab Classroom network.</source>
+        <translation>Adja meg azokat a csoportokat, melyek tagjainak hozzáférése kellene, hogy legyen a TinShareLab Classroom hálózatában lévő számítógépekhez.</translation>
     </message>
     <message>
         <source>Authorized user groups</source>
@@ -333,8 +333,8 @@ Ha érdekel a Veyon fordítása (saját vagy egyéb nyelvre), esetleg meglévő 
         <translation>3) Exportáld a nyilvános kulcsot , majd importáld ugyanazon a néven az összes számítógépre.</translation>
     </message>
     <message>
-        <source>Please refer to the &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;Veyon Administrator Manual&lt;/a&gt; for more information.</source>
-        <translation>Kérem, további információkért olvassa le a &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt; Veyon üzemeltetői leírást &lt;/a&gt;.</translation>
+        <source>Please refer to the &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;TinShareLab Classroom Administrator Manual&lt;/a&gt; for more information.</source>
+        <translation>Kérem, további információkért olvassa le a &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt; TinShareLab Classroom üzemeltetői leírást &lt;/a&gt;.</translation>
     </message>
     <message>
         <source>Key file directories</source>
@@ -1051,8 +1051,8 @@ Győződj meg arról, hogy az egymáshoz tartozó kulcsok nevei minden számít�
         <translation>A számítógép nincs hálózaton vagy kikapcsolták</translation>
     </message>
     <message>
-        <source>Veyon Server unreachable or not running</source>
-        <translation>Veyon szerver nem érhető el vagy nem fut</translation>
+        <source>TinShareLab Server unreachable or not running</source>
+        <translation>TinShareLab Classroom szerver nem érhető el vagy nem fut</translation>
     </message>
     <message>
         <source>Authentication failed or access denied</source>
@@ -1118,8 +1118,8 @@ Győződj meg arról, hogy az egymáshoz tartozó kulcsok nevei minden számít�
         <translation>&quot;%1%&quot; felhasználó &quot;%2&quot; kiszolgálóról megpróbálta eléri ezt a számítógépet, de letiltottuk hozzáférés-hitelesítési beállítások miatt.</translation>
     </message>
     <message>
-        <source>Veyon Service %1 at %2:%3</source>
-        <translation>%1 Veyon szolgáltatás: 2%:%3</translation>
+        <source>TinShareLab Service %1 at %2:%3</source>
+        <translation>%1 TinShareLab Classroom szolgáltatás: 2%:%3</translation>
     </message>
     <message>
         <source>Active connections:</source>
@@ -1141,8 +1141,8 @@ Győződj meg arról, hogy az egymáshoz tartozó kulcsok nevei minden számít�
         <translation>Hiányzik a hálózatobjektummappa-bővítmény</translation>
     </message>
     <message>
-        <source>No default network object directory plugin was found. Please check your installation or configure a different network object directory backend via Veyon Configurator.</source>
-        <translation>Nem található alapértelmezett hálózati objektumkönyvtár bővítmény. Kérjük, ellenőrizd a telepítést, vagy konfigurálj egy másik hálózati objektumkönyvtár-háttérprogramot a Veyon Konfigurátor segítségével.</translation>
+        <source>No default network object directory plugin was found. Please check your installation or configure a different network object directory backend via TinShareLab Configurator.</source>
+        <translation>Nem található alapértelmezett hálózati objektumkönyvtár bővítmény. Kérjük, ellenőrizd a telepítést, vagy konfigurálj egy másik hálózati objektumkönyvtár-háttérprogramot a TinShareLab Classroom Konfigurátor segítségével.</translation>
     </message>
     <message>
         <source>Computer name;Hostname;User</source>
@@ -1203,8 +1203,8 @@ Győződj meg arról, hogy az egymáshoz tartozó kulcsok nevei minden számít�
 <context>
     <name>ConfigCommands</name>
     <message>
-        <source>Clear system-wide Veyon configuration</source>
-        <translation>Az egész rendszerre kiterjedő Veyon konfiguráció törlése</translation>
+        <source>Clear system-wide TinShareLab Classroom configuration</source>
+        <translation>Az egész rendszerre kiterjedő TinShareLab Classroom konfiguráció törlése</translation>
     </message>
     <message>
         <source>List all configuration keys and values</source>
@@ -1267,27 +1267,27 @@ Győződj meg arról, hogy az egymáshoz tartozó kulcsok nevei minden számít�
         <translation>Kérem, valós értéket adj meg.</translation>
     </message>
     <message>
-        <source>Configure Veyon at command line</source>
-        <translation>Veyon konfigurálása parancssorból</translation>
+        <source>Configure TinShareLab Classroom at command line</source>
+        <translation>TinShareLab Classroom konfigurálása parancssorból</translation>
     </message>
     <message>
-        <source>Commands for managing the configuration of Veyon</source>
-        <translation>Veyon konfigurálásához parancsok</translation>
+        <source>Commands for managing the configuration of TinShareLab Classroom</source>
+        <translation>TinShareLab Classroom konfigurálásához parancsok</translation>
     </message>
 </context>
 <context>
     <name>ConfigurationManager</name>
     <message>
-        <source>Could not modify the autostart property for the Veyon Service.</source>
-        <translation>Nem sikerült módosítani a Veyon szolgáltatás autostart tulajdonságát.</translation>
+        <source>Could not modify the autostart property for the TinShareLab Service.</source>
+        <translation>Nem sikerült módosítani a TinShareLab Classroom szolgáltatás autostart tulajdonságát.</translation>
     </message>
     <message>
-        <source>Could not configure the firewall configuration for the Veyon Server.</source>
-        <translation>Nem sikerült konfigurálni a Veyon szerver tűzfalkonfigurációját.</translation>
+        <source>Could not configure the firewall configuration for the TinShareLab Server.</source>
+        <translation>Nem sikerült konfigurálni a TinShareLab Classroom szerver tűzfalkonfigurációját.</translation>
     </message>
     <message>
-        <source>Could not configure the firewall configuration for the Veyon Worker.</source>
-        <translation>Nem sikerült konfigurálni a Veyon worker tűzfalkonfigurációját.</translation>
+        <source>Could not configure the firewall configuration for the TinShareLab Classroom Worker.</source>
+        <translation>Nem sikerült konfigurálni a TinShareLab Classroom worker tűzfalkonfigurációját.</translation>
     </message>
     <message>
         <source>Could not apply platform-specific configuration settings.</source>
@@ -1301,8 +1301,8 @@ Győződj meg arról, hogy az egymáshoz tartozó kulcsok nevei minden számít�
 <context>
     <name>DemoClient</name>
     <message>
-        <source>Veyon Demo</source>
-        <translation>Veyon Demó</translation>
+        <source>TinShareLab Demo</source>
+        <translation>TinShareLab Classroom Demó</translation>
     </message>
 </context>
 <context>
@@ -1648,8 +1648,8 @@ Győződj meg arról, hogy az egymáshoz tartozó kulcsok nevei minden számít�
         <translation>ÉRVEK</translation>
     </message>
     <message>
-        <source>Starts the specified feature on the specified host by connecting to the Veyon Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features. Depending on the feature, additional arguments (such as the text message to display) encoded as a single JSON string have to be specified. Please refer to the developer documentation for more information</source>
-        <translation>Elindítja a megadott szolgáltatást a megadott kiszolgálón a távolról futó Veyon-szerverhez való csatlakozással. A szolgáltatás névvel vagy UID-vel adható meg. Az összes elérhető funkció megtekintéséhez használja a ``show`` parancsot. A szolgáltatástól függően további argumentumokat (például a megjelenítendő szöveges üzenetet) kell megadni egyetlen JSON-karakterláncként kódolva. További információért tekintse meg a fejlesztői dokumentációt</translation>
+        <source>Starts the specified feature on the specified host by connecting to the TinShareLab Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features. Depending on the feature, additional arguments (such as the text message to display) encoded as a single JSON string have to be specified. Please refer to the developer documentation for more information</source>
+        <translation>Elindítja a megadott szolgáltatást a megadott kiszolgálón a távolról futó TinShareLab Classroom-szerverhez való csatlakozással. A szolgáltatás névvel vagy UID-vel adható meg. Az összes elérhető funkció megtekintéséhez használja a ``show`` parancsot. A szolgáltatástól függően további argumentumokat (például a megjelenítendő szöveges üzenetet) kell megadni egyetlen JSON-karakterláncként kódolva. További információért tekintse meg a fejlesztői dokumentációt</translation>
     </message>
     <message>
         <source>Lock the screen</source>
@@ -1668,8 +1668,8 @@ Győződj meg arról, hogy az egymáshoz tartozó kulcsok nevei minden számít�
         <translation>Alkalmazás indítása</translation>
     </message>
     <message>
-        <source>Stops the specified feature on the specified host by connecting to the Veyon Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features.</source>
-        <translation>Leállítja a megadott szolgáltatást a megadott kiszolgálón a távoli Veyon-szerverhez való csatlakozással. A szolgáltatás névvel vagy UID-vel adható meg. Az összes elérhető funkció megtekintéséhez használja a ``show`` parancsot.</translation>
+        <source>Stops the specified feature on the specified host by connecting to the TinShareLab Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features.</source>
+        <translation>Leállítja a megadott szolgáltatást a megadott kiszolgálón a távoli TinShareLab Classroom-szerverhez való csatlakozással. A szolgáltatás névvel vagy UID-vel adható meg. Az összes elérhető funkció megtekintéséhez használja a ``show`` parancsot.</translation>
     </message>
     <message>
         <source>Unlock the screen</source>
@@ -2213,12 +2213,12 @@ Győződj meg arról, hogy az egymáshoz tartozó kulcsok nevei minden számít�
         <translation>A hitelesítési kulcsok nem megfelelően vannak beállítva ezen a számtógépen.</translation>
     </message>
     <message>
-        <source>Veyon service</source>
-        <translation>Veyon szolgáltatás</translation>
+        <source>TinShareLab service</source>
+        <translation>TinShareLab Classroom szolgáltatás</translation>
     </message>
     <message>
-        <source>The Veyon service needs to be stopped temporarily in order to remove the log files. Continue?</source>
-        <translation>A Veyon szolgáltatást ideiglenesen le kell állítani a naplófájlok eltávolításához. Biztos, hogy folytatod?</translation>
+        <source>The TinShareLab service needs to be stopped temporarily in order to remove the log files. Continue?</source>
+        <translation>A TinShareLab Classroom szolgáltatást ideiglenesen le kell állítani a naplófájlok eltávolításához. Biztos, hogy folytatod?</translation>
     </message>
     <message>
         <source>Log files cleared</source>
@@ -3018,8 +3018,8 @@ Győződj meg arról, hogy az egymáshoz tartozó kulcsok nevei minden számít�
         <translation>%1 (felhasználók és csoportok betöltése LDAP/AD-ból)</translation>
     </message>
     <message>
-        <source>LDAP/AD support for Veyon</source>
-        <translation>LDAP/AD támogatás a Veyon számára</translation>
+        <source>LDAP/AD support for TinShareLab Classroom</source>
+        <translation>LDAP/AD támogatás a TinShareLab Classroom számára</translation>
     </message>
 </context>
 <context>
@@ -3101,8 +3101,8 @@ Győződj meg arról, hogy az egymáshoz tartozó kulcsok nevei minden számít�
 <context>
     <name>MainWindow</name>
     <message>
-        <source>Veyon Configurator</source>
-        <translation>Veyon Konfigurátor</translation>
+        <source>TinShareLab Configurator</source>
+        <translation>TinShareLab Classroom Konfigurátor</translation>
     </message>
     <message>
         <source>General</source>
@@ -3161,8 +3161,8 @@ Győződj meg arról, hogy az egymáshoz tartozó kulcsok nevei minden számít�
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <source>About Veyon</source>
-        <translation>Veyon-ról</translation>
+        <source>About TinShareLab Classroom</source>
+        <translation>TinShareLab Classroom-ról</translation>
     </message>
     <message>
         <source>About Qt</source>
@@ -3225,8 +3225,8 @@ Győződj meg arról, hogy az egymáshoz tartozó kulcsok nevei minden számít�
         <translation>Csak olyan számítógépeket megjelenítése, melyekre bejelentkezett felhasználó.</translation>
     </message>
     <message>
-        <source>Veyon Configurator %1</source>
-        <translation>%1 Veyon Konfigurátor</translation>
+        <source>TinShareLab Configurator %1</source>
+        <translation>%1 TinShareLab Classroom Konfigurátor</translation>
     </message>
     <message>
         <source>Load settings from file</source>
@@ -3261,16 +3261,16 @@ Győződj meg arról, hogy az egymáshoz tartozó kulcsok nevei minden számít�
         <translation>Konfiguráció nem írható</translation>
     </message>
     <message>
-        <source>The local configuration backend reported that the configuration is not writable! Please run Veyon Configurator with higher privileges.</source>
-        <translation>A helyi konfigurációs háttérrendszer azt jelezte, hogy a konfiguráció nem írható! Kérjük, futtasd a Veyon Konfigurátort magasabb jogosultságokkal.</translation>
+        <source>The local configuration backend reported that the configuration is not writable! Please run TinShareLab Configurator with higher privileges.</source>
+        <translation>A helyi konfigurációs háttérrendszer azt jelezte, hogy a konfiguráció nem írható! Kérjük, futtasd a TinShareLab Classroom Konfigurátort magasabb jogosultságokkal.</translation>
     </message>
     <message>
         <source>Authentication impossible</source>
         <translation>Hitelesítés nem lehetséges</translation>
     </message>
     <message>
-        <source>No authentication key files were found or your current ones are outdated. Please create new key files using Veyon Configurator. Alternatively set up logon authentication using Veyon Configurator. Otherwise you won&apos;t be able to access computers using Veyon.</source>
-        <translation>Nincsenek hitelesítési kulcsok vagy a jelenlegi kulcsok elavultak. Készíts új kulcsfájlokat Veyon  Konfigurátorral. Másik megoldás lehet bejelentkezési hitelesítés beállítása Veyon Konfigurátorral. Különben nem tudod majd elérni a számítógépeket Veyon használatával.</translation>
+        <source>No authentication key files were found or your current ones are outdated. Please create new key files using TinShareLab Configurator. Alternatively set up logon authentication using TinShareLab Configurator. Otherwise you won&apos;t be able to access computers using TinShareLab Classroom.</source>
+        <translation>Nincsenek hitelesítési kulcsok vagy a jelenlegi kulcsok elavultak. Készíts új kulcsfájlokat TinShareLab Classroom  Konfigurátorral. Másik megoldás lehet bejelentkezési hitelesítés beállítása TinShareLab Classroom Konfigurátorral. Különben nem tudod majd elérni a számítógépeket TinShareLab Classroom használatával.</translation>
     </message>
     <message>
         <source>Access denied</source>
@@ -3285,8 +3285,8 @@ Győződj meg arról, hogy az egymáshoz tartozó kulcsok nevei minden számít�
         <translation>Aktív funkció</translation>
     </message>
     <message>
-        <source>The feature &quot;%1&quot; is still active. Please stop it before closing Veyon.</source>
-        <translation>&quot;%1&quot; funkció továbbra is aktív. Kérjük, állítsd le a Veyon bezárása előtt.</translation>
+        <source>The feature &quot;%1&quot; is still active. Please stop it before closing TinShareLab Classroom.</source>
+        <translation>&quot;%1&quot; funkció továbbra is aktív. Kérjük, állítsd le a TinShareLab Classroom bezárása előtt.</translation>
     </message>
     <message>
         <source>Use custom computer arrangement.
@@ -3685,8 +3685,8 @@ Nyomd meg és tartsd lenyomva az elrendezés betöltéséhez egy fájlból vagy 
         <translation>Weboldal megnyitása</translation>
     </message>
     <message>
-        <source>e.g. Veyon</source>
-        <translation>pl. Veyon</translation>
+        <source>e.g. TinShareLab Classroom</source>
+        <translation>pl. TinShareLab Classroom</translation>
     </message>
     <message>
         <source>Remember and add to website menu</source>
@@ -3708,8 +3708,8 @@ Nyomd meg és tartsd lenyomva az elrendezés betöltéséhez egy fájlból vagy 
 <context>
     <name>PasswordDialog</name>
     <message>
-        <source>Veyon Logon</source>
-        <translation>Veyon bejelentkezés</translation>
+        <source>TinShareLab Logon</source>
+        <translation>TinShareLab Classroom bejelentkezés</translation>
     </message>
     <message>
         <source>Please enter your username and password in order to access computers.</source>
@@ -3951,12 +3951,12 @@ Please save your work and close all programs.</source>
 <context>
     <name>RemoteAccessWidget</name>
     <message>
-        <source>%1 - Veyon Remote Access</source>
-        <translation>%1 - Veyon Távoli Hozzáférés</translation>
+        <source>%1 - TinShareLab Remote Access</source>
+        <translation>%1 - TinShareLab Classroom Távoli Hozzáférés</translation>
     </message>
     <message>
-        <source>%1 - %2 - Veyon Remote Access</source>
-        <translation>%1 - %2 Veyon Távoli Hozzáférés</translation>
+        <source>%1 - %2 - TinShareLab Remote Access</source>
+        <translation>%1 - %2 TinShareLab Classroom Távoli Hozzáférés</translation>
     </message>
 </context>
 <context>
@@ -4257,8 +4257,8 @@ Typically this is required to support terminal servers.</source>
         <translation>Hálózati portok száma</translation>
     </message>
     <message>
-        <source>Veyon server</source>
-        <translation>Veyon szerver</translation>
+        <source>TinShareLab server</source>
+        <translation>TinShareLab Classroom szerver</translation>
     </message>
     <message>
         <source>Internal VNC server</source>
@@ -4297,12 +4297,12 @@ Typically this is required to support terminal servers.</source>
         <translation>Bővítmény:</translation>
     </message>
     <message>
-        <source>Restart Veyon Service</source>
-        <translation>Veyon Szolgáltatás újraindítása</translation>
+        <source>Restart TinShareLab Service</source>
+        <translation>TinShareLab Classroom Szolgáltatás újraindítása</translation>
     </message>
     <message>
-        <source>All settings were saved successfully. In order to take effect the Veyon service needs to be restarted. Restart it now?</source>
-        <translation>Minden beállítást sikeresen mentél. A beállítások érvénybe léptetéséhez újra kell indítani a Veyon szolgáltatást. Újraindítod most?</translation>
+        <source>All settings were saved successfully. In order to take effect the TinShareLab service needs to be restarted. Restart it now?</source>
+        <translation>Minden beállítást sikeresen mentél. A beállítások érvénybe léptetéséhez újra kell indítani a TinShareLab Classroom szolgáltatást. Újraindítod most?</translation>
     </message>
     <message>
         <source>Running</source>
@@ -4337,8 +4337,8 @@ Example: [^-]*-(PC[0-9]*)</source>
 Példa: [^-]*-(PC[0-9]*)</translation>
     </message>
     <message>
-        <source>Enable if a single Veyon Server instance should be launched for the currently active session, no matter if local or remote.</source>
-        <translation>Engedélyezd, ha egyetlen Veyon szerver példányt kell elindítani az jelenleg aktív munkamenethez, függetlenül attól, hogy helyi vagy távoli.</translation>
+        <source>Enable if a single TinShareLab Server instance should be launched for the currently active session, no matter if local or remote.</source>
+        <translation>Engedélyezd, ha egyetlen TinShareLab Classroom szerver példányt kell elindítani az jelenleg aktív munkamenethez, függetlenül attól, hogy helyi vagy távoli.</translation>
     </message>
     <message>
         <source>Environment variable name</source>
@@ -4379,44 +4379,44 @@ Példa: [^-]*-(PC[0-9]*)</translation>
 <context>
     <name>ServiceControlCommands</name>
     <message>
-        <source>Register Veyon Service</source>
-        <translation>Regisztrált Veyon szolgáltatás</translation>
+        <source>Register TinShareLab Service</source>
+        <translation>Regisztrált TinShareLab Classroom szolgáltatás</translation>
     </message>
     <message>
-        <source>Unregister Veyon Service</source>
-        <translation>Nem regisztrált Veyon szolgáltatás</translation>
+        <source>Unregister TinShareLab Service</source>
+        <translation>Nem regisztrált TinShareLab Classroom szolgáltatás</translation>
     </message>
     <message>
-        <source>Start Veyon Service</source>
-        <translation>Veyon szolgáltatás indítása</translation>
+        <source>Start TinShareLab Service</source>
+        <translation>TinShareLab Classroom szolgáltatás indítása</translation>
     </message>
     <message>
-        <source>Stop Veyon Service</source>
-        <translation>Veyon szolgáltatás leállítása</translation>
+        <source>Stop TinShareLab Service</source>
+        <translation>TinShareLab Classroom szolgáltatás leállítása</translation>
     </message>
     <message>
-        <source>Restart Veyon Service</source>
-        <translation>Veyon Szolgáltatás újraindítása</translation>
+        <source>Restart TinShareLab Service</source>
+        <translation>TinShareLab Classroom Szolgáltatás újraindítása</translation>
     </message>
     <message>
-        <source>Query status of Veyon Service</source>
-        <translation>Veyon Szolgáltatás állapotának lekérdezése</translation>
+        <source>Query status of TinShareLab Service</source>
+        <translation>TinShareLab Classroom Szolgáltatás állapotának lekérdezése</translation>
     </message>
     <message>
         <source>Service is running</source>
-        <translation>Veyon szolgáltatás jelenleg fut</translation>
+        <translation>TinShareLab Classroom szolgáltatás jelenleg fut</translation>
     </message>
     <message>
         <source>Service is not running</source>
-        <translation>Veyon szolgáltatás jelenleg nem fut</translation>
+        <translation>TinShareLab Classroom szolgáltatás jelenleg nem fut</translation>
     </message>
     <message>
-        <source>Configure and control Veyon service</source>
-        <translation>Veyon szolgáltatás konfigurálása és felügyelete</translation>
+        <source>Configure and control TinShareLab service</source>
+        <translation>TinShareLab Classroom szolgáltatás konfigurálása és felügyelete</translation>
     </message>
     <message>
-        <source>Commands for configuring and controlling Veyon Service</source>
-        <translation>Veyon Szolgáltatás konfigurációs és felügyeleti parancsai</translation>
+        <source>Commands for configuring and controlling TinShareLab Service</source>
+        <translation>TinShareLab Classroom Szolgáltatás konfigurációs és felügyeleti parancsai</translation>
     </message>
 </context>
 <context>
@@ -4430,8 +4430,8 @@ Példa: [^-]*-(PC[0-9]*)</translation>
         <translation>&quot;%1&quot; fájl nem létezik!</translation>
     </message>
     <message>
-        <source>Interactive shell and script execution for Veyon CLI</source>
-        <translation>Interaktív shell- és szkript-végrehajtás a Veyon CLI-hez</translation>
+        <source>Interactive shell and script execution for TinShareLab CLI</source>
+        <translation>Interaktív shell- és szkript-végrehajtás a TinShareLab CLI-hez</translation>
     </message>
     <message>
         <source>Commands for shell functionalities</source>
@@ -4461,8 +4461,8 @@ Példa: [^-]*-(PC[0-9]*)</translation>
         <translation>Megtekintés külön ablakban</translation>
     </message>
     <message>
-        <source>Veyon Master – Slideshow</source>
-        <translation>Veyon Master – Diavetítés</translation>
+        <source>TinShareLab Classroom – Slideshow</source>
+        <translation>TinShareLab Classroom – Diavetítés</translation>
     </message>
 </context>
 <context>
@@ -4544,12 +4544,12 @@ Példa: [^-]*-(PC[0-9]*)</translation>
 <context>
     <name>TestingCommandLinePlugin</name>
     <message>
-        <source>Test internal Veyon components and functions</source>
-        <translation>A Veyon belső komponenseinek és funkciónak tesztelése</translation>
+        <source>Test internal TinShareLab Classroom components and functions</source>
+        <translation>A TinShareLab Classroom belső komponenseinek és funkciónak tesztelése</translation>
     </message>
     <message>
-        <source>Commands for testing internal components and functions of Veyon</source>
-        <translation>A Veyon belső komponensek és funkciók teszteléséhez parancsok</translation>
+        <source>Commands for testing internal components and functions of TinShareLab Classroom</source>
+        <translation>A TinShareLab Classroom belső komponensek és funkciók teszteléséhez parancsok</translation>
     </message>
 </context>
 <context>
@@ -4769,15 +4769,15 @@ Példa: [^-]*-(PC[0-9]*)</translation>
         <translation>Nincs írási hozzáférés</translation>
     </message>
     <message>
-        <source>Could not save your personal settings! Please check the user configuration file path using Veyon Configurator.</source>
-        <translation>Nem sikerült menteni a személyes beállításaidat! Kérjük, ellenőrizd a felhasználói konfigurációs fájl elérési útját a Veyon Konfigurátor segítségével.</translation>
+        <source>Could not save your personal settings! Please check the user configuration file path using TinShareLab Configurator.</source>
+        <translation>Nem sikerült menteni a személyes beállításaidat! Kérjük, ellenőrizd a felhasználói konfigurációs fájl elérési útját a TinShareLab Classroom Konfigurátor segítségével.</translation>
     </message>
 </context>
 <context>
     <name>VeyonServiceControl</name>
     <message>
-        <source>Veyon Service</source>
-        <translation>Veyon szolgáltatás</translation>
+        <source>TinShareLab Service</source>
+        <translation>TinShareLab Classroom szolgáltatás</translation>
     </message>
 </context>
 <context>

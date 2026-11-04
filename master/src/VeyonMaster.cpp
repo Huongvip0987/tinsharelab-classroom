@@ -59,7 +59,7 @@ VeyonMaster::VeyonMaster( QObject* parent ) :
 		QMessageBox::information(nullptr,
 								 tr("No write access"),
 								 tr("Could not save your personal settings! Please check the user configuration "
-									"file path using Veyon Configurator."));
+									"file path using TinShareLab Configurator."));
 	}
 
 	connect(m_computerControlListModel, &ComputerControlListModel::modelAboutToBeReset,
