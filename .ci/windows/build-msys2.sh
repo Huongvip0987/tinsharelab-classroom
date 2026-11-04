@@ -67,6 +67,8 @@ cp "$ROOT/README.md" "$STAGE/README.TXT"
 unix2dos "$STAGE"/*.TXT
 cp -r "$ROOT/nsis" "$STAGE/"
 cp "$BUILD/nsis/veyon.nsi" "$STAGE/"
+# Native makensis only understands backslashes in the paths it packs.
+sed -i -E -e '/^[[:space:]]*File /s#/#\\#g' -e 's#"nsis/#"nsis\\#g' "$STAGE/veyon.nsi"
 
 (cd "$STAGE" && makensis veyon.nsi)
 mv "$STAGE"/tinsharelab-classroom-*-setup.exe "$ROOT/"
