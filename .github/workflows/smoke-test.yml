@@ -1,0 +1,30 @@
+name: Check a built installer
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: Windows installer run to check
+        required: true
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: tinsharelab-classroom-win64
+          path: artifact
+          run-id: ${{ inputs.run_id }}
+          github-token: ${{ github.token }}
+      - name: Install and check on this machine
+        shell: powershell
+        run: |
+          $installer = (Get-ChildItem artifact\*-setup.exe | Select-Object -First 1).FullName
+          & .ci\windows\smoke-test.ps1 -Installer $installer
