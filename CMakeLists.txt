@@ -95,7 +95,7 @@ endif()
 # set up basic platform variables
 if(WIN32)
 	set(VEYON_BUILD_WINDOWS 1)
-	if(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64")
+	if(CMAKE_SYSTEM_PROCESSOR MATCHES "^(x86_64|AMD64)$")
 		set(VEYON_BUILD_WIN64 1)
 		set(VEYON_WINDOWS_ARCH "win64")
 	else()

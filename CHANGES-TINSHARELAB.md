@@ -20,3 +20,6 @@ On the teacher's machine, enable the WebAPI once as administrator, then restart 
 
     veyon-wcli config set WebAPI/HttpServerEnabled true
     veyon-wcli service restart
+
+Build changes for native MSYS2: AMD64 is recognized as 64-bit, translations are compiled from the
+TS files in the tree without running lupdate, and compiler warnings no longer stop the build.

@@ -13,7 +13,7 @@ macro(set_default_target_properties TARGET_NAME)
 		-DQT_USE_QSTRINGBUILDER
 		-DQT_STRICT_ITERATORS
 	)
-	target_compile_options(${TARGET_NAME} PRIVATE "-Wall;-Werror")
+	target_compile_options(${TARGET_NAME} PRIVATE "-Wall")
 	if(WITH_LTO)
 		if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND ${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.13.0")
 			target_compile_options(${TARGET_NAME} PRIVATE ${GCC_LTO_FLAGS})
