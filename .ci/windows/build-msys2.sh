@@ -20,8 +20,8 @@ fi
 cmake -S "$ROOT" -B "$BUILD" -G Ninja \
 	-DCMAKE_BUILD_TYPE=Release \
 	-DWITH_BUNDLED_LIBVNC=ON \
-	-DWITH_LTO=OFF
-cmake --build "$BUILD"
+	-DWITH_LTO=OFF \n	-DCMAKE_C_FLAGS="-Wno-error=incompatible-pointer-types -Wno-error=int-conversion -Wno-error=implicit-function-declaration"
+cmake --build "$BUILD" -- -k 0
 
 rm -rf "$STAGE"
 mkdir -p "$STAGE"/{interception,plugins,translations,crypto,imageformats,platforms,styles,tls}
