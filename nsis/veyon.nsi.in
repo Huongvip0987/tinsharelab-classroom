@@ -264,7 +264,7 @@ ${GetOptions} $R0 "/NoStartMenuFolder" $R1
 ${If} ${Errors}
 CreateDirectory "$SMPROGRAMS\Veyon"
 CreateShortCut "$SMPROGRAMS\Veyon\Veyon Configurator.lnk" "$INSTDIR\veyon-configurator.exe"
-CreateShortCut "$SMPROGRAMS\Veyon\Uninstall Veyon.lnk" "$INSTDIR\uninstall.exe"
+CreateShortCut "$SMPROGRAMS\Veyon\Uninstall TinShareLab Classroom.lnk" "$INSTDIR\uninstall.exe"
 WriteIniStr "$INSTDIR\TinShareLab website.url" "InternetShortcut" "URL" "${WEB_SITE}"
 CreateShortCut "$SMPROGRAMS\Veyon\TinShareLab Website.lnk" "$INSTDIR\TinShareLab website.url"
 ${EndIf}
@@ -313,7 +313,7 @@ RmDir "$INSTDIR"
 
 Delete "$SMPROGRAMS\Veyon\Veyon Master.lnk"
 Delete "$SMPROGRAMS\Veyon\Veyon Configurator.lnk"
-Delete "$SMPROGRAMS\Veyon\Uninstall Veyon.lnk"
+Delete "$SMPROGRAMS\Veyon\Uninstall TinShareLab Classroom.lnk"
 Delete "$SMPROGRAMS\Veyon\TinShareLab Website.lnk"
 RmDir "$SMPROGRAMS\Veyon"
 
