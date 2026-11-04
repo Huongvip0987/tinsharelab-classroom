@@ -31,7 +31,7 @@ OutFile "${INSTALLER_NAME}"
 BrandingText "${APP_NAME} ${VERSION}"
 XPStyle on
 InstallDirRegKey "${REG_ROOT}" "${REG_APP_PATH}" ""
-InstallDir "$PROGRAMFILES64\Veyon"
+InstallDir "$PROGRAMFILES64\TinShareLab Classroom"
 ShowInstDetails hide
 RequestExecutionLevel admin
 
@@ -215,10 +215,10 @@ File "veyon-master.exe"
 ${GetParameters} $R0
 ${GetOptions} $R0 "/NoStartMenuFolder" $R1
 ${If} ${Errors}
-CreateDirectory "$SMPROGRAMS\Veyon"
-CreateShortCut "$SMPROGRAMS\Veyon\Veyon Master.lnk" "$INSTDIR\${MAIN_APP_EXE}"
+CreateDirectory "$SMPROGRAMS\TinShareLab Classroom"
+CreateShortCut "$SMPROGRAMS\TinShareLab Classroom\Veyon Master.lnk" "$INSTDIR\${MAIN_APP_EXE}"
 ${EndIf}
-CreateShortCut "$DESKTOP\Veyon Master.lnk" "$INSTDIR\${MAIN_APP_EXE}"
+CreateShortCut "$DESKTOP\TinShareLab Classroom.lnk" "$INSTDIR\${MAIN_APP_EXE}"
 SectionEnd
 
 Section "Interception driver" SEC_INTERCEPTION
@@ -262,11 +262,11 @@ WriteUninstaller "$INSTDIR\uninstall.exe"
 ${GetParameters} $R0
 ${GetOptions} $R0 "/NoStartMenuFolder" $R1
 ${If} ${Errors}
-CreateDirectory "$SMPROGRAMS\Veyon"
-CreateShortCut "$SMPROGRAMS\Veyon\Veyon Configurator.lnk" "$INSTDIR\veyon-configurator.exe"
-CreateShortCut "$SMPROGRAMS\Veyon\Uninstall TinShareLab Classroom.lnk" "$INSTDIR\uninstall.exe"
+CreateDirectory "$SMPROGRAMS\TinShareLab Classroom"
+CreateShortCut "$SMPROGRAMS\TinShareLab Classroom\Veyon Configurator.lnk" "$INSTDIR\veyon-configurator.exe"
+CreateShortCut "$SMPROGRAMS\TinShareLab Classroom\Uninstall TinShareLab Classroom.lnk" "$INSTDIR\uninstall.exe"
 WriteIniStr "$INSTDIR\TinShareLab website.url" "InternetShortcut" "URL" "${WEB_SITE}"
-CreateShortCut "$SMPROGRAMS\Veyon\TinShareLab Website.lnk" "$INSTDIR\TinShareLab website.url"
+CreateShortCut "$SMPROGRAMS\TinShareLab Classroom\TinShareLab Website.lnk" "$INSTDIR\TinShareLab website.url"
 ${EndIf}
 
 WriteRegStr ${REG_ROOT} "${REG_APP_PATH}" "" "$INSTDIR\${MAIN_APP_EXE}"
@@ -311,13 +311,13 @@ RmDir /r "$INSTDIR\interception"
 
 RmDir "$INSTDIR"
 
-Delete "$SMPROGRAMS\Veyon\Veyon Master.lnk"
-Delete "$SMPROGRAMS\Veyon\Veyon Configurator.lnk"
-Delete "$SMPROGRAMS\Veyon\Uninstall TinShareLab Classroom.lnk"
-Delete "$SMPROGRAMS\Veyon\TinShareLab Website.lnk"
-RmDir "$SMPROGRAMS\Veyon"
+Delete "$SMPROGRAMS\TinShareLab Classroom\Veyon Master.lnk"
+Delete "$SMPROGRAMS\TinShareLab Classroom\Veyon Configurator.lnk"
+Delete "$SMPROGRAMS\TinShareLab Classroom\Uninstall TinShareLab Classroom.lnk"
+Delete "$SMPROGRAMS\TinShareLab Classroom\TinShareLab Website.lnk"
+RmDir "$SMPROGRAMS\TinShareLab Classroom"
 
-Delete "$DESKTOP\Veyon Master.lnk"
+Delete "$DESKTOP\TinShareLab Classroom.lnk"
 
 DeleteRegKey ${REG_ROOT} "${REG_APP_PATH}"
 DeleteRegKey ${REG_ROOT} "${UNINSTALL_PATH}"
