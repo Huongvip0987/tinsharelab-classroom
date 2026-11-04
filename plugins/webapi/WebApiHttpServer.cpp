@@ -67,6 +67,67 @@ static inline QByteArray toJson(const QHttpHeaders& headers)
 
 
 
+// TinShareLab: only these web origins may drive the API from a browser.
+// Requests without an Origin header come from local non-browser clients.
+static bool isAllowedOrigin(const QByteArray& origin)
+{
+	return origin == QByteArrayLiteral("https://tinsharelab.com") ||
+		   origin == QByteArrayLiteral("https://www.tinsharelab.com");
+}
+
+
+template<typename Headers>
+static QByteArray originOf(const Headers& headers)
+{
+	for (const auto& header : headers)
+	{
+		if (header.first.compare(QByteArrayLiteral("origin"), Qt::CaseInsensitive) == 0)
+		{
+			return header.second;
+		}
+	}
+	return {};
+}
+
+
+static void addHeaders(QHttpServerResponse& response, const QList<QPair<QByteArray, QByteArray>>& extraHeaders)
+{
+#if QT_VERSION >= QT_VERSION_CHECK(6, 8, 0)
+	auto headers = response.headers();
+	for (const auto& header : extraHeaders)
+	{
+		headers.append(header.first, header.second);
+	}
+	response.setHeaders(std::move(headers));
+#else
+	for (const auto& header : extraHeaders)
+	{
+		response.addHeader(header.first, header.second);
+	}
+#endif
+}
+
+
+static QHttpServerResponse withCorsHeaders(QHttpServerResponse&& response, const QByteArray& origin)
+{
+	if (isAllowedOrigin(origin))
+	{
+		addHeaders(response, {{QByteArrayLiteral("Access-Control-Allow-Origin"), origin},
+							  {QByteArrayLiteral("Vary"), QByteArrayLiteral("Origin")}});
+	}
+	return std::move(response);
+}
+
+
+static QHttpServerResponse forbiddenOriginResponse()
+{
+	return QHttpServerResponse{QByteArrayLiteral("text/plain"),
+							   QByteArrayLiteral("Origin not allowed"),
+							   QHttpServerResponse::StatusCode::Forbidden};
+}
+
+
+
 static QHttpServerResponse convertResponse(const WebApiController::Request& request,
 										   const WebApiController::Response& response)
 {
@@ -271,12 +332,21 @@ bool WebApiHttpServer::addRoute( const QString& path,
 #else
 			const auto headers = request.headers();
 #endif
+			const auto origin = originOf(headers);
+			if (origin.isEmpty() == false && isAllowedOrigin(origin) == false)
+			{
+				QFutureInterface<QHttpServerResponse> fi;
+				fi.reportAndMoveResult(forbiddenOriginResponse());
+				fi.reportFinished();
+				return QFuture<QHttpServerResponse>{&fi};
+			}
+
 			const auto data = dataFromRequest<M>( request );
 			const auto controllerRequest = WebApiController::Request{path, headers, data};
 
 			if( m_threadPool.activeThreadCount() >= m_threadPool.maxThreadCount() )
 			{
-				auto response = convertResponse(controllerRequest, WebApiController::Error::ConnectionLimitReached);
+				auto response = withCorsHeaders(convertResponse(controllerRequest, WebApiController::Error::ConnectionLimitReached), origin);
 				QFutureInterface<QHttpServerResponse> fi;
 				fi.reportAndMoveResult( std::move(response) );
 				fi.reportFinished();
@@ -284,8 +354,8 @@ bool WebApiHttpServer::addRoute( const QString& path,
 			}
 
 			return QtConcurrent::run(&m_threadPool, [=, this] {
-				return convertResponse(controllerRequest,
-									   (m_controller->*controllerMethod)(controllerRequest, std::forward<Args>(args)... ));
+				return withCorsHeaders(convertResponse(controllerRequest,
+									   (m_controller->*controllerMethod)(controllerRequest, std::forward<Args>(args)... )), origin);
 			});
 		} );
 }
@@ -314,10 +384,10 @@ bool WebApiHttpServer::start()
 #endif
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 8, 0)
-	if (m_tcpServer->listen(QHostAddress::Any, m_configuration.httpServerPort()) == false ||
+	if (m_tcpServer->listen(QHostAddress::LocalHost, m_configuration.httpServerPort()) == false ||
 		m_server->bind(m_tcpServer) == false)
 #else
-	if( m_server->listen( QHostAddress::Any, m_configuration.httpServerPort() ) != m_configuration.httpServerPort() )
+	if( m_server->listen( QHostAddress::LocalHost, m_configuration.httpServerPort() ) != m_configuration.httpServerPort() )
 #endif
 	{
 		vCritical() << "can't listen at port" << m_configuration.httpServerPort();
@@ -342,6 +412,27 @@ bool WebApiHttpServer::start()
 		success &= addRoute<Method::Get>(QStringLiteral("debug/sleep/<arg>"), &WebApiController::sleep);
 		success &= bool(m_server->route(QStringLiteral("/api/v1/debug/info"), [this]() { return getDebugInformation(); }));
 	}
+
+	// Browser preflight for calls from tinsharelab.com to this loopback server.
+	success &= bool(m_server->route(QStringLiteral(".*"), QHttpServerRequest::Method::Options, [](const QHttpServerRequest& request) {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 8, 0)
+		const auto origin = originOf(request.headers().toListOfPairs());
+#else
+		const auto origin = originOf(request.headers());
+#endif
+		if (isAllowedOrigin(origin) == false)
+		{
+			return forbiddenOriginResponse();
+		}
+		QHttpServerResponse response{QHttpServerResponse::StatusCode::NoContent};
+		addHeaders(response, {{QByteArrayLiteral("Access-Control-Allow-Origin"), origin},
+							  {QByteArrayLiteral("Vary"), QByteArrayLiteral("Origin")},
+							  {QByteArrayLiteral("Access-Control-Allow-Methods"), QByteArrayLiteral("GET, POST, PUT, DELETE, OPTIONS")},
+							  {QByteArrayLiteral("Access-Control-Allow-Headers"), QByteArrayLiteral("Content-Type, Connection-Uid")},
+							  {QByteArrayLiteral("Access-Control-Allow-Private-Network"), QByteArrayLiteral("true")},
+							  {QByteArrayLiteral("Access-Control-Max-Age"), QByteArrayLiteral("600")}});
+		return response;
+	}));
 
 	success &= bool(m_server->route(QStringLiteral(".*"), [] {
 		return QHttpServerResponse{

@@ -1,0 +1,43 @@
+name: Windows installer
+
+on:
+  push:
+    branches: [tinsharelab]
+    tags: ["tsl-v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 120
+    defaults:
+      run:
+        shell: msys2 {0}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: recursive
+      - uses: msys2/setup-msys2@v2
+        with:
+          msystem: UCRT64
+          update: true
+          install: git dos2unix
+          pacboy: >-
+            toolchain:p cmake:p ninja:p nsis:p
+            qt6-base:p qt6-5compat:p qt6-tools:p qt6-httpserver:p qt6-websockets:p
+            qca-qt6:p openssl:p lzo2:p libjpeg-turbo:p libpng:p zlib:p
+            openldap:p cyrus-sasl:p
+      - run: .ci/windows/build-msys2.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tinsharelab-classroom-win64
+          path: tinsharelab-classroom-*-setup.exe
+          if-no-files-found: error
+      - uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: tinsharelab-classroom-*-setup.exe

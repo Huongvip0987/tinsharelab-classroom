@@ -1,11 +1,11 @@
-!define APP_NAME "Veyon"
-!define COMP_NAME "Veyon Solutions"
-!define WEB_SITE "https://veyon.io"
+!define APP_NAME "TinShareLab Classroom"
+!define COMP_NAME "TinShareLab (based on Veyon by Veyon Solutions)"
+!define WEB_SITE "https://tinsharelab.com"
 !define VERSION "@VERSION_MAJOR@.@VERSION_MINOR@.@VERSION_PATCH@.@VERSION_BUILD@"
 !define COPYRIGHT "2004-2026 Veyon Solutions / Tobias Junghans"
-!define DESCRIPTION "Veyon Installer"
+!define DESCRIPTION "TinShareLab Classroom Installer"
 !define LICENSE_TXT "COPYING"
-!define INSTALLER_NAME "veyon-${VERSION}-@VEYON_WINDOWS_ARCH@-setup.exe"
+!define INSTALLER_NAME "tinsharelab-classroom-${VERSION}-@VEYON_WINDOWS_ARCH@-setup.exe"
 !define MAIN_APP_EXE "veyon-master.exe"
 !define INSTALL_TYPE "SetShellVarContext all"
 !define REG_ROOT "HKLM"
@@ -68,10 +68,10 @@ RequestExecutionLevel admin
 !insertmacro MUI_PAGE_INSTFILES
 
 !define MUI_FINISHPAGE_RUN
-!define MUI_FINISHPAGE_RUN_TEXT "Run Veyon Configurator now"
+!define MUI_FINISHPAGE_RUN_TEXT "Run the configurator now"
 !define MUI_FINISHPAGE_RUN_FUNCTION "RunConfigurator"
-!define MUI_FINISHPAGE_LINK "Support Veyon project with a donation"
-!define MUI_FINISHPAGE_LINK_LOCATION "https://www.paypal.com/cgi-bin/webscr?item_name=Donation+to+Veyon+-+OpenSource+classroom+management&cmd=_donations&business=donate%40veyon.io"
+!define MUI_FINISHPAGE_LINK "Source code and license"
+!define MUI_FINISHPAGE_LINK_LOCATION "https://github.com/Huongvip0987/tinsharelab-classroom"
 
 !insertmacro MUI_PAGE_FINISH
 
@@ -265,8 +265,8 @@ ${If} ${Errors}
 CreateDirectory "$SMPROGRAMS\Veyon"
 CreateShortCut "$SMPROGRAMS\Veyon\Veyon Configurator.lnk" "$INSTDIR\veyon-configurator.exe"
 CreateShortCut "$SMPROGRAMS\Veyon\Uninstall Veyon.lnk" "$INSTDIR\uninstall.exe"
-WriteIniStr "$INSTDIR\Veyon website.url" "InternetShortcut" "URL" "${WEB_SITE}"
-CreateShortCut "$SMPROGRAMS\Veyon\Veyon Website.lnk" "$INSTDIR\Veyon website.url"
+WriteIniStr "$INSTDIR\TinShareLab website.url" "InternetShortcut" "URL" "${WEB_SITE}"
+CreateShortCut "$SMPROGRAMS\Veyon\TinShareLab Website.lnk" "$INSTDIR\TinShareLab website.url"
 ${EndIf}
 
 WriteRegStr ${REG_ROOT} "${REG_APP_PATH}" "" "$INSTDIR\${MAIN_APP_EXE}"
@@ -314,7 +314,7 @@ RmDir "$INSTDIR"
 Delete "$SMPROGRAMS\Veyon\Veyon Master.lnk"
 Delete "$SMPROGRAMS\Veyon\Veyon Configurator.lnk"
 Delete "$SMPROGRAMS\Veyon\Uninstall Veyon.lnk"
-Delete "$SMPROGRAMS\Veyon\Veyon Website.lnk"
+Delete "$SMPROGRAMS\Veyon\TinShareLab Website.lnk"
 RmDir "$SMPROGRAMS\Veyon"
 
 Delete "$DESKTOP\Veyon Master.lnk"
