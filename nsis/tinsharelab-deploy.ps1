@@ -606,4 +606,273 @@ $openButton.Add_Click({
     }
 })
 
+# ---------------------------------------------------------------- exam
+# The app signs in to tinsharelab.com once with a session of its own (Google,
+# through the browser), then opens, starts and ends exams there and switches the
+# room's browsers to the exam page. The sealed session is readable only by
+# SYSTEM and administrators, like the pairing token.
+$siteUrl = 'https://tinsharelab.com'
+$webSessionPath = Join-Path $dataDir 'tinsharelab-web-session'
+$sessionCookieName = '__Host-tsl-session'
+$featureStartApp = 'da9ca56a-b2ad-4fff-8f8a-929b2927b442'
+$featureOpenWebsite = '8a11a75d-b3db-48b6-b9cb-f8422ddd5b0c'
+Add-Type -AssemblyName System.Net.Http
+[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
+
+# Public JSON from the site, read as UTF-8 whatever the response header says.
+function Get-SiteJson([string]$path) {
+    $web = New-Object Net.WebClient
+    $web.Encoding = [Text.Encoding]::UTF8
+    try { return ConvertFrom-Json $web.DownloadString("$siteUrl$path") } finally { $web.Dispose() }
+}
+
+function Get-WebSession { if (Test-Path $webSessionPath) { (Get-Content $webSessionPath -Raw).Trim() } else { '' } }
+function Save-WebSession([string]$value) {
+    if ($value) {
+        Set-Content -Path $webSessionPath -Encoding Ascii -NoNewline -Value $value
+        & icacls.exe $webSessionPath /inheritance:r /grant:r '*S-1-5-18:F' '*S-1-5-32-544:F' | Out-Null
+    } else { Remove-Item -Force -ErrorAction SilentlyContinue $webSessionPath }
+}
+
+# One call to the site as the linked teacher. The site may hand back a renewed
+# session cookie, which replaces the stored one.
+function Invoke-Site([string]$method, [string]$path, [object]$body) {
+    $session = Get-WebSession
+    if (-not $session) { throw 'Chưa kết nối tài khoản web. Bấm "Kết nối tài khoản".' }
+    $handler = New-Object System.Net.Http.HttpClientHandler
+    $handler.UseCookies = $false
+    $handler.AllowAutoRedirect = $false
+    $client = New-Object System.Net.Http.HttpClient($handler)
+    $client.Timeout = [TimeSpan]::FromSeconds(30)
+    try {
+        $message = New-Object System.Net.Http.HttpRequestMessage((New-Object System.Net.Http.HttpMethod($method)), "$siteUrl$path")
+        [void]$message.Headers.TryAddWithoutValidation('Cookie', "$sessionCookieName=$session")
+        [void]$message.Headers.TryAddWithoutValidation('Origin', $siteUrl)
+        if ($null -ne $body) { $message.Content = New-Object System.Net.Http.StringContent((ConvertTo-Json -InputObject $body -Depth 20 -Compress), [Text.Encoding]::UTF8, 'application/json') }
+        $response = $client.SendAsync($message).GetAwaiter().GetResult()
+        $lines = $null
+        if ($response.Headers.TryGetValues('Set-Cookie', [ref]$lines)) {
+            foreach ($line in $lines) {
+                if ($line -match "^$([regex]::Escape($sessionCookieName))=([^;]*);.*Max-Age=(\d+)") { Save-WebSession $(if ([int]$Matches[2] -gt 0) { $Matches[1] } else { '' }) }
+            }
+        }
+        $text = $response.Content.ReadAsStringAsync().GetAwaiter().GetResult()
+        $code = [int]$response.StatusCode
+        if ($code -eq 401) { Save-WebSession ''; throw 'Kết nối tài khoản đã hết hạn. Bấm "Kết nối tài khoản" lại.' }
+        if ($code -eq 403) { throw 'Tài khoản này không có quyền giáo viên.' }
+        if ($code -eq 409) { throw 'Phòng này đang có một buổi kiểm tra khác chưa kết thúc.' }
+        if (-not $response.IsSuccessStatusCode) { throw "Web báo lỗi $code." }
+        if ($text) { return (ConvertFrom-Json $text) }
+    } finally { $client.Dispose() }
+}
+
+# Starts one veyon-cli feature on each machine, ten machines at a time, and
+# returns how many it reached.
+function Send-Feature([string[]]$hosts, [string]$feature, [object]$arguments, [string]$label) {
+    $json = ConvertTo-Json -InputObject $arguments -Depth 5 -Compress
+    $quoted = '"' + ($json -replace '(\\*)"', '$1$1\"') + '"'
+    $ok = 0
+    for ($i = 0; $i -lt $hosts.Count; $i += 10) {
+        $batch = @($hosts[$i..([math]::Min($i + 9, $hosts.Count - 1))])
+        $status.Text = "$label`: máy $($i + 1)-$($i + $batch.Count)/$($hosts.Count)..."
+        $form.Refresh()
+        $running = foreach ($target in $batch) {
+            $start = New-Object Diagnostics.ProcessStartInfo $cli
+            $start.Arguments = "feature start $target $feature $quoted"
+            $start.UseShellExecute = $false
+            $start.CreateNoWindow = $true
+            [Diagnostics.Process]::Start($start)
+        }
+        foreach ($process in $running) {
+            if ($process.WaitForExit(45000) -and $process.ExitCode -eq 0) { $ok++ } elseif (-not $process.HasExited) { $process.Kill() }
+            [Windows.Forms.Application]::DoEvents()
+        }
+    }
+    return $ok
+}
+
+function Get-RoomMachines { @(if (Test-Path $machinesPath) { Get-Content $machinesPath | Where-Object { $_.Trim() } }) }
+
+$form.ClientSize = New-Object Drawing.Size(760, 700)
+$examTitle = New-Object Windows.Forms.Label
+$examTitle.Text = 'Kiểm tra'
+$examTitle.Font = New-Object Drawing.Font('Segoe UI', 11, [Drawing.FontStyle]::Bold)
+$examTitle.Location = New-Object Drawing.Point(16, 552)
+$examTitle.Size = New-Object Drawing.Size(90, 24)
+$form.Controls.Add($examTitle)
+$accountLabel = New-Object Windows.Forms.Label
+$accountLabel.Location = New-Object Drawing.Point(110, 554)
+$accountLabel.Size = New-Object Drawing.Size(390, 24)
+$form.Controls.Add($accountLabel)
+$linkButton = New-Object Windows.Forms.Button
+$linkButton.Text = 'Kết nối tài khoản'
+$linkButton.Location = New-Object Drawing.Point(508, 548)
+$linkButton.Size = New-Object Drawing.Size(236, 30)
+$form.Controls.Add($linkButton)
+Add-Label 'Phòng / lớp' 16 590 90
+$classBox = New-Object Windows.Forms.ComboBox
+$classBox.DropDownStyle = 'DropDownList'
+$classBox.Location = New-Object Drawing.Point(110, 587)
+$classBox.Size = New-Object Drawing.Size(250, 26)
+$form.Controls.Add($classBox)
+Add-Label 'Đề' 372 590 30
+$presetBox = New-Object Windows.Forms.ComboBox
+$presetBox.DropDownStyle = 'DropDownList'
+$presetBox.Location = New-Object Drawing.Point(404, 587)
+$presetBox.Size = New-Object Drawing.Size(340, 26)
+$form.Controls.Add($presetBox)
+$startExamButton = New-Object Windows.Forms.Button
+$startExamButton.Text = 'Bắt đầu kiểm tra'
+$startExamButton.Location = New-Object Drawing.Point(16, 624)
+$startExamButton.Size = New-Object Drawing.Size(360, 40)
+$form.Controls.Add($startExamButton)
+$endExamButton = New-Object Windows.Forms.Button
+$endExamButton.Text = 'Kết thúc kiểm tra'
+$endExamButton.Location = New-Object Drawing.Point(384, 624)
+$endExamButton.Size = New-Object Drawing.Size(360, 40)
+$form.Controls.Add($endExamButton)
+$examHint = New-Object Windows.Forms.Label
+$examHint.Text = 'Bắt đầu: tạo buổi thi trên web (nếu phòng chưa có buổi đang mở), khóa trình duyệt chỉ vào trang thi và mở trang thi trên mọi máy.'
+$examHint.Location = New-Object Drawing.Point(16, 668)
+$examHint.Size = New-Object Drawing.Size(728, 30)
+$form.Controls.Add($examHint)
+
+$script:classes = @()
+$script:presets = @()
+
+function Update-ExamChoices {
+    $session = Get-WebSession
+    $linked = [bool]$session
+    $classBox.Items.Clear(); $presetBox.Items.Clear()
+    $script:classes = @(); $script:presets = @()
+    if (-not $linked) { $accountLabel.Text = 'Chưa kết nối tài khoản web.'; return }
+    try {
+        $who = Invoke-Site 'GET' '/api/auth/session' $null
+        if (-not $who.user) { Save-WebSession ''; $accountLabel.Text = 'Chưa kết nối tài khoản web.'; return }
+        $accountLabel.Text = "Đã kết nối: $($who.user.email)"
+        $script:classes = @((Invoke-Site 'GET' '/api/admin/classes' $null).classes | Sort-Object { $_.kind -ne 'exam' }, name)
+        foreach ($item in $script:classes) { [void]$classBox.Items.Add($(if ($item.kind -eq 'exam') { "$($item.name) (phòng thi)" } else { $item.name })) }
+        if ($classBox.Items.Count) { $classBox.SelectedIndex = 0 }
+        $script:presets = @((Get-SiteJson '/phong-may/de-mau.json').presets)
+        foreach ($item in $script:presets) {
+            $each = if ($item.mode -eq 'random') { ", mỗi máy $($item.pickCount) câu riêng" } else { '' }
+            [void]$presetBox.Items.Add("$($item.title) - $(@($item.problems).Count) câu$each")
+        }
+        [void]$presetBox.Items.Insert(0, 'Buổi đang mở trên web (đề đã chọn trên web)')
+        $presetBox.SelectedIndex = $(if ($presetBox.Items.Count -gt 1) { 1 } else { 0 })
+    } catch { $accountLabel.Text = "$_" }
+}
+
+# Loopback sign-in: the browser comes back to this listener with the sealed
+# session and the random state it was sent with.
+$script:link = $null
+$linkTimer = New-Object Windows.Forms.Timer
+$linkTimer.Interval = 300
+function Stop-WebLink {
+    $linkTimer.Stop()
+    if ($script:link) { try { $script:link.Listener.Stop() } catch {}; $script:link = $null }
+    $linkButton.Enabled = $true
+}
+$linkTimer.Add_Tick({
+    $link = $script:link
+    if (-not $link) { $linkTimer.Stop(); return }
+    if ((Get-Date) -gt $link.Deadline) { Stop-WebLink; $accountLabel.Text = 'Hết thời gian chờ đăng nhập. Bấm "Kết nối tài khoản" lại.'; return }
+    if (-not $link.Handle.IsCompleted) { return }
+    $context = $link.Listener.EndGetContext($link.Handle)
+    $query = $context.Request.QueryString
+    $token = $query['token']
+    $done = $context.Request.Url.AbsolutePath -eq '/ket-noi' -and $query['state'] -eq $link.State -and $token -match '^[\w-]+\.[\w-]+$'
+    $page = if ($done) { '<p>Đã kết nối app TinShareLab Classroom. Có thể đóng tab này.</p>' } else { '<p>Liên kết không hợp lệ.</p>' }
+    $bytes = [Text.Encoding]::UTF8.GetBytes("<!doctype html><meta charset=utf-8><title>TinShareLab</title><body style=""font-family:sans-serif;padding:2em"">$page<script>history.replaceState(null,'','/')</script>")
+    $context.Response.StatusCode = $(if ($done) { 200 } else { 400 })
+    $context.Response.ContentType = 'text/html; charset=utf-8'
+    $context.Response.OutputStream.Write($bytes, 0, $bytes.Length)
+    $context.Response.Close()
+    if (-not $done) { $link.Handle = $link.Listener.BeginGetContext($null, $null); return }
+    Stop-WebLink
+    Save-WebSession $token
+    Update-ExamChoices
+    $form.Activate()
+})
+
+$linkButton.Add_Click({
+    try {
+        Stop-WebLink
+        $bytes = New-Object byte[] 16
+        [Security.Cryptography.RandomNumberGenerator]::Create().GetBytes($bytes)
+        $state = ($bytes | ForEach-Object { $_.ToString('x2') }) -join ''
+        $listener = $null
+        foreach ($try in 1..10) {
+            $port = Get-Random -Minimum 49152 -Maximum 65000
+            $candidate = New-Object System.Net.HttpListener
+            $candidate.Prefixes.Add("http://127.0.0.1:$port/")
+            try { $candidate.Start(); $listener = $candidate; break } catch { $candidate.Close() }
+        }
+        if (-not $listener) { throw 'Không mở được cổng để nhận kết nối.' }
+        $script:link = @{ Listener = $listener; State = $state; Handle = $listener.BeginGetContext($null, $null); Deadline = (Get-Date).AddMinutes(5) }
+        $linkButton.Enabled = $false
+        $accountLabel.Text = 'Đang chờ đăng nhập Google trên trình duyệt...'
+        $linkTimer.Start()
+        Start-Process "$siteUrl/phong-may/ket-noi-app/?port=$port&state=$state"
+    } catch { Stop-WebLink; [void][Windows.Forms.MessageBox]::Show("$_", 'TinShareLab Classroom', 'OK', 'Error') }
+})
+
+function Set-ExamBusy([bool]$busy) {
+    $startExamButton.Enabled = -not $busy
+    $endExamButton.Enabled = -not $busy
+    $linkButton.Enabled = -not $busy
+    $form.UseWaitCursor = $busy
+}
+
+$startExamButton.Add_Click({
+    try {
+        if ($classBox.SelectedIndex -lt 0) { throw 'Hãy kết nối tài khoản và chọn phòng / lớp.' }
+        $machines = Get-RoomMachines
+        if (-not $machines.Count) { throw 'Chưa có danh sách máy. Bấm nút 2 để tìm máy trước.' }
+        Set-ExamBusy $true
+        $classId = $script:classes[$classBox.SelectedIndex].id
+        $status.Text = 'Đang chuẩn bị buổi kiểm tra trên web...'
+        $form.Refresh()
+        $report = Invoke-Site 'GET' "/api/admin/lab/exam?classId=$classId" $null
+        $exam = $report.exam
+        if (-not $exam -or $exam.closedAt) {
+            if ($presetBox.SelectedIndex -lt 1) { throw 'Phòng này chưa có buổi đang mở. Hãy chọn một đề.' }
+            $preset = $script:presets[$presetBox.SelectedIndex - 1]
+            $title = "$($preset.title) - $(Get-Date -Format 'dd/MM/yyyy HH:mm')"
+            [void](Invoke-Site 'POST' '/api/admin/lab/exam' @{ classId = $classId; title = $title; language = $preset.language; problems = @($preset.problems); mode = $preset.mode; pickCount = [int]$preset.pickCount; durationMin = [int]$preset.durationMin; showResults = 'score' })
+            $exam = (Invoke-Site 'GET' "/api/admin/lab/exam?classId=$classId" $null).exam
+        }
+        if (-not $exam -or -not $exam.joinCode) { throw 'Web chưa trả về mã phòng thi.' }
+        if (-not $exam.startedAt) { [void](Invoke-Site 'PATCH' '/api/admin/lab/exam' @{ classId = $classId; examId = $exam.id; action = 'start' }) }
+        $url = "$siteUrl/phong-may/?ma=$($exam.joinCode)"
+        $locked = Send-Feature $machines $featureStartApp @{ applications = @('schtasks /run /tn TinShareLab\examonly') } 'Khóa trình duyệt'
+        Start-Sleep -Seconds 2
+        $opened = Send-Feature $machines $featureOpenWebsite @{ websiteUrls = @($url) } 'Mở trang thi'
+        $status.Text = "Đang kiểm tra: $($exam.title). Khóa $locked/$($machines.Count) máy, mở trang thi $opened/$($machines.Count) máy."
+    } catch {
+        $status.Text = ''
+        [void][Windows.Forms.MessageBox]::Show("$_", 'TinShareLab Classroom', 'OK', 'Error')
+    } finally { Set-ExamBusy $false }
+})
+
+$endExamButton.Add_Click({
+    try {
+        if ($classBox.SelectedIndex -lt 0) { throw 'Hãy kết nối tài khoản và chọn phòng / lớp.' }
+        if ([Windows.Forms.MessageBox]::Show('Kết thúc buổi kiểm tra và mở lại mạng cho cả phòng?', 'TinShareLab Classroom', 'YesNo', 'Question') -ne 'Yes') { return }
+        Set-ExamBusy $true
+        $classId = $script:classes[$classBox.SelectedIndex].id
+        $exam = (Invoke-Site 'GET' "/api/admin/lab/exam?classId=$classId" $null).exam
+        if ($exam -and -not $exam.closedAt) { [void](Invoke-Site 'PATCH' '/api/admin/lab/exam' @{ classId = $classId; examId = $exam.id; action = 'close' }) }
+        $machines = Get-RoomMachines
+        $released = Send-Feature $machines $featureStartApp @{ applications = @('schtasks /run /tn TinShareLab\release') } 'Mở mạng'
+        $status.Text = "Đã kết thúc kiểm tra. Mở mạng $released/$($machines.Count) máy."
+    } catch {
+        $status.Text = ''
+        [void][Windows.Forms.MessageBox]::Show("$_", 'TinShareLab Classroom', 'OK', 'Error')
+    } finally { Set-ExamBusy $false }
+})
+
+$form.Add_Shown({ Update-ExamChoices })
+$form.Add_FormClosed({ Stop-WebLink })
+
 [void]$form.ShowDialog()
