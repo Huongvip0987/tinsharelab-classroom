@@ -71,6 +71,24 @@ function Get-NetworkRanges([string]$ip, [int]$length) {
     return (($start..($start + $count - 1)) | ForEach-Object { "$($octets[0]).$($octets[1]).$_." }) -join ', '
 }
 
+# The /24s the student machines actually sit on, learned without asking anyone:
+# NetSupport keeps a connection to every student (port 5405), and the ARP cache
+# lists the machines on this LAN. Only addresses sharing this machine's first two
+# octets count, so internet hosts never end up in the scan.
+function Get-PeerRanges([string]$self) {
+    if (-not $self) { return @() }
+    $head = ($self.Split('.')[0..1]) -join '.'
+    $inLab = { param($ip) $ip -match '^\d+\.\d+\.\d+\.\d+$' -and $ip.StartsWith("$head.") }
+    $students = @()
+    try { $students = @(Get-NetTCPConnection -State Established -ErrorAction Stop | Where-Object { $_.RemotePort -eq 5405 -or $_.LocalPort -eq 5405 } | ForEach-Object { $_.RemoteAddress } | Where-Object { & $inLab $_ }) } catch {}
+    if ($students.Count) { return @($students | ForEach-Object { $_ -replace '\d+$', '' } | Sort-Object -Unique) }
+    # No NetSupport: the busiest /24s in the ARP cache, at most four so a big
+    # school network does not turn the scan into minutes.
+    $neighbors = @()
+    try { $neighbors = @(Get-NetNeighbor -AddressFamily IPv4 -ErrorAction Stop | Where-Object { $_.State -in 'Reachable', 'Stale', 'Delay', 'Probe' } | ForEach-Object { $_.IPAddress } | Where-Object { & $inLab $_ }) } catch {}
+    return @($neighbors | ForEach-Object { $_ -replace '\d+$', '' } | Group-Object | Sort-Object Count -Descending | Select-Object -First 4 | ForEach-Object { $_.Name })
+}
+
 # Every step goes to install-log.txt so a failed machine says why; result.txt holds
 # only the final word, which the network install waits for.
 $studentInstallScript = @'
@@ -263,9 +281,12 @@ function Add-Box([string]$text, [int]$x, [int]$y, [int]$width) {
 }
 
 Add-Label 'Máy con không có mật khẩu: bấm nút 1, gửi gói qua NetSupport hoặc USB, chạy xong thì bấm nút 2.' 16 12 720
+# Saved ranges, this network's ranges and the ranges NetSupport students are on,
+# merged, so the teacher never types an address.
 $savedRanges = if (Test-Path $rangesPath) { (Get-Content $rangesPath -Raw).Trim() } else { '' }
+$startRanges = try { (Get-Prefixes ((@($savedRanges, $subnet.Prefix) + (Get-PeerRanges $subnet.Self)) -join ',')) -join ', ' } catch { $subnet.Prefix }
 Add-Label 'Dải địa chỉ' 16 48 90
-$prefixBox = Add-Box $(if ($savedRanges) { $savedRanges } else { $subnet.Prefix }) 110 46 250
+$prefixBox = Add-Box $startRanges 110 46 250
 Add-Label 'từ' 370 48 26
 $fromBox = Add-Box '1' 400 46 50
 Add-Label 'đến' 460 48 34
