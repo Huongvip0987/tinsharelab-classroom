@@ -166,6 +166,16 @@ if ($Mode -eq 'examonly') {
     Set-PolicyList "$firefox\Block" @('<all_urls>')
     Set-PolicyList "$firefox\Exceptions" ($examSites | ForEach-Object { "https://$_/*"; "https://*.$_/*" })
 }
+# Chrome, Edge and Coc Coc reread their registry policies on a Group Policy
+# notification, not on a plain registry write, so an open browser would keep the
+# old rules. RefreshPolicyEx sends that notification for the machine policies.
+try {
+    Add-Type -Namespace TinShareLab -Name Gp -MemberDefinition '[DllImport("userenv.dll", SetLastError = true)] public static extern bool RefreshPolicyEx(bool machine, uint options);'
+    [void][TinShareLab.Gp]::RefreshPolicyEx($true, 1)
+} catch {}
+# Firefox only reads policies at start, so it is closed when the room is locked;
+# the student reopens it under the new rules.
+if ($Mode -eq 'examonly') { Get-Process -Name firefox -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue }
 New-Item -ItemType Directory -Force -Path $dataHome | Out-Null
 Set-Content -Path (Join-Path $dataHome 'mode.txt') -Value "$Mode $(Get-Date -Format s)"
 '@
