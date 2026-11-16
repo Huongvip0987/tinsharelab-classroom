@@ -259,7 +259,7 @@ Add-Label 'từ' 370 48 26
 $fromBox = Add-Box '1' 400 46 50
 Add-Label 'đến' 460 48 34
 $toBox = Add-Box '254' 498 46 50
-Add-Label 'Nhiều dải: cách nhau dấu phẩy' 556 48 190
+Add-Label 'Nhiều dải: dùng dấu phẩy' 556 48 190
 Add-Label 'Tài khoản admin' 16 84 120
 $userBox = Add-Box 'Administrator' 140 82 180
 Add-Label 'Mật khẩu' 335 84 70
