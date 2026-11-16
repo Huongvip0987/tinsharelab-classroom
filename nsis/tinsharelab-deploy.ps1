@@ -53,11 +53,22 @@ function Initialize-Teacher {
     if ((Invoke-Cli @('service', 'start')) -ne 0) { throw 'Không khởi động lại được dịch vụ.' }
 }
 
+# Prefix is every /24 inside this machine's network (up to 8), so a lab on a /22
+# such as 172.16.8.0/22 is scanned whole on a fresh install with nothing typed.
 function Get-Subnet {
     $address = Get-NetIPConfiguration | Where-Object { $_.IPv4DefaultGateway -and $_.IPv4Address } | Select-Object -First 1
     if (-not $address) { return @{ Prefix = '192.168.1.'; Self = '' } }
     $ip = $address.IPv4Address[0].IPAddress
-    return @{ Prefix = ($ip -replace '\d+$', ''); Self = $ip }
+    $length = [int]$address.IPv4Address[0].PrefixLength
+    return @{ Prefix = (Get-NetworkRanges $ip $length); Self = $ip }
+}
+
+function Get-NetworkRanges([string]$ip, [int]$length) {
+    $octets = $ip.Split('.') | ForEach-Object { [int]$_ }
+    if ($length -ge 24 -or $length -lt 21) { return "$($octets[0]).$($octets[1]).$($octets[2])." }
+    $count = [int][math]::Pow(2, 24 - $length)
+    $start = $octets[2] - ($octets[2] % $count)
+    return (($start..($start + $count - 1)) | ForEach-Object { "$($octets[0]).$($octets[1]).$_." }) -join ', '
 }
 
 # Every step goes to install-log.txt so a failed machine says why; result.txt holds
