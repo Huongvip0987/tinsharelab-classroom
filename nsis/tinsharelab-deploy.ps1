@@ -89,6 +89,75 @@ function Get-PeerRanges([string]$self) {
     return @($neighbors | ForEach-Object { $_ -replace '\d+$', '' } | Group-Object | Sort-Object Count -Descending | Select-Object -First 4 | ForEach-Object { $_.Name })
 }
 
+# Runs on each student as SYSTEM through three scheduled tasks that any signed-in
+# user may start, so the teacher page can switch a room with "Start application"
+# (which runs as the student). netoff blocks the internet but keeps the LAN, so the
+# teacher still sees the screens; examonly lets browsers open only the exam site;
+# release undoes both and also runs at every boot so nobody stays locked out.
+$restrictScript = @'
+param([ValidateSet('netoff', 'examonly', 'release')][string]$Mode = 'release', [switch]$Register)
+$ErrorActionPreference = 'Continue'
+$dataHome = Join-Path $env:ProgramData 'TinShareLab'
+$self = Join-Path $dataHome 'restrict.ps1'
+
+if ($Register) {
+    New-Item -ItemType Directory -Force -Path $dataHome | Out-Null
+    if ($PSCommandPath -ne $self) { Copy-Item -Force $PSCommandPath $self }
+    $service = New-Object -ComObject Schedule.Service
+    $service.Connect()
+    $root = $service.GetFolder('\')
+    try { $folder = $root.GetFolder('TinShareLab') } catch { $folder = $root.CreateFolder('TinShareLab') }
+    foreach ($name in 'netoff', 'examonly', 'release') {
+        $task = $service.NewTask(0)
+        $task.Settings.AllowDemandStart = $true
+        $task.Settings.DisallowStartIfOnBatteries = $false
+        $task.Settings.StopIfGoingOnBatteries = $false
+        $task.Settings.ExecutionTimeLimit = 'PT5M'
+        $task.Principal.UserId = 'SYSTEM'
+        $task.Principal.LogonType = 5
+        $task.Principal.RunLevel = 1
+        if ($name -eq 'release') { [void]$task.Triggers.Create(8) }
+        $action = $task.Actions.Create(0)
+        $action.Path = 'powershell.exe'
+        $action.Arguments = "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File `"$self`" -Mode $name"
+        # SYSTEM and administrators own the task; any signed-in user may only run it.
+        [void]$folder.RegisterTaskDefinition($name, $task, 6, 'SYSTEM', $null, 5, 'D:(A;;FA;;;SY)(A;;FA;;;BA)(A;;GRGX;;;AU)')
+    }
+    exit 0
+}
+
+$group = 'TinShareLab Restrict'
+# Every public IPv4 block; private ranges (the lab LAN) stay open.
+$internet = '1.0.0.0-9.255.255.255', '11.0.0.0-126.255.255.255', '128.0.0.0-169.253.255.255', '169.255.0.0-172.15.255.255', '172.32.0.0-192.167.255.255', '192.169.0.0-223.255.255.255'
+$examSites = 'tinsharelab.com', 'ghnefwjmhmukzyxyyvcp.supabase.co'
+$chromium = 'HKLM:\SOFTWARE\Policies\Google\Chrome', 'HKLM:\SOFTWARE\Policies\Microsoft\Edge', 'HKLM:\SOFTWARE\Policies\CocCoc\Browser'
+$firefox = 'HKLM:\SOFTWARE\Policies\Mozilla\Firefox\WebsiteFilter'
+
+function Set-PolicyList([string]$path, [string[]]$items) {
+    Remove-Item -Recurse -Force -ErrorAction SilentlyContinue $path
+    New-Item -Force -Path $path | Out-Null
+    for ($i = 0; $i -lt $items.Count; $i++) { New-ItemProperty -Force -Path $path -Name ($i + 1) -Value $items[$i] -PropertyType String | Out-Null }
+}
+
+Get-NetFirewallRule -Group $group -ErrorAction SilentlyContinue | Remove-NetFirewallRule
+foreach ($path in $chromium) { Remove-Item -Recurse -Force -ErrorAction SilentlyContinue "$path\URLBlocklist", "$path\URLAllowlist" }
+Remove-Item -Recurse -Force -ErrorAction SilentlyContinue $firefox
+
+if ($Mode -eq 'netoff') {
+    New-NetFirewallRule -DisplayName 'TinShareLab - tat mang' -Group $group -Direction Outbound -Action Block -RemoteAddress $internet -Profile Any | Out-Null
+}
+if ($Mode -eq 'examonly') {
+    foreach ($path in $chromium) {
+        Set-PolicyList "$path\URLBlocklist" @('*')
+        Set-PolicyList "$path\URLAllowlist" $examSites
+    }
+    Set-PolicyList "$firefox\Block" @('<all_urls>')
+    Set-PolicyList "$firefox\Exceptions" ($examSites | ForEach-Object { "https://$_/*"; "https://*.$_/*" })
+}
+New-Item -ItemType Directory -Force -Path $dataHome | Out-Null
+Set-Content -Path (Join-Path $dataHome 'mode.txt') -Value "$Mode $(Get-Date -Format s)"
+'@
+
 # Every step goes to install-log.txt so a failed machine says why; result.txt holds
 # only the final word, which the network install waits for.
 $studentInstallScript = @'
@@ -137,6 +206,11 @@ netsh advfirewall firewall delete rule name="TinShareLab 11100" >nul 2>&1
 netsh advfirewall firewall add rule name="TinShareLab 11100" dir=in action=allow protocol=TCP localport=11100 >> "%LOG%" 2>&1
 "%CLI%" service stop >> "%LOG%" 2>&1
 "%CLI%" service start >> "%LOG%" 2>&1
+if exist "%~dp0restrict.ps1" (
+  echo registering_restrict_tasks >> "%LOG%"
+  powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0restrict.ps1" -Register >> "%LOG%" 2>&1
+  schtasks /query /tn "TinShareLab\examonly" >nul 2>&1 || echo restrict_tasks_missing >> "%LOG%"
+)
 echo ok >> "%LOG%"
 echo ok>"%~dp0result.txt"
 '@
@@ -148,6 +222,7 @@ function New-StudentPackage([string]$folder) {
     Copy-Item -Force $setup (Join-Path $folder 'setup.exe')
     Copy-Item -Force $publicKey (Join-Path $folder 'teacher_public_key.pem')
     Set-Content -Path (Join-Path $folder 'install.cmd') -Encoding Ascii -Value $studentInstallScript
+    Set-Content -Path (Join-Path $folder 'restrict.ps1') -Encoding UTF8 -Value $restrictScript
     Remove-Item -Force -ErrorAction SilentlyContinue (Join-Path $folder 'result.txt'), (Join-Path $folder 'install-log.txt')
 }
 
@@ -175,7 +250,7 @@ if ($MakePackage) {
 }
 
 $installWorker = {
-    param([string]$Target, [object]$Credential, [string]$Setup, [string]$Key, [string]$InstallScript)
+    param([string]$Target, [object]$Credential, [string]$Setup, [string]$Key, [string]$InstallScript, [string]$RestrictScript)
     $ErrorActionPreference = 'Stop'
 
     function Test-Port([string]$Address, [int]$Port, [int]$Timeout) {
@@ -209,6 +284,7 @@ $installWorker = {
         Copy-Item -Force $Setup "$remote\setup.exe"
         Copy-Item -Force $Key "$remote\teacher_public_key.pem"
         Set-Content -Path "$remote\install.cmd" -Encoding Ascii -Value $InstallScript
+        Set-Content -Path "$remote\restrict.ps1" -Encoding UTF8 -Value $RestrictScript
 
         $stage = 'chạy trình cài'
         $ErrorActionPreference = 'Continue'
@@ -369,7 +445,7 @@ function Start-RoomJobs([object]$credential) {
             if ($target -eq $subnet.Self) { continue }
             $pipe = [powershell]::Create()
             $pipe.RunspacePool = $script:pool
-            [void]$pipe.AddScript($installWorker).AddArgument($target).AddArgument($credential).AddArgument($setup).AddArgument($publicKey).AddArgument($studentInstallScript)
+            [void]$pipe.AddScript($installWorker).AddArgument($target).AddArgument($credential).AddArgument($setup).AddArgument($publicKey).AddArgument($studentInstallScript).AddArgument($restrictScript)
             $script:jobs += [pscustomobject]@{ Host = $target; Pipe = $pipe; Handle = $pipe.BeginInvoke(); Done = $false; Result = $null }
         }
     }
