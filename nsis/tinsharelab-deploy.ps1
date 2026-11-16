@@ -33,6 +33,18 @@ function Invoke-Cli([string[]]$arguments) {
     return $code
 }
 
+# Windows PowerShell 5.1 splits an argument that holds quotes, so a JSON value is
+# passed as one hand-quoted command line (backslashes before a quote doubled).
+function Set-CliJson([string]$key, [object[]]$value) {
+    $json = ConvertTo-Json -InputObject $value -Compress
+    $start = New-Object Diagnostics.ProcessStartInfo $cli
+    $start.Arguments = "config set $key `"" + ($json -replace '(\\*)"', '$1$1\"') + '"'
+    $start.UseShellExecute = $false
+    $start.CreateNoWindow = $true
+    $process = [Diagnostics.Process]::Start($start)
+    $process.WaitForExit()
+}
+
 function Initialize-Teacher {
     New-Item -ItemType Directory -Force -Path $dataDir | Out-Null
     if (-not (Test-Path (Join-Path $dataDir 'keys\private\teacher\key'))) {
@@ -381,7 +393,7 @@ $packageButton.Size = New-Object Drawing.Size(236, 40)
 $form.Controls.Add($packageButton)
 
 $openButton = New-Object Windows.Forms.Button
-$openButton.Text = '2. Tìm máy đã cài, mở web'
+$openButton.Text = '2. Tìm máy, mở bảng điều khiển'
 $openButton.Location = New-Object Drawing.Point(262, 120)
 $openButton.Size = New-Object Drawing.Size(236, 40)
 $form.Controls.Add($openButton)
@@ -392,9 +404,15 @@ $installButton.Location = New-Object Drawing.Point(508, 120)
 $installButton.Size = New-Object Drawing.Size(236, 40)
 $form.Controls.Add($installButton)
 
+$examButton = New-Object Windows.Forms.Button
+$examButton.Text = 'Lấy đề thi trên web'
+$examButton.Location = New-Object Drawing.Point(508, 164)
+$examButton.Size = New-Object Drawing.Size(236, 28)
+$form.Controls.Add($examButton)
+
 $status = New-Object Windows.Forms.Label
 $status.Location = New-Object Drawing.Point(16, 168)
-$status.Size = New-Object Drawing.Size(728, 24)
+$status.Size = New-Object Drawing.Size(484, 24)
 $form.Controls.Add($status)
 
 $list = New-Object Windows.Forms.ListView
@@ -407,11 +425,37 @@ $list.Size = New-Object Drawing.Size(728, 348)
 [void]$list.Columns.Add('Chi tiết', 460)
 $form.Controls.Add($list)
 
-function Open-Panel {
+# The room is controlled from the app's own window (veyon-master): the machines
+# just found become its "Phong may" location, and the room switches are preset
+# under "Start application" / "Open website". The web page is only for exams.
+$roomName = 'Phong may'
+$roomApps = @(
+    @{ Type = 1; Name = 'Tắt mạng'; Path = 'schtasks /run /tn TinShareLab\netoff'; Uid = '{6f1c2a10-7d3b-4c8e-9a51-1b2c3d4e5f01}' },
+    @{ Type = 1; Name = 'Chỉ trang kiểm tra'; Path = 'schtasks /run /tn TinShareLab\examonly'; Uid = '{6f1c2a10-7d3b-4c8e-9a51-1b2c3d4e5f02}' },
+    @{ Type = 1; Name = 'Mở mạng'; Path = 'schtasks /run /tn TinShareLab\release'; Uid = '{6f1c2a10-7d3b-4c8e-9a51-1b2c3d4e5f03}' }
+)
+$roomSites = @(
+    @{ Type = 2; Name = 'Trang kiểm tra'; Path = 'https://tinsharelab.com/phong-may/'; Uid = '{6f1c2a10-7d3b-4c8e-9a51-1b2c3d4e5f11}' }
+)
+
+function Open-Control {
     if (-not (Test-Path $tokenPath)) { Initialize-Teacher }
-    $token = (Get-Content $tokenPath -Raw).Trim()
-    $machines = if (Test-Path $machinesPath) { ((Get-Content $machinesPath) -join ',') } else { '' }
-    Start-Process "$panelUrl#ket-noi=$token&may=$machines"
+    $machines = @(if (Test-Path $machinesPath) { Get-Content $machinesPath | Where-Object { $_.Trim() } })
+    $csv = Join-Path $env:TEMP 'tinsharelab-room.csv'
+    # This machine joins the location too, so the window opens on "Phong may" by
+    # itself (AutoSelectCurrentLocation) while hiding its own tile.
+    $rows = @($machines) + @($subnet.Self | Where-Object { $_ })
+    Set-Content -Path $csv -Encoding Ascii -Value ($rows | ForEach-Object { "$_;$_" })
+    Invoke-Cli @('config', 'set', 'Master/AutoSelectCurrentLocation', 'true') | Out-Null
+    Invoke-Cli @('config', 'set', 'Master/HideLocalComputer', 'true') | Out-Null
+    Invoke-Cli @('config', 'set', 'Master/AutoAdjustMonitoringIconSize', 'true') | Out-Null
+    Invoke-Cli @('networkobjects', 'clear') | Out-Null
+    if ($machines.Count) { Invoke-Cli @('networkobjects', 'import', $csv, 'location', $roomName, 'format', '%name%;%host%') | Out-Null }
+    Remove-Item -Force -ErrorAction SilentlyContinue $csv
+    Set-CliJson 'DesktopServices/PredefinedApplications' $roomApps
+    Set-CliJson 'DesktopServices/PredefinedWebsites' $roomSites
+    Get-Process -Name 'veyon-master' -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue
+    Start-Process (Join-Path $installDir 'veyon-master.exe')
 }
 
 $script:pool = $null
@@ -488,7 +532,7 @@ $timer.Add_Tick({
         if ($script:openWhenDone) {
             $script:openWhenDone = $false
             if ($ok.Count) {
-                try { Open-Panel } catch { [void][Windows.Forms.MessageBox]::Show("$_", 'TinShareLab Classroom', 'OK', 'Error') }
+                try { Open-Control } catch { [void][Windows.Forms.MessageBox]::Show("$_", 'TinShareLab Classroom', 'OK', 'Error') }
             } else {
                 [void][Windows.Forms.MessageBox]::Show('Chưa thấy máy nào đã cài. Hãy kiểm tra máy con đã chạy install.cmd, đã bật và cùng dải địa chỉ.', 'TinShareLab Classroom', 'OK', 'Warning')
             }
@@ -533,6 +577,8 @@ $installButton.Add_Click({
         [void][Windows.Forms.MessageBox]::Show("$_", 'TinShareLab Classroom', 'OK', 'Error')
     }
 })
+
+$examButton.Add_Click({ Start-Process $panelUrl })
 
 $openButton.Add_Click({
     try {
