@@ -22,6 +22,7 @@ $publicKey = Join-Path $PSScriptRoot 'teacher_public_key.pem'
 $tokenPath = Join-Path $dataDir 'tinsharelab-pairing-token'
 $panelUrl = 'https://tinsharelab.com/phong-may/giao-vien/'
 $machinesPath = Join-Path $dataDir 'tinsharelab-machines.txt'
+$rangesPath = Join-Path $dataDir 'tinsharelab-ranges.txt'
 
 function Invoke-Cli([string[]]$arguments) {
     $previous = $ErrorActionPreference
@@ -59,28 +60,56 @@ function Get-Subnet {
     return @{ Prefix = ($ip -replace '\d+$', ''); Self = $ip }
 }
 
+# Every step goes to install-log.txt so a failed machine says why; result.txt holds
+# only the final word, which the network install waits for.
 $studentInstallScript = @'
 @echo off
+setlocal
+set "LOG=%~dp0install-log.txt"
+del "%~dp0result.txt" >nul 2>&1
+echo launched %date% %time% user=%username% computer=%computername% > "%LOG%"
 net session >nul 2>&1 || (
+  echo not_admin_requesting_uac >> "%LOG%"
   powershell.exe -NoProfile -Command "Start-Process -FilePath '%~f0' -Verb RunAs"
   exit /b
 )
 cd /d "%~dp0"
-setup.exe /S /NoMaster /NoStartMenuFolder
-set "CLI=%ProgramFiles%\TinShareLab Classroom\veyon-wcli.exe"
+echo admin_ok >> "%LOG%"
+set "CLI=%ProgramFiles%\TinShareLab Classroom\veyon-cli.exe"
 if not exist "%CLI%" (
-  echo install_failed>result.txt
+  echo installing >> "%LOG%"
+  start "" /wait "%~dp0setup.exe" /S /NoMaster /NoStartMenuFolder
+)
+if not exist "%CLI%" (
+  echo install_failed >> "%LOG%"
+  echo install_failed>"%~dp0result.txt"
   exit /b 1
 )
-"%CLI%" authkeys delete teacher/public >nul 2>&1
-"%CLI%" authkeys import teacher/public "%~dp0teacher_public_key.pem" || (
-  echo key_failed>result.txt
+if not exist "%~dp0teacher_public_key.pem" (
+  echo missing_teacher_public_key.pem >> "%LOG%"
+  echo key_failed>"%~dp0result.txt"
   exit /b 1
 )
-"%CLI%" config set Authentication/Method 1
-"%CLI%" service stop
-"%CLI%" service start
-echo ok>result.txt
+"%CLI%" authkeys delete teacher/public >> "%LOG%" 2>&1
+set N=0
+:retry
+set /a N+=1
+"%CLI%" authkeys import teacher/public "%~dp0teacher_public_key.pem" >> "%LOG%" 2>&1 && goto imported
+if %N% lss 5 (
+  timeout /t 3 /nobreak >nul
+  goto retry
+)
+echo key_failed >> "%LOG%"
+echo key_failed>"%~dp0result.txt"
+exit /b 1
+:imported
+"%CLI%" config set Authentication/Method 1 >> "%LOG%" 2>&1
+netsh advfirewall firewall delete rule name="TinShareLab 11100" >nul 2>&1
+netsh advfirewall firewall add rule name="TinShareLab 11100" dir=in action=allow protocol=TCP localport=11100 >> "%LOG%" 2>&1
+"%CLI%" service stop >> "%LOG%" 2>&1
+"%CLI%" service start >> "%LOG%" 2>&1
+echo ok >> "%LOG%"
+echo ok>"%~dp0result.txt"
 '@
 
 function New-StudentPackage([string]$folder) {
@@ -90,7 +119,25 @@ function New-StudentPackage([string]$folder) {
     Copy-Item -Force $setup (Join-Path $folder 'setup.exe')
     Copy-Item -Force $publicKey (Join-Path $folder 'teacher_public_key.pem')
     Set-Content -Path (Join-Path $folder 'install.cmd') -Encoding Ascii -Value $studentInstallScript
-    Remove-Item -Force -ErrorAction SilentlyContinue (Join-Path $folder 'result.txt')
+    Remove-Item -Force -ErrorAction SilentlyContinue (Join-Path $folder 'result.txt'), (Join-Path $folder 'install-log.txt')
+}
+
+# The room can span several /24 ranges (e.g. 172.16.9. and 172.16.11.), so the box
+# takes a comma-separated list. Leading zeros are dropped so "172.16.09." still works.
+function Get-Prefixes([string]$text) {
+    $prefixes = @()
+    foreach ($item in ($text -split '[,;\s]+' | Where-Object { $_ })) {
+        $parts = $item.Trim('.').Split('.')
+        if ($parts.Count -ne 3) { throw "Dải địa chỉ không hợp lệ: $item (ví dụ đúng: 172.16.11.)" }
+        $octets = foreach ($part in $parts) {
+            if ($part -notmatch '^\d{1,3}$' -or [int]$part -gt 255) { throw "Dải địa chỉ không hợp lệ: $item" }
+            [int]$part
+        }
+        $prefix = ($octets -join '.') + '.'
+        if ($prefixes -notcontains $prefix) { $prefixes += $prefix }
+    }
+    if (-not $prefixes.Count) { throw 'Hãy nhập ít nhất một dải địa chỉ, ví dụ 172.16.11.' }
+    return $prefixes
 }
 
 if ($MakePackage) {
@@ -205,12 +252,14 @@ function Add-Box([string]$text, [int]$x, [int]$y, [int]$width) {
 }
 
 Add-Label 'Máy con không có mật khẩu: bấm nút 1, gửi gói qua NetSupport hoặc USB, chạy xong thì bấm nút 2.' 16 12 720
+$savedRanges = if (Test-Path $rangesPath) { (Get-Content $rangesPath -Raw).Trim() } else { '' }
 Add-Label 'Dải địa chỉ' 16 48 90
-$prefixBox = Add-Box $subnet.Prefix 110 46 130
-Add-Label 'từ' 250 48 26
-$fromBox = Add-Box '1' 280 46 50
-Add-Label 'đến' 340 48 34
-$toBox = Add-Box '254' 378 46 50
+$prefixBox = Add-Box $(if ($savedRanges) { $savedRanges } else { $subnet.Prefix }) 110 46 250
+Add-Label 'từ' 370 48 26
+$fromBox = Add-Box '1' 400 46 50
+Add-Label 'đến' 460 48 34
+$toBox = Add-Box '254' 498 46 50
+Add-Label 'Nhiều dải: cách nhau dấu phẩy' 556 48 190
 Add-Label 'Tài khoản admin' 16 84 120
 $userBox = Add-Box 'Administrator' 140 82 180
 Add-Label 'Mật khẩu' 335 84 70
@@ -274,18 +323,23 @@ function Set-Busy([bool]$busy) {
 function Start-RoomJobs([object]$credential) {
     $from = [int]$fromBox.Text
     $to = [int]$toBox.Text
-    if ($prefixBox.Text -notmatch '^\d{1,3}\.\d{1,3}\.\d{1,3}\.$' -or $from -lt 1 -or $to -gt 254 -or $from -gt $to) { throw 'Dải địa chỉ không hợp lệ.' }
+    if ($from -lt 1 -or $to -gt 254 -or $from -gt $to) { throw 'Khoảng "từ ... đến" phải nằm trong 1-254.' }
+    $prefixes = Get-Prefixes $prefixBox.Text
+    $prefixBox.Text = $prefixes -join ', '
+    Set-Content -Path $rangesPath -Encoding UTF8 -Value $prefixBox.Text
     $list.Items.Clear()
-    $script:pool = [runspacefactory]::CreateRunspacePool(1, 16)
+    $script:pool = [runspacefactory]::CreateRunspacePool(1, 32)
     $script:pool.Open()
     $script:jobs = @()
-    foreach ($last in $from..$to) {
-        $target = "$($prefixBox.Text)$last"
-        if ($target -eq $subnet.Self) { continue }
-        $pipe = [powershell]::Create()
-        $pipe.RunspacePool = $script:pool
-        [void]$pipe.AddScript($installWorker).AddArgument($target).AddArgument($credential).AddArgument($setup).AddArgument($publicKey).AddArgument($studentInstallScript)
-        $script:jobs += [pscustomobject]@{ Host = $target; Pipe = $pipe; Handle = $pipe.BeginInvoke(); Done = $false; Result = $null }
+    foreach ($prefix in $prefixes) {
+        foreach ($last in $from..$to) {
+            $target = "$prefix$last"
+            if ($target -eq $subnet.Self) { continue }
+            $pipe = [powershell]::Create()
+            $pipe.RunspacePool = $script:pool
+            [void]$pipe.AddScript($installWorker).AddArgument($target).AddArgument($credential).AddArgument($setup).AddArgument($publicKey).AddArgument($studentInstallScript)
+            $script:jobs += [pscustomobject]@{ Host = $target; Pipe = $pipe; Handle = $pipe.BeginInvoke(); Done = $false; Result = $null }
+        }
     }
     $timer.Start()
 }
