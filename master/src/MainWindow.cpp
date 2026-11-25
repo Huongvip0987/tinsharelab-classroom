@@ -31,6 +31,13 @@
 #include <QMessageBox>
 #include <QSplitter>
 
+#ifdef Q_OS_WIN
+#include <windows.h>
+#ifndef WDA_EXCLUDEFROMCAPTURE
+#define WDA_EXCLUDEFROMCAPTURE 0x00000011
+#endif
+#endif
+
 #include "AboutDialog.h"
 #include "AccessControlProvider.h"
 #include "MainWindow.h"
@@ -62,6 +69,16 @@ MainWindow::MainWindow( VeyonMaster &masterCore, QWidget* parent ) :
 	m_modeGroup( new QButtonGroup( this ) )
 {
 	ui->setupUi( this );
+
+#ifdef Q_OS_WIN
+	// A simulated room (student services on this same PC) would otherwise film
+	// this window inside every thumbnail, endlessly. Keep it out of screen
+	// captures while TINSHARELAB_SIMULATION is set.
+	if( qEnvironmentVariableIsSet( "TINSHARELAB_SIMULATION" ) )
+	{
+		SetWindowDisplayAffinity( reinterpret_cast<HWND>( winId() ), WDA_EXCLUDEFROMCAPTURE );
+	}
+#endif
 
 	restoreState( QByteArray::fromBase64( m_master.userConfig().windowState().toUtf8() ) );
 	restoreGeometry( QByteArray::fromBase64( m_master.userConfig().windowGeometry().toUtf8() ) );
