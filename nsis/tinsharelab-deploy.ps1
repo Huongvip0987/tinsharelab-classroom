@@ -381,7 +381,8 @@ function Add-Box([string]$text, [int]$x, [int]$y, [int]$width) {
 Add-Label 'Máy con không có mật khẩu: bấm nút 1, gửi gói qua NetSupport hoặc USB, chạy xong thì bấm nút 2.' 16 12 720
 # Saved ranges, this network's ranges and the ranges NetSupport students are on,
 # merged, so the teacher never types an address.
-$savedRanges = if (Test-Path $rangesPath) { (Get-Content $rangesPath -Raw).Trim() } else { '' }
+$keptRanges = if ((Test-Path 'D:\TinShareLab\dai.txt')) { (Get-Content 'D:\TinShareLab\dai.txt' -Raw).Trim() } else { '' }
+$savedRanges = if (Test-Path $rangesPath) { (Get-Content $rangesPath -Raw).Trim() } else { $keptRanges }
 $startRanges = try { (Get-Prefixes ((@($savedRanges, $subnet.Prefix) + (Get-PeerRanges $subnet.Self)) -join ',')) -join ', ' } catch { $subnet.Prefix }
 Add-Label 'Dải địa chỉ' 16 48 90
 $prefixBox = Add-Box $startRanges 110 46 250
@@ -448,9 +449,64 @@ $roomSites = @(
     @{ Type = 2; Name = 'Trang kiểm tra'; Path = 'https://tinsharelab.com/phong-may/'; Uid = '{6f1c2a10-7d3b-4c8e-9a51-1b2c3d4e5f11}' }
 )
 
-function Open-Control {
-    if (-not (Test-Path $tokenPath)) { Initialize-Teacher }
-    $machines = @(if (Test-Path $machinesPath) { Get-Content $machinesPath | Where-Object { $_.Trim() } })
+# The machine list also lives on a data drive when there is one: lab teacher PCs
+# often reset C: at every restart (Shadow Defender), and a fresh install then
+# finds last session's room at once instead of scanning from nothing.
+$keepDir = if ((Test-Path 'D:\') -and ([IO.DriveInfo]'D').DriveType -eq 'Fixed') { 'D:\TinShareLab' } else { $null }
+function Save-Room([string[]]$machines) {
+    $machines = @($machines | Where-Object { $_ } | Sort-Object -Unique)
+    Set-Content -Path $machinesPath -Encoding Ascii -Value $machines
+    if ($keepDir) {
+        try {
+            New-Item -ItemType Directory -Force -Path $keepDir | Out-Null
+            Set-Content -Path (Join-Path $keepDir 'may.txt') -Encoding Ascii -Value $machines
+            if (Test-Path $rangesPath) { Copy-Item -Force $rangesPath (Join-Path $keepDir 'dai.txt') }
+        } catch {}
+    }
+}
+function Get-SavedRoom {
+    $paths = @($machinesPath) + @(if ($keepDir) { Join-Path $keepDir 'may.txt' })
+    @($paths | Where-Object { Test-Path $_ } | ForEach-Object { Get-Content $_ } | Where-Object { $_ -match '^\d+\.\d+\.\d+\.\d+$' } | Sort-Object -Unique)
+}
+# Students NetSupport is connected to right now, by exact address.
+function Get-NetSupportPeers {
+    if (-not $subnet.Self) { return @() }
+    $head = ($subnet.Self.Split('.')[0..1]) -join '.'
+    try {
+        @(Get-NetTCPConnection -State Established -ErrorAction Stop | Where-Object { $_.RemotePort -eq 5405 -or $_.LocalPort -eq 5405 } |
+            ForEach-Object { $_.RemoteAddress } | Where-Object { $_ -match '^\d+\.\d+\.\d+\.\d+$' -and $_.StartsWith("$head.") } | Sort-Object -Unique)
+    } catch { @() }
+}
+# Which of these addresses answer on the app's port, all at once, in a second or two.
+function Find-Listening([string[]]$hosts) {
+    $hosts = @($hosts | Where-Object { $_ -and $_ -ne $subnet.Self } | Sort-Object -Unique)
+    if (-not $hosts.Count) { return @() }
+    $probe = {
+        param([string]$Address)
+        $client = New-Object Net.Sockets.TcpClient
+        try { if ($client.ConnectAsync($Address, 11100).Wait(800) -and $client.Connected) { $Address } } catch {} finally { $client.Close() }
+    }
+    $pool = [runspacefactory]::CreateRunspacePool(1, 32)
+    $pool.Open()
+    try {
+        $running = foreach ($target in $hosts) {
+            $pipe = [powershell]::Create()
+            $pipe.RunspacePool = $pool
+            [void]$pipe.AddScript($probe).AddArgument($target)
+            [pscustomobject]@{ Pipe = $pipe; Handle = $pipe.BeginInvoke() }
+        }
+        $found = foreach ($item in $running) {
+            while (-not $item.Handle.IsCompleted) { [Windows.Forms.Application]::DoEvents(); Start-Sleep -Milliseconds 20 }
+            $item.Pipe.EndInvoke($item.Handle)
+            $item.Pipe.Dispose()
+        }
+        return @($found | Where-Object { $_ })
+    } finally { $pool.Close() }
+}
+
+# Puts the machines into the app's "Phong may" location; an open control window
+# picks the change up by itself within seconds.
+function Update-Room([string[]]$machines) {
     $csv = Join-Path $env:TEMP 'tinsharelab-room.csv'
     # This machine joins the location too, so the window opens on "Phong may" by
     # itself (AutoSelectCurrentLocation) while hiding its own tile.
@@ -459,13 +515,22 @@ function Open-Control {
     Invoke-Cli @('config', 'set', 'Master/AutoSelectCurrentLocation', 'true') | Out-Null
     Invoke-Cli @('config', 'set', 'Master/HideLocalComputer', 'true') | Out-Null
     Invoke-Cli @('config', 'set', 'Master/AutoAdjustMonitoringIconSize', 'true') | Out-Null
+    Invoke-Cli @('config', 'set', 'NetworkObjectDirectory/UpdateInterval', '10') | Out-Null
     Invoke-Cli @('networkobjects', 'clear') | Out-Null
     if ($machines.Count) { Invoke-Cli @('networkobjects', 'import', $csv, 'location', $roomName, 'format', '%name%;%host%') | Out-Null }
     Remove-Item -Force -ErrorAction SilentlyContinue $csv
     Set-CliJson 'DesktopServices/PredefinedApplications' $roomApps
     Set-CliJson 'DesktopServices/PredefinedWebsites' $roomSites
-    Get-Process -Name 'veyon-master' -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue
-    Start-Process (Join-Path $installDir 'veyon-master.exe')
+}
+
+# Opens the control window on the room; restart only when asked, so a window the
+# teacher already uses stays open.
+function Open-Control([switch]$Restart) {
+    if (-not (Test-Path $tokenPath)) { Initialize-Teacher }
+    Update-Room (Get-RoomMachines)
+    $running = Get-Process -Name 'veyon-master' -ErrorAction SilentlyContinue
+    if ($running -and $Restart) { $running | Stop-Process -Force -ErrorAction SilentlyContinue; $running = $null }
+    if (-not $running) { Start-Process (Join-Path $installDir 'veyon-master.exe') }
 }
 
 $script:pool = $null
@@ -474,6 +539,8 @@ $timer = New-Object Windows.Forms.Timer
 $timer.Interval = 500
 
 $script:openWhenDone = $false
+$script:refreshWhenDone = $false
+$script:quickFound = @()
 
 function Set-Busy([bool]$busy) {
     $installButton.Enabled = -not $busy
@@ -536,13 +603,19 @@ $timer.Add_Tick({
         $script:pool.Close()
         $found = @($script:jobs | Where-Object { $_.Result -and $_.Result.Found })
         $ok = @($found | Where-Object { $_.Result.Ok })
-        Set-Content -Path $machinesPath -Encoding Ascii -Value @($ok | ForEach-Object { $_.Result.Host })
-        $status.Text = "Xong: $($ok.Count)/$($found.Count) máy thành công. Máy tắt hoặc chặn mạng sẽ không có trong danh sách."
+        $hosts = @($ok | ForEach-Object { $_.Result.Host })
+        if ($script:refreshWhenDone) { $hosts = @($hosts) + @($script:quickFound) }
+        Save-Room $hosts
+        $status.Text = "Xong: $(@(Get-RoomMachines).Count) máy trong phòng. Máy tắt hoặc chặn mạng sẽ không có trong danh sách."
         Set-Busy $false
+        if ($script:refreshWhenDone) {
+            $script:refreshWhenDone = $false
+            try { Update-Room (Get-RoomMachines) } catch {}
+        }
         if ($script:openWhenDone) {
             $script:openWhenDone = $false
             if ($ok.Count) {
-                try { Open-Control } catch { [void][Windows.Forms.MessageBox]::Show("$_", 'TinShareLab Classroom', 'OK', 'Error') }
+                try { Open-Control -Restart } catch { [void][Windows.Forms.MessageBox]::Show("$_", 'TinShareLab Classroom', 'OK', 'Error') }
             } else {
                 [void][Windows.Forms.MessageBox]::Show('Chưa thấy máy nào đã cài. Hãy kiểm tra máy con đã chạy install.cmd, đã bật và cùng dải địa chỉ.', 'TinShareLab Classroom', 'OK', 'Warning')
             }
@@ -691,7 +764,7 @@ function Send-Feature([string[]]$hosts, [string]$feature, [object]$arguments, [s
     return $ok
 }
 
-function Get-RoomMachines { @(if (Test-Path $machinesPath) { Get-Content $machinesPath | Where-Object { $_.Trim() } }) }
+function Get-RoomMachines { Get-SavedRoom }
 
 $form.ClientSize = New-Object Drawing.Size(760, 700)
 $examTitle = New-Object Windows.Forms.Label
@@ -872,7 +945,29 @@ $endExamButton.Add_Click({
     } finally { Set-ExamBusy $false }
 })
 
-$form.Add_Shown({ Update-ExamChoices })
+# Like NetSupport: opening the app shows the room straight away. Machines
+# known from last time and the ones NetSupport sees now are checked in a
+# second or two and the control window opens on them; a full scan of the
+# ranges then runs behind and adds any others to the same window.
+function Start-Room {
+    try {
+        $status.Text = 'Đang mở phòng máy...'
+        $form.Refresh()
+        if (-not (Test-Path $tokenPath)) { Initialize-Teacher }
+        $script:quickFound = @(Find-Listening (@(Get-SavedRoom) + @(Get-NetSupportPeers)))
+        if ($script:quickFound.Count) {
+            Save-Room $script:quickFound
+            Open-Control
+            $status.Text = "Đã mở $($script:quickFound.Count) máy. Đang dò thêm máy mới trong các dải..."
+        } else { $status.Text = 'Đang dò máy trong các dải địa chỉ...' }
+        Set-Busy $true
+        $script:refreshWhenDone = $true
+        $script:openWhenDone = -not $script:quickFound.Count
+        Start-RoomJobs $null
+    } catch { Set-Busy $false; $status.Text = "$_" }
+}
+
+$form.Add_Shown({ Start-Room; Update-ExamChoices })
 $form.Add_FormClosed({ Stop-WebLink })
 
 [void]$form.ShowDialog()
