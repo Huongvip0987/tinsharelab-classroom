@@ -810,6 +810,32 @@ $examHint.Location = New-Object Drawing.Point(16, 668)
 $examHint.Size = New-Object Drawing.Size(728, 30)
 $form.Controls.Add($examHint)
 
+# While an exam runs, the hint line becomes a live summary from the site every
+# 15 seconds: time left, who joined, who handed in, who left the page.
+$script:watchClass = $null
+$watchTimer = New-Object Windows.Forms.Timer
+$watchTimer.Interval = 15000
+function Update-ExamWatch {
+    if (-not $script:watchClass) { return }
+    try {
+        $report = Invoke-Site 'GET' "/api/admin/lab/exam?classId=$($script:watchClass)" $null
+        $exam = $report.exam
+        if (-not $exam -or $exam.closedAt) { $examHint.Text = 'Buổi kiểm tra đã kết thúc.'; $script:watchClass = $null; $watchTimer.Stop(); return }
+        $parts = @($report.participants)
+        $finished = @($parts | Where-Object { $_.finishedAt }).Count
+        $leavers = @($parts | Where-Object { $_.leaves -gt 0 }).Count
+        $submitted = @($report.results | ForEach-Object { $_.accountId } | Sort-Object -Unique).Count
+        $left = ''
+        if ($exam.endsAt) {
+            $seconds = [math]::Max(0, [int]([datetime]::Parse($exam.endsAt).ToUniversalTime() - [datetime]::Parse($report.now).ToUniversalTime()).TotalSeconds)
+            $left = ' · còn {0:D2}:{1:D2}' -f [int][math]::Floor($seconds / 60), ($seconds % 60)
+        }
+        $examHint.Text = "Đang thi: $($exam.title)$left · Đã vào $($parts.Count) · Đã nộp bài $submitted · Nộp xong $finished · Rời trang $leavers"
+    } catch { $examHint.Text = "Chưa cập nhật được tình hình buổi thi: $_" }
+}
+$watchTimer.Add_Tick({ Update-ExamWatch })
+function Start-ExamWatch([string]$classId) { $script:watchClass = $classId; Update-ExamWatch; $watchTimer.Start() }
+
 $script:classes = @()
 $script:presets = @()
 
@@ -922,6 +948,7 @@ $startExamButton.Add_Click({
         Start-Sleep -Seconds 2
         $opened = Send-Feature $machines $featureOpenWebsite @{ websiteUrls = @($url) } 'Mở trang thi'
         $status.Text = "Đang kiểm tra: $($exam.title). Khóa $locked/$($machines.Count) máy, mở trang thi $opened/$($machines.Count) máy."
+        Start-ExamWatch $classId
     } catch {
         $status.Text = ''
         [void][Windows.Forms.MessageBox]::Show("$_", 'TinShareLab Classroom', 'OK', 'Error')
@@ -939,6 +966,7 @@ $endExamButton.Add_Click({
         $machines = Get-RoomMachines
         $released = Send-Feature $machines $featureStartApp @{ applications = @('schtasks /run /tn TinShareLab\release') } 'Mở mạng'
         $status.Text = "Đã kết thúc kiểm tra. Mở mạng $released/$($machines.Count) máy."
+        $script:watchClass = $null; $watchTimer.Stop(); $examHint.Text = 'Đã kết thúc kiểm tra.'
     } catch {
         $status.Text = ''
         [void][Windows.Forms.MessageBox]::Show("$_", 'TinShareLab Classroom', 'OK', 'Error')
@@ -966,6 +994,18 @@ function Start-Room {
         Start-RoomJobs $null
     } catch { Set-Busy $false; $status.Text = "$_" }
 }
+
+# Reopening the app during an exam picks the live summary up again.
+$classBox.Add_SelectedIndexChanged({
+    $watchTimer.Stop(); $script:watchClass = $null
+    if ($classBox.SelectedIndex -lt 0) { return }
+    try {
+        $classId = $script:classes[$classBox.SelectedIndex].id
+        $exam = (Invoke-Site 'GET' "/api/admin/lab/exam?classId=$classId" $null).exam
+        if ($exam -and $exam.startedAt -and -not $exam.closedAt) { Start-ExamWatch $classId }
+        else { $examHint.Text = 'Bắt đầu: tạo buổi thi trên web (nếu phòng chưa có buổi đang mở), khóa trình duyệt chỉ vào trang thi và mở trang thi trên mọi máy.' }
+    } catch {}
+})
 
 $form.Add_Shown({ Start-Room; Update-ExamChoices })
 $form.Add_FormClosed({ Stop-WebLink })
