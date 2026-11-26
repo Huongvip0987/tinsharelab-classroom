@@ -1,4 +1,4 @@
-# Cập nhật nhanh, không build: chép script "Cai cho ca phong" từ mã nguồn vào app đã cài.
+﻿# Cập nhật nhanh, không build: chép script "Cai cho ca phong" từ mã nguồn vào app đã cài.
 # Dùng khi chỉ sửa nsis/tinsharelab-deploy.ps1. Sửa phần C++ thì vẫn phải build bộ cài.
 # Chạy: chuột phải -> Run with PowerShell (tự xin quyền quản trị).
 $identity = [Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()
